@@ -8,10 +8,6 @@ public class Player : MonoBehaviour
     public float speed = 1.0f;
     private Rigidbody2D rb;
     Vector2 movement;
-
-    bool movingUp;
-    bool movingDown;
-    bool movingSide;
     Animator animator;
 
     private void Start()
@@ -24,10 +20,14 @@ public class Player : MonoBehaviour
     {
         movement.x = joystick.Horizontal * speed;
         movement.y = joystick.Vertical * speed;
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
     }
 
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * speed * Time.fixedDeltaTime);
+
     }
 }
