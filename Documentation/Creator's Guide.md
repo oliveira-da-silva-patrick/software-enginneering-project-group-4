@@ -54,7 +54,7 @@ This document will be divided into **sections** and will be continuously updated
  
  Both of these above will be implemented using ***Raycast***, which means that these will only follow the player if he's within their _field of view_.
   - ***Bosses***: This is the final and hardest challenge the player will face. This enemy will be implemented using ***Pathfinding***, which means that it will be
- able to detect the player indenpendently of it's position in the room.
+ able to detect the player indenpendently of it's position in the room. _(You can **run** but you can't **hide**...)_ 
 
   Used scripts:
   
@@ -80,6 +80,22 @@ This document will be divided into **sections** and will be continuously updated
   * ***Boundary*** - Given to any Game Object that is a map limit or has the same properties.
   
 ## Projectiles
+
+  Projectiles are custom game objects thrown by the enemy to damage the player. There can (and will) exist different types of projectiles, the following steps 
+  provide guidance on how to create a **custom game object**:
+  
+  - Create or drag into the scene a game object. (You can use the default objects on Unity, _Ex: Circle, Square, etc._ or your own objects)
+  - Modify the properties of the objects such as color, size, layer, etc.
+  - Add the desired components to the object. In the case of a projectile we want to add the following:
+      * _Sprite Renderer_ (present by default)
+      * _Collider 2D_
+      * _Projectile.cs_
+  - Now drag this game object into one of your folders and you can delete it from the scene.
+  - That's it! Your Custom Game Object is created. In the case of the projectile object you can now drag it into the enemy's projectile slot.
+  
+  Note: Keep in mind that when you attach a game object to a slot in a script, you are ***not*** creating a _copy_. Think of it as a link or pointer, 
+  so any changes that you make to the game object in your folder will be applied to the the projectile thrown by the enemy. _(Which is handy otherwise you 
+  would have to reattach the game object every time you modified it)_
 
   Used scripts:
   
