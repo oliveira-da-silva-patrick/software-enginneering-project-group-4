@@ -62,13 +62,22 @@ This document will be divided into **sections** and will be continuously updated
   
 ## Boundaries
 
-  A boundary defines the limit of the map. All boundaries should have the ***Boundary*** tag. As explained in the [tags](#Tags) section, it is necessary to identify 
+  A boundary defines the limit of the map and is most commonly a wall but it can be used for another object that has the same properties. All boundaries should have
+  the ***Boundary*** tag. As explained in the [tags](#Tags) section, it is necessary to identify 
   certain Game Objects. For example, [projectiles](#Projectiles) self-destruct when they come in contact with boundaries, however this only happens if the boundary
   is tagged, otherwise the projectile just phases through the boundary.
+  
+  Furthermore, boundaries should be given a ***Kinematic*** body type. This allows interaction with Game Objects, such as collision detection but makes it unnaffected
+  by forces, such as gravity.
   
 ## Tags
 
   Tags have an important role in the game behind the scenes. They allow to identify and determine interactions between _Game Objects_.
+  
+  Tags used:
+  
+  * ***Player*** - Given to the main player
+  * ***Boundary*** - Given to any Game Object that is a map limit or has the same properties.
   
 ## Projectiles
 
@@ -77,4 +86,8 @@ This document will be divided into **sections** and will be continuously updated
    * Projectile.cs
   
 ## JoyStick
+
+  For the joystick, we downloaded [this](https://assetstore.unity.com/packages/tools/input-management/joystick-pack-107631) pack
+  from the [Unity asset store](https://assetstore.unity.com/).
+  
 ## Animations
