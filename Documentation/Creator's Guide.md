@@ -103,7 +103,12 @@ This document will be divided into **sections** and will be continuously updated
   
 ## JoyStick
 
-  For the joystick, we downloaded [this](https://assetstore.unity.com/packages/tools/input-management/joystick-pack-107631) pack
+  For the joystick, we downloaded [this](https://assetstore.unity.com/packages/tools/input-management/joystick-pack-107631) free pack
   from the [Unity asset store](https://assetstore.unity.com/).
+  
+  To place the joystick on the scene you first need to create a canvas. You can do so by `Right clicking on Hierarchy` --> `UI` --> `Canvas` and finally drag the 
+  joystick inside the canvas.
+  
+  We chose to use the ***Floating*** joystick, which allows the player to touch anywhere on the screen to move the main character.
   
 ## Animations
