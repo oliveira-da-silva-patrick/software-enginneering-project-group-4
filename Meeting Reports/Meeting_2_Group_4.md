@@ -5,7 +5,8 @@
 
 ### Location
 Online
-### Time 
+### Date and Time
+09/03/22
 15:30 - 15:45
 ### Attendees
  - Patrick Silva
