@@ -62,7 +62,12 @@ This document will be divided into **sections** and will be continuously updated
  angle so that the enemy can detect the player in every direction.
  Furthermore this mechanism also has the ability to detect obstacles, which consequentialy prevents the detection of entities if they are behind said obstacles.
  
- Our `FieldOfView.cs` script contains a variable `CanAtack` that may be checked by other scripts in the same game object.
+ Our `FieldOfView.cs` script contains a variable `CanAtack` that may be checked by other scripts in the same game object. This way we can also add an attack type
+ script to the enemy that is only activated once the `CanAtack` is activated.
+ 
+   #### Attack types
+   
+   * Shooting
  
 
   Used scripts:
