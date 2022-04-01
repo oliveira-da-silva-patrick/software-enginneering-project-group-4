@@ -52,9 +52,18 @@ This document will be divided into **sections** and will be continuously updated
   - ***Standart***: These are the most common and weaker kind of enemy that usually appears in groups. They can be found in most rooms and sometimes on the main hall.
   - ***Mini-Bosses***: These are stronger, more challenging and give greater reward once beaten. They usually appear alone _(Unless you are really unlucky...)_.
  
- Both of these above will be implemented using ***Raycast***, which means that these will only follow the player if he's within their _field of view_.
+ Both of these above will be implemented using ***Circlecast***, which means that these will only follow the player if he's within their _field of view_.
   - ***Bosses***: This is the final and hardest challenge the player will face. This enemy will be implemented using ***Pathfinding***, which means that it will be
  able to detect the player indenpendently of it's position in the room. _(You can **run** but you can't **hide**...)_ 
+ 
+ ### CircleCast
+ 
+ Circlecast is a detecting mechanism for entities. It consists of a circle area around the entity that detects when other entities are in range. We use a 360 degree
+ angle so that the enemy can detect the player in every direction.
+ Furthermore this mechanism also has the ability to detect obstacles, which consequentialy prevents the detection of entities if they are behind said obstacles.
+ 
+ Our `FieldOfView.cs` script contains a variable `CanAtack` that may be checked by other scripts in the same game object.
+ 
 
   Used scripts:
   
