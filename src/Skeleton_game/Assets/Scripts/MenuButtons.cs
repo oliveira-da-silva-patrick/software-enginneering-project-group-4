@@ -9,5 +9,15 @@ public class MenuButtons : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
+
+    public void AccessSkills()
+    {
+        SceneManager.LoadScene("SkillTree");
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
     
 }
