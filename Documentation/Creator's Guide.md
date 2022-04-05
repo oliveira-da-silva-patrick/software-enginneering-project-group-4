@@ -68,11 +68,18 @@ This document will be divided into **sections** and will be continuously updated
    #### Attack types
    
    * Shooting
- 
+   * DDirect hitters
+
 
   Used scripts:
   
-  * Enemy.cs
+  * FieldOfView.cs
+  * Shooting.cs
+
+## AI Enemies
+
+  Due to their complexity AI enemies have their own dedicated section. We used a package from [this](https://arongranberg.com/astar/) website to implement these
+  enemies.
   
 ## Boundaries
 
