@@ -20,6 +20,7 @@ This document will be divided into **sections** and will be continuously updated
 * [Projectiles](#Projectiles)
 * [Joystick](#Joystick)
 * [Animations](#Animations)
+* [UI-Design](#UI-Design)
 
 ## Scripts
   
@@ -141,3 +142,49 @@ This document will be divided into **sections** and will be continuously updated
   We chose to use the ***Floating*** joystick, which allows the player to touch anywhere on the screen to move the main character.
   
 ## Animations
+
+## UI-Design
+
+  How to create a menu with buttons?
+  
+  First of all, we need a new scene. To this scene, you can add a background if you want. I simply created a 2D square and gave it a color.
+  A main menu needs the title and some buttons to interact with. 
+  Unity has already predefined objects for each. For the title, you can use the 'Text' object or even better the 'Text - TextMeshPro' object. If the second
+  is not to be found, you may need to download the TextMeshPro plugin from the asset store. It was already pre-installed on my machine.
+  Now, for the buttons it is best to use the 'Button' object. Here again the TextMeshPro alternative is better. TextMeshPro allows more freedom on how the text is
+  edited. You may notice that not only a button has been created, but also a parent canvas and a text child. To edit the content of the button, modify the values 
+  on the inspector when the button or its text object is selected. It is also better to group the buttons in the canvas under one same empty element.
+  Finally, you should have a nice menu with a title and one or some buttons. Here's how your hierarchy could be looking like:
+    
+    -MainMenu
+      -EventSystem
+      -Canvas
+        -Main Camera
+        -Title (Text - TMP)
+        -Background (Square)
+        -Buttons (Empty element)
+          -Button1 (Button - TMP)
+            -Text (Text - TMP)
+          -Button2 (Button - TMP)
+            -Text (Text - TMP)
+  
+  How to give actions to the buttons?
+  
+  For the buttons to have an on click event, we need to write some code. Let's create a new script called 'MenuButtons'.
+  First of all, we need to use the 'UnityEngine.SceneManagement' library. This can be implemented with this line: 'using UnityEngine.SceneManagement;'.
+  In this script, we can delete the predefined methods and we will create a method for each button available.
+  I created a play button, so i want to have a method which will move the fame from the menu scene to the in-game scene. So, I create a method called 'Play'.
+  In this method, I add one simple line: 'SceneManager.LoadScene("x");'.
+  This line will load the scene x and quit the current scene (here the main menu scene).
+  
+  x can be either the name given to the scene or the index given by the build to the scene. This index number can be found under 'File -> Build Settings'.
+  
+  Remarks:
+  
+  It may be that now when you start your game, the scene doesn't load or the text does not appear. 
+  First, you need to add the scene to the build. Go to 'File -> Build Settings' and drag and drop your scene into that window. 
+  Second, go to the inspector of the canvas which contains the text to be displayed and change its render mode to 'World Space'.
+  This should fix those issues.
+  
+  
+  
