@@ -10,7 +10,7 @@
 
         * Projectile: Drag to this field the GameObject you want this enemy to shoot. (Also make sure that the GameObject dragged here has been setup with the projectile script)
 
-    Once this is done the camera should now follow the player's position.
+    Once this is done the enemy should now shoot the player.
 **/
 
 //----------------------------------------------------------
