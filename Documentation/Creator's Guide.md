@@ -14,6 +14,7 @@ This document will be divided into **sections** and will be continuously updated
 * [Player](#Player)
 * [Camera](#Camera)
 * [Enemies](#Enemies)
+* [AI Enemies](#AI Enemies)
 * [Boundaries](#Boundaries)
 * [Tags](#Tags)
 * [Projectiles](#Projectiles)
@@ -82,9 +83,11 @@ This document will be divided into **sections** and will be continuously updated
   enemies.
   
   We used ***Pathfinding*** to control the entities' movement. This mechanism enables enemies to reach the player wherever he is within a defined area, all while 
-  avoiding obstacles. Contrary to those implemented with ***CircleCast***, these AI enemies can go _around_ obstacles.
+  avoiding obstacles. Contrary to normal enemies, these AI enemies can go _around_ obstacles. To make them more worthy of their title,
+  they are also smart enough to know _when_ to shoot, meaning, they only do so when their target is in sight, which is achieved using ***CircleCast***.
   
-  The scripts `AI_FieldOFView` and `AI_Shooting` are quite similar to the `FieldOfView` and `Shooting` respectively, with only a few modifications 
+  The scripts `AI_FieldOFView` and `AI_Shooting` are quite similar to the `FieldOfView` and `Shooting` respectively, with only a few modifications to make the 
+  behaviours descrived above work correctly.
   
 ## Boundaries
 
