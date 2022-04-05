@@ -14,7 +14,7 @@ This document will be divided into **sections** and will be continuously updated
 * [Player](#Player)
 * [Camera](#Camera)
 * [Enemies](#Enemies)
-* [AI Enemies](#AI Enemies)
+* [AI-Enemies](#AI-Enemies)
 * [Boundaries](#Boundaries)
 * [Tags](#Tags)
 * [Projectiles](#Projectiles)
@@ -77,7 +77,7 @@ This document will be divided into **sections** and will be continuously updated
   * FieldOfView.cs
   * Shooting.cs
 
-## AI Enemies
+## AI-Enemies
 
   Due to their complexity AI enemies have their own dedicated section. We used a package from [this](https://arongranberg.com/astar/) website to implement these
   enemies.
