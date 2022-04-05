@@ -81,6 +81,11 @@ This document will be divided into **sections** and will be continuously updated
   Due to their complexity AI enemies have their own dedicated section. We used a package from [this](https://arongranberg.com/astar/) website to implement these
   enemies.
   
+  We used ***Pathfinding*** to control the entities' movement. This mechanism enables enemies to reach the player wherever he is within a defined area, all while 
+  avoiding obstacles. Contrary to those implemented with ***CircleCast***, these AI enemies can go _around_ obstacles.
+  
+  The scripts `AI_FieldOFView` and `AI_Shooting` are quite similar to the `FieldOfView` and `Shooting` respectively, with only a few modifications 
+  
 ## Boundaries
 
   A boundary defines the limit of the map and is most commonly a wall but it can be used for another object that has the same properties. All boundaries should have
