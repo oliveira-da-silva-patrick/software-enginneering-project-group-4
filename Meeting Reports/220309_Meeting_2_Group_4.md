@@ -1,4 +1,11 @@
-
+<div style="display: inline-block;">
+	<img src="logo_uni.jpg"
+	alt="University of Luxembourg logo"
+	style="float: left;
+	width : 20%; "/>
+	<p style="float:right;"> 09/03/2022</p>
+	
+</div>
 
 # <center>Group 4 – Meeting Report 2
 ## General Information
