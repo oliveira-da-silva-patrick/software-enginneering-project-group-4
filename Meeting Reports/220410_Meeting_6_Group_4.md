@@ -20,9 +20,9 @@ Online on Discord
  - Matteo Vitellaro
 
 ### Absentees
- - Daniel Sousa
+ - Daniel Sousa (justified)
  
 ## Meeting Content
-We discussed what has been done since last meeting. There have been updates on the skill tree and a pause menu has been added.
+We discussed what has been done since last meeting. There have been updates on the skill tree and a pause menu has been added. The basics around enemies has also been completed.
 The next goal is implementing the skills to the game and implement a save-load system. 
 
