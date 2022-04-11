@@ -32,64 +32,71 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
-    private Rigidbody2D body;
-    private Animator anim;
-    private bool grounded;
+    public float rotateSpeed;
 
     public Joystick joystick;
+    public Rigidbody2D rb;
+    private float distance;
+    Vector2 movement;
+    public BoxCollider2D colliderEnemy;
+    public Transform firePoint;
+    public GameObject attackPrefab;
+    public float fireRate = 0.5f;
+    private float nextFire = 0.0F;
 
-    private void Awake()
+
+    public Transform target;
+
+
+    // Update is called once per frame
+    void Update()
     {
-        //Get references for rigidbody and animator from object
-        body = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-    }
-
-    private void Update()
-    {
-        // Moves player, speed in editor might be set to 0 by default, change it to make this work.
-        float horizontalInput = joystick.Horizontal;
-        float verticalInput = joystick.Vertical;
-
-        if (horizontalInput >= .05f)
+        movement.x = joystick.Horizontal;
+        movement.y = joystick.Vertical;
+        movement.Normalize();
+        
+        if(colliderEnemy != null)
         {
-            horizontalInput = 1f;
-        }else if (horizontalInput <= -.05f)
+            distance = rb.Distance(colliderEnemy).distance;
+                if(distance <= 3f && movement == Vector2.zero)
+            {
+                Vector3 relPos = target.position - transform.position;
+                Vector3  rotatedVectorToTarget = Quaternion.Euler(0, 0, 90) * relPos;
+                Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, rotatedVectorToTarget);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotateSpeed * Time.deltaTime);
+                if(transform.rotation == toRotation)
+                {
+                    Shoot();
+                }
+            }
+            else if(movement != Vector2.zero)
+            {
+                Quaternion toRotation2 = Quaternion.LookRotation(Vector3.forward, Quaternion.Euler(0, 0, 90) * movement);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation2, rotateSpeed * Time.deltaTime);
+            }
+        }
+        else
         {
-            horizontalInput = -1f;
-        }else
-        {
-            horizontalInput = 0f;
+            if(movement != Vector2.zero)
+            {
+                Quaternion toRotation2 = Quaternion.LookRotation(Vector3.forward, Quaternion.Euler(0, 0, 90) * movement);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation2, rotateSpeed * Time.deltaTime);
+            }
         }
 
-        if (verticalInput <= -.05f)
-        {
-            verticalInput = -1f;
-        }else if (verticalInput >= .05f)
-        {
-            verticalInput = 1f;
-        }else
-        {
-            verticalInput = 0f;
-        }
-
-        body.velocity = new Vector2(horizontalInput * speed, verticalInput * speed);
-
-        // Flips player when pressing right/left arrow keys
-        if (horizontalInput > 0.01f)
-            transform.localScale = Vector3.one;
-        else if (horizontalInput < -0.01f)
-            transform.localScale = new Vector3(-1,1,1);
-
-
-            /**     ANIMATIONS      **/
-
-        // Set animator parameters
-
-        // Animation's name and condition 
-        anim.SetBool("run", horizontalInput != 0 || verticalInput != 0); 
     }
 
+    void FixedUpdate()
+    {
+        rb.MovePosition(new Vector2(transform.position.x + (movement.x * speed * Time.deltaTime), transform.position.y + (movement.y * speed * Time.deltaTime)));
+    }
 
-    
+    void Shoot ()
+    {
+        if(Time.time > nextFire)
+        {
+            nextFire = Time.time + fireRate;
+            Instantiate(attackPrefab, firePoint.position, firePoint.rotation);
+        }
+    }
 }
