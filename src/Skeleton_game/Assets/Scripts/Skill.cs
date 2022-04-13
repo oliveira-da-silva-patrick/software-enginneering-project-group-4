@@ -8,6 +8,7 @@ using static SkillTree;
 public class Skill : MonoBehaviour
 {
     public int id;
+    public bool isBought = false;
 
     public TMP_Text TitleText;
     public TMP_Text DescriptionText;
@@ -16,22 +17,30 @@ public class Skill : MonoBehaviour
 
     public void UpdateUI()
     {
-        TitleText.text = $"{skillTree.SkillLevels[id]}/{skillTree.SkillCaps[id]}\n{skillTree.SkillNames[id]}";
-        DescriptionText.text = $"{skillTree.SkillDescriptions[id]}\nCost: {skillTree.ECTS}/1 ECTS";
+        TitleText.text = $"Cost: {skillTree.SkillCosts[id]} ECTS\n{skillTree.SkillNames[id]}";
+        DescriptionText.text = $"{skillTree.SkillDescriptions[id]}";
 
-        GetComponent<Image>().color = skillTree.SkillLevels[id] >= skillTree.SkillCaps[id] ? Color.yellow : skillTree.ECTS > 0 ? Color.green : Color.white;
+        GetComponent<Image>().color = isBought ? Color.yellow : Color.white;
         
         foreach (var connectedSkill in ConnectedSkill)
         {
-            skillTree.SkillList[connectedSkill].gameObject.SetActive(skillTree.SkillLevels[id] > 0);
-            skillTree.ConnectorsList[connectedSkill].SetActive(skillTree.SkillLevels[id] > 0);
+            skillTree.SkillList[connectedSkill].gameObject.SetActive(isBought);
+            skillTree.ConnectorsList[connectedSkill].SetActive(isBought);
         }
     }
     public void Buy()
     {
-        if (skillTree.ECTS < 1 || skillTree.SkillLevels[id] >= skillTree.SkillCaps[id]) return;
-        skillTree.ECTS -= 1;
-        skillTree.SkillLevels[id]++;
+        if (skillTree.ECTS < skillTree.SkillCosts[id] || isBought) return;
+        skillTree.ECTS -= skillTree.SkillCosts[id];
+        isBought = true;
+        skillTree.UpdateAllSkillUI();
+    }
+
+    public void refund()
+    {
+        if (!isBought) return;
+        skillTree.ECTS += skillTree.SkillCosts[id];
+        isBought = false;
         skillTree.UpdateAllSkillUI();
     }
 
