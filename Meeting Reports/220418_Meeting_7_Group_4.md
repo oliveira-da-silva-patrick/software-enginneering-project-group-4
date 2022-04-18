@@ -3,11 +3,11 @@
 	alt="University of Luxembourg logo"
 	style="float: left;
 	width : 20%; "/>
-	<p style="float:right;"> 10/04/2022</p>
+	<p style="float:right;"> 18/04/2022</p>
 	
 </div>
 
-# <center>Group 4 – Meeting Report 6
+# <center>Group 4 – Meeting Report 7
 ## General Information
 
 ### Location
