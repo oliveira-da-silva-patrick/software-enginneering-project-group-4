@@ -827,11 +827,9 @@ MonoBehaviour:
   rotateSpeed: 1500
   joystick: {fileID: 629774635}
   rb: {fileID: 92550406}
-  colliderEnemy: {fileID: 1428939185}
   firePoint: {fileID: 979820863}
   attackPrefab: {fileID: 5040321003700504359, guid: 92f1d50b55199f74298a577245d9f426, type: 3}
   fireRate: 0.5
-  target: {fileID: 1428939184}
 --- !u!58 &92550405
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2364,7 +2362,7 @@ GameObject:
   - component: {fileID: 327090222}
   m_Layer: 0
   m_Name: Follower (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3336,7 +3334,7 @@ GameObject:
   - component: {fileID: 673287927}
   m_Layer: 0
   m_Name: Shooter (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5895,7 +5893,7 @@ GameObject:
   - component: {fileID: 1428939188}
   m_Layer: 0
   m_Name: Shooter (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
