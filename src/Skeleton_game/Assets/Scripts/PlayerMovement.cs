@@ -38,14 +38,13 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb;
     private float distance;
     Vector2 movement;
-    public BoxCollider2D colliderEnemy;
     public Transform firePoint;
     public GameObject attackPrefab;
     public float fireRate = 0.5f;
     private float nextFire = 0.0F;
 
 
-    public Transform target;
+    private GameObject enemy;
 
 
     // Update is called once per frame
@@ -54,13 +53,15 @@ public class PlayerMovement : MonoBehaviour
         movement.x = joystick.Horizontal;
         movement.y = joystick.Vertical;
         movement.Normalize();
+
+        enemy = FindClosestEnemy();
         
-        if(colliderEnemy != null)
+        if(enemy != null)
         {
-            distance = rb.Distance(colliderEnemy).distance;
+            distance = Vector2.Distance (transform.position, enemy.transform.position);
                 if(distance <= 3f && movement == Vector2.zero)
             {
-                Vector3 relPos = target.position - transform.position;
+                Vector3 relPos = enemy.transform.position - transform.position;
                 Vector3  rotatedVectorToTarget = Quaternion.Euler(0, 0, 90) * relPos;
                 Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, rotatedVectorToTarget);
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotateSpeed * Time.deltaTime);
@@ -98,5 +99,25 @@ public class PlayerMovement : MonoBehaviour
             nextFire = Time.time + fireRate;
             Instantiate(attackPrefab, firePoint.position, firePoint.rotation);
         }
+    }
+
+    public GameObject FindClosestEnemy()
+    {
+        GameObject[] gos;
+        gos = GameObject.FindGameObjectsWithTag("Enemy");
+        GameObject closest = null;
+        float distance = Mathf.Infinity;
+        Vector3 position = transform.position;
+        foreach (GameObject go in gos)
+        {
+            Vector3 diff = go.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
+            if (curDistance < distance)
+            {
+                closest = go;
+                distance = curDistance;
+            }
+        }
+        return closest;
     }
 }
