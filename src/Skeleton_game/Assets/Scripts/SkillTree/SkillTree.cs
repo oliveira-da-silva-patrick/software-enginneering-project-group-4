@@ -14,6 +14,7 @@ public class SkillTree : MonoBehaviour
     public int[] SkillCosts;
     public string[] SkillNames;
     public string[] SkillDescriptions;
+    public static bool[] UnlockedAbilities;
 
     public List<Skill> SkillList;
     public GameObject SkillHolder;
@@ -98,6 +99,8 @@ public class SkillTree : MonoBehaviour
             "Axis bullets damage is increased to 20"
         };
 
+        UnlockedAbilities = new bool[SkillCosts.Length];
+
         foreach (var skill in SkillHolder.GetComponentsInChildren<Skill>())
         {
             SkillList.Add(skill);
@@ -112,6 +115,12 @@ public class SkillTree : MonoBehaviour
         {
             SkillList[i].id = i;
         }
+
+        for (var i = 0; i < UnlockedAbilities.Length; i++)
+        {
+            UnlockedAbilities[i] = false;
+        }
+
 
         // Engineering
         SkillList[0].ConnectedSkill = new[] { 1, 2 };
