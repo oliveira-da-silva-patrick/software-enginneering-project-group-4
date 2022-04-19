@@ -31,6 +31,9 @@ public class Projectile : MonoBehaviour
     private float maxDistance = 10f;
     private Vector2 initialPosition;
 
+        public int damage = 15;
+
+
     private void Start() {
         
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -64,6 +67,11 @@ public class Projectile : MonoBehaviour
     **/
 
     private void OnTriggerEnter2D(Collider2D other) {
+        healthSystem opponent = other.GetComponent<healthSystem>();
+        if(opponent != null)
+        {
+            opponent.TakeDamage(damage);
+        }
         if (other.CompareTag("Player") || other.CompareTag("Boundary"))
         {
             DestroyProjectile();

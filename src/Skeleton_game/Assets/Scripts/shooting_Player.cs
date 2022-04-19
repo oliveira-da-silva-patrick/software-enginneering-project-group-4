@@ -17,6 +17,11 @@ public class shooting_Player : MonoBehaviour
 
     void OnTriggerEnter2D (Collider2D hitInfo)
     {
+        healthSystem opponent = hitInfo.GetComponent<healthSystem>();
+        if(opponent != null)
+        {
+            opponent.TakeDamage(damage);
+        }
         if(hitInfo.name != "Player_shooting(Clone)" && hitInfo.name != "Projectile_ball(Clone)")
         {
             Destroy(gameObject);
