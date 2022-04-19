@@ -738,6 +738,7 @@ GameObject:
   - component: {fileID: 92550406}
   - component: {fileID: 92550405}
   - component: {fileID: 92550407}
+  - component: {fileID: 92550408}
   m_Layer: 6
   m_Name: Main_player
   m_TagString: Player
@@ -827,11 +828,9 @@ MonoBehaviour:
   rotateSpeed: 1500
   joystick: {fileID: 629774635}
   rb: {fileID: 92550406}
-  colliderEnemy: {fileID: 1428939185}
   firePoint: {fileID: 979820863}
   attackPrefab: {fileID: 5040321003700504359, guid: 92f1d50b55199f74298a577245d9f426, type: 3}
   fireRate: 0.5
-  target: {fileID: 1428939184}
 --- !u!58 &92550405
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -888,6 +887,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &92550408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92550401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2987e5c17aa6c2440b24db9806e1634b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 250
 --- !u!1 &107432578
 GameObject:
   m_ObjectHideFlags: 0
@@ -2362,9 +2374,10 @@ GameObject:
   - component: {fileID: 327090223}
   - component: {fileID: 327090221}
   - component: {fileID: 327090222}
+  - component: {fileID: 327090228}
   m_Layer: 0
   m_Name: Follower (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2567,6 +2580,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &327090228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327090219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2987e5c17aa6c2440b24db9806e1634b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 250
 --- !u!1 &351559127
 GameObject:
   m_ObjectHideFlags: 0
@@ -3334,9 +3360,10 @@ GameObject:
   - component: {fileID: 673287929}
   - component: {fileID: 673287928}
   - component: {fileID: 673287927}
+  - component: {fileID: 673287932}
   m_Layer: 0
   m_Name: Shooter (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3490,6 +3517,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &673287932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673287925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2987e5c17aa6c2440b24db9806e1634b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 250
 --- !u!1 &719677197
 GameObject:
   m_ObjectHideFlags: 0
@@ -5893,9 +5933,10 @@ GameObject:
   - component: {fileID: 1428939185}
   - component: {fileID: 1428939189}
   - component: {fileID: 1428939188}
+  - component: {fileID: 1428939190}
   m_Layer: 0
   m_Name: Shooter (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6049,6 +6090,19 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 128
+--- !u!114 &1428939190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428939183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2987e5c17aa6c2440b24db9806e1634b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 250
 --- !u!1 &1429373177
 GameObject:
   m_ObjectHideFlags: 0
