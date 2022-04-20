@@ -26,77 +26,77 @@ public class SkillTree : MonoBehaviour
     public Text ECTS_Text;
 
     private void Start()
-    {
+    {        
         ECTS = 20;
         ECTS_Text = GameObject.Find("ECTSInfoText").GetComponent<Text>();
 
         SkillCosts = new[] { 
-                            // Engineering
-                            1, 2, 2, 2, 2, 2
-                            // Comp Sci
-                            , 2, 2, 2, 2
-                            // Physics
-                            , 2, 2, 2, 2, 2, 2, 2
-                            // Medicine
-                            , 2, 2, 2, 2, 2
-                            // Maths
-                            , 2, 2, 2, 2};
-        SkillNames = new[] { 
-            "Lightning", 
-            "Damage increase",
-            "2 enemies",
-            "3 enemies",
-            "Damage increase", 
-            "Lightning Bolt",
-            "Piercing Shot",
-            "Hacking",
-            "Shooting hack",
-            "Movement hack",
-            "Fast shot",
-            "Damage magnet",
-            "Damage increase ",
-            "Faster shot",
-            "2 magnets",
-            "3 magnets",
-            "Ultimate damage increase",
-            "Poison Bullet",
-            "Health Buff",
-            "Poison Damage",
-            "Health Buff",
-            "Health Buff",
-            "X-Shot",
-            "Y-Shot",
-            "Timer decrease",
-            "Damage increase"
+                        // Engineering
+                        1, 2, 2, 2, 2, 2
+                        // Comp Sci
+                        , 2, 2, 2, 2
+                        // Physics
+                        , 2, 2, 2, 2, 2, 2, 2
+                        // Medicine
+                        , 2, 2, 2, 2, 2
+                        // Maths
+                        , 2, 2, 2, 2};
+        SkillNames = new[] {
+        "Lightning",
+        "Damage increase",
+        "2 enemies",
+        "3 enemies",
+        "Damage increase",
+        "Lightning Bolt",
+        "Piercing Shot",
+        "Hacking",
+        "Shooting hack",
+        "Movement hack",
+        "Fast shot",
+        "Damage magnet",
+        "Damage increase ",
+        "Faster shot",
+        "2 magnets",
+        "3 magnets",
+        "Ultimate damage increase",
+        "Poison Bullet",
+        "Health Buff",
+        "Poison Damage",
+        "Health Buff",
+        "Health Buff",
+        "X-Shot",
+        "Y-Shot",
+        "Timer decrease",
+        "Damage increase"
         };
         SkillDescriptions = new[]
         {
-            "10 damage per second to closest enemy in range",
-            "Lightning damage is increased to 20",
-            "Lightning attacks 2 closest enemies in range",
-            "Lightning attacks 3 closest enemies in range",
-            "Lightning damage is increased to 30",
-            "Lightning strikes all enemies in range",
-            "Bullets go through enemies",
-            "Player learns the ability to hack",
-            "When enemies are hit, they are hacked and shoot at a slower rate for 2 seconds",
-            "When enemies are hit, they are hacked and move at a slower rate for 2 seconds",
-            "Shooting cooldown decreased by 0.2 seconds", 
-            "A magnet circling around the player that deals 15 damage",
-            "Conventional bullets deal 15 more damage",
-            "Shooting cooldown decreased by 0.3 seconds", 
-            "2 magnets that circle around the player", 
-            "3 magnets that circle around the player",
-            "Conventional bullets deal 25 more damage", 
-            "Conventional bullets are laced with poison, dealing 2 damage per second for 5 seconds", 
-            "Player has 20 more HP",
-            "Poison bullets damage is increased to 5 damage per second",
-            "Player gains another 30 HP",
-            "Player HP is increased by 50",
-            "Player shoots 2 bullets on the X-axis every 2 seconds, dealing 10 damage",
-            "Player shoots 2 bullets on the Y-axis every 2 seconds, dealing 10 damage",
-            "Axis bullets cooldown is decreased to 1 second",
-            "Axis bullets damage is increased to 20"
+        "10 damage per second to closest enemy in range",
+        "Lightning damage is increased to 20",
+        "Lightning attacks 2 closest enemies in range",
+        "Lightning attacks 3 closest enemies in range",
+        "Lightning damage is increased to 30",
+        "Lightning strikes all enemies in range",
+        "Bullets go through enemies",
+        "Player learns the ability to hack",
+        "When enemies are hit, they are hacked and shoot at a slower rate for 2 seconds",
+        "When enemies are hit, they are hacked and move at a slower rate for 2 seconds",
+        "Shooting cooldown decreased by 0.2 seconds",
+        "A magnet circling around the player that deals 15 damage",
+        "Conventional bullets deal 15 more damage",
+        "Shooting cooldown decreased by 0.3 seconds",
+        "2 magnets that circle around the player",
+        "3 magnets that circle around the player",
+        "Conventional bullets deal 25 more damage",
+        "Conventional bullets are laced with poison, dealing 2 damage per second for 5 seconds",
+        "Player has 20 more HP",
+        "Poison bullets damage is increased to 5 damage per second",
+        "Player gains another 30 HP",
+        "Player HP is increased by 50",
+        "Player shoots 2 bullets on the X-axis every 2 seconds, dealing 10 damage",
+        "Player shoots 2 bullets on the Y-axis every 2 seconds, dealing 10 damage",
+        "Axis bullets cooldown is decreased to 1 second",
+        "Axis bullets damage is increased to 20"
         };
 
         UnlockedAbilities = new bool[SkillCosts.Length];
@@ -145,7 +145,7 @@ public class SkillTree : MonoBehaviour
         // Maths
         SkillList[22].ConnectedSkill = new[] { 23 };
         SkillList[23].ConnectedSkill = new[] { 24 };
-        SkillList[24].ConnectedSkill = new[] { 25 };
+        SkillList[24].ConnectedSkill = new[] { 25 };    
 
         UpdateAllSkillUI();
     }
@@ -167,4 +167,6 @@ public class SkillTree : MonoBehaviour
         }
         UpdateAllSkillUI();
     }
+
+    
 }
