@@ -121,6 +121,8 @@ public class SkillTree : MonoBehaviour
             UnlockedAbilities[i] = false;
         }
 
+        Load();
+
 
         // Engineering
         SkillList[0].ConnectedSkill = new[] { 1, 2 };
@@ -157,6 +159,7 @@ public class SkillTree : MonoBehaviour
             skill.UpdateUI();
         }
         ECTS_Text.text = "ECTS: " + ECTS;
+        Save();
     }
 
     public void resetSkillTree()
@@ -168,5 +171,20 @@ public class SkillTree : MonoBehaviour
         UpdateAllSkillUI();
     }
 
-    
+    public void Save()
+    {
+        SaveScript.SaveSkillTree(skillTree);
+    }
+
+    public void Load()
+    {
+        SkillTreeData data = SaveScript.LoadSkillTree();
+
+        if (data != null)
+        {
+            ECTS = data.ECTS;
+            //UnlockedAbilities = data.UnlockedAbilities;
+        }
+    }
+
 }
