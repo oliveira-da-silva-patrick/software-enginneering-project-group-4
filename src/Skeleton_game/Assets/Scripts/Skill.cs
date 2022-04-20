@@ -28,6 +28,7 @@ public class Skill : MonoBehaviour
             skillTree.ConnectorsList[connectedSkill].SetActive(isBought);
         }
     }
+
     public void Buy()
     {
         if (skillTree.ECTS < skillTree.SkillCosts[id] || isBought) return;
