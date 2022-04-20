@@ -183,7 +183,7 @@ public class SkillTree : MonoBehaviour
         if (data != null)
         {
             ECTS = data.ECTS;
-            //UnlockedAbilities = data.UnlockedAbilities;
+            UnlockedAbilities = (bool[]) data.UnlockedAbilities.Clone();
         }
     }
 

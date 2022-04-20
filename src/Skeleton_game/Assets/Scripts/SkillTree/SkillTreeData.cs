@@ -10,7 +10,7 @@ public class SkillTreeData
 
     public SkillTreeData(SkillTree skillTree)
     {
-        UnlockedAbilities = SkillTree.UnlockedAbilities;
+        UnlockedAbilities = (bool[]) SkillTree.UnlockedAbilities.Clone();
         ECTS = skillTree.ECTS;
     }
 }
