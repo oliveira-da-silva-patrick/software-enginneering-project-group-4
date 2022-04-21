@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class shooting_Player : MonoBehaviour
 {
-   public float speed = 20f;
+    public float speed = 20f;
     public Rigidbody2D rb;
     public int damage = 40;
+    private bool piercingEnabled;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        Load();
         rb.velocity = transform.right * speed;
+        piercingEnabled = SkillTree.UnlockedAbilities[6];
     }
 
     void OnTriggerEnter2D (Collider2D hitInfo)
@@ -22,11 +25,38 @@ public class shooting_Player : MonoBehaviour
         {
             opponent.TakeDamage(damage);
         }
-        if(hitInfo.name != "Player_shooting(Clone)" && hitInfo.name != "Projectile_ball(Clone)")
+        // if piercing shot is enabled
+        if (piercingEnabled)
         {
-            Destroy(gameObject);
+            if (hitInfo.CompareTag("Boundary")){
+                Destroy(gameObject);
+            }
+        }
+        else
+        {
+            if (hitInfo.name != "Player_shooting(Clone)" && hitInfo.name != "Projectile_ball(Clone)")
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
-    
+    public void Load()
+    {
+        SkillTreeData data = SaveScript.LoadSkillTree();
+
+        if (data != null)
+        {
+            SkillTree.UnlockedAbilities = (bool[])data.UnlockedAbilities.Clone();
+        }
+        else
+        {
+            for (var i = 0; i < SkillTree.UnlockedAbilities.Length; i++)
+            {
+                SkillTree.UnlockedAbilities[i] = false;
+            }
+        }
+    }
+
+
 }
