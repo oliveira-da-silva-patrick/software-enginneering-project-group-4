@@ -6,7 +6,25 @@
     
         * Speed: Set this to whatever value suits your needs.
 
+        * rotateSpeed: Set this to whatever value suits your needs.
+
         * Joystick: Drag your joystick inside this field. If you dont have a joystick yet please follow the instructions on the 'Creator's Guide'.
+
+        * rb: Player's Rigidbody2D.
+
+        * distance: The value of the distance between the closest enemy.
+
+        * movement : Get the input of the joystick and translate it in movement for the player.
+
+        * firePoint: Is the shooting point of the player needs an empty object (which is below the main player called Fire_Point).
+
+        * attackPrefab: Needs the Player_shoot (the projectiles that the player shoots).
+
+        * fireRate: Variable that sets the attack speed of the player.
+
+        * nextFire: Variable which tells the methode that it has to shoot again.
+
+        * enemy: Gets the closest enemy to the player.
 
     Once this is done the player should now move. (You can also use the 'CameraController' script to make the camera follow your player)
 
@@ -32,10 +50,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float speed;
-    public float rotateSpeed;
+    private float rotateSpeed;
 
     public Joystick joystick;
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
     private float distance;
     Vector2 movement;
     public Transform firePoint;
@@ -45,6 +63,14 @@ public class PlayerMovement : MonoBehaviour
 
 
     private GameObject enemy;
+
+
+
+    void Start()
+    {
+        rotateSpeed = 1500f;
+        rb = gameObject.GetComponent<Rigidbody2D>();
+    }
 
 
     // Update is called once per frame

@@ -825,9 +825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  rotateSpeed: 1500
   joystick: {fileID: 629774635}
-  rb: {fileID: 92550406}
   firePoint: {fileID: 979820863}
   attackPrefab: {fileID: 5040321003700504359, guid: 92f1d50b55199f74298a577245d9f426, type: 3}
   fireRate: 0.5
@@ -4868,7 +4866,7 @@ GameObject:
   m_Component:
   - component: {fileID: 979820863}
   m_Layer: 6
-  m_Name: Attack_prefab
+  m_Name: Fire_Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
