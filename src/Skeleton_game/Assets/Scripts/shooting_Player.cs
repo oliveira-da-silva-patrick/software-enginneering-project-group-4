@@ -43,7 +43,7 @@ public class shooting_Player : MonoBehaviour
 
     public void Load()
     {
-        SkillTreeData data = SaveScript.LoadSkillTree();
+        SkillTreeData data = SaveLoadSystem.LoadSkillTree();
 
         if (data != null)
         {

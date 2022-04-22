@@ -3603,8 +3603,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 953151709}
-        m_TargetAssemblyTypeName: ReturnScript, Assembly-CSharp
-        m_MethodName: Return
+        m_TargetAssemblyTypeName: ScenesScript, Assembly-CSharp
+        m_MethodName: goToMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3623,7 +3623,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 953151704}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: effcaa26270446e4588b4f8e5952d771, type: 3}
+  m_Script: {fileID: 11500000, guid: d374d5c0967417d4399b0b78e4b760eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1002823276

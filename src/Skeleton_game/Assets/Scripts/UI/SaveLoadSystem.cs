@@ -3,9 +3,9 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
 // static is responsible for making it impossible to create multiple instances of this class
-public static class SaveScript 
+public static class SaveLoadSystem
 {
-    
+    // saves the skill tree's current state
     public static void SaveSkillTree(SkillTree skillTree)
     {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -19,6 +19,7 @@ public static class SaveScript
         stream.Close();
     }
 
+    // tries to load the skill tree and returns its data
     public static SkillTreeData LoadSkillTree()
     {
         string path = Application.persistentDataPath + "/skillTree.dfk";

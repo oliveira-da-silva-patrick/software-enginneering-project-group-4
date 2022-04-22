@@ -203,12 +203,12 @@ public class SkillTree : MonoBehaviour
 
     public void Save()
     {
-        SaveScript.SaveSkillTree(skillTree);
+        SaveLoadSystem.SaveSkillTree(skillTree);
     }
 
     public void Load()
     {
-        SkillTreeData data = SaveScript.LoadSkillTree();
+        SkillTreeData data = SaveLoadSystem.LoadSkillTree();
 
         if (data != null)
         {

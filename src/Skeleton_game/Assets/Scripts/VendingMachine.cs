@@ -5,7 +5,7 @@ using UnityEngine;
 public class VendingMachine : MonoBehaviour
 {
 
-    [SerializeField] GameObject vmMenu;
+    [SerializeField] GameObject vmMenu; // vending machine menu canvas
 
     private Transform player;
     public float openRadius = 3; //Player has to be within radius to open chest
@@ -15,7 +15,7 @@ public class VendingMachine : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    //When player clicks on chest
+    //When player clicks on vending machine
     private void OnMouseDown()
     {
         if (Vector2.Distance(player.position, transform.position) <= openRadius)
@@ -25,6 +25,7 @@ public class VendingMachine : MonoBehaviour
         }
     }
 
+    // resume game and exit vm menu
     public void Resume()
     {
         vmMenu.SetActive(false);
