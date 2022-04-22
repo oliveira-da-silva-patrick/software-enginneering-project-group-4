@@ -1,3 +1,16 @@
+/**
+    Script Description
+
+    This script is supposed to be attached to the camera in the SkillTree scene. There are 2 serialized fields that need to be filled.
+    The Skill is clickable, which will lead to its connected skills, as well as the corresponding connectors, to appear.
+
+        * zoomOutMin: A minimum zoom value, to let the player not zoom too far outside, should be set to 100.
+
+        * zoomOutMax: A minimum zoom value, to let the player not zoom too far inside, should be set to 600.
+**/
+
+//----------------------------------------------------------
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +18,8 @@ using UnityEngine;
 public class ScrollAndPinch : MonoBehaviour
 {
     Vector3 touchStart;
-    public float zoomOutMin = 1;
-    public float zoomOutMax = 15;
+    public float zoomOutMin = 100;
+    public float zoomOutMax = 600;
     private bool ismultiTouch = false;
 
 
@@ -18,6 +31,7 @@ public class ScrollAndPinch : MonoBehaviour
         {
             touchStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
+        // in case a zoom should be registered
         if (Input.touchCount == 2)
         {
             ismultiTouch = true;
@@ -36,11 +50,14 @@ public class ScrollAndPinch : MonoBehaviour
             zoom(difference);
 
         }
+        // if only one finger is touching & the player wants to move around
         else if (Input.GetMouseButton(0) && !ismultiTouch)
         {
             Vector3 direction = touchStart - Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            // camera is bound to the desired space between -1500/-1000 & 1500/1000
             Camera.main.transform.position = new Vector3(Mathf.Clamp(direction.x + Camera.main.transform.position.x, -1500, 1500), Mathf.Clamp(direction.y + Camera.main.transform.position.y, -1000, 1000), -10);
         }
+        // to let the camera not snap back to one finger after letting another go
         if (ismultiTouch && Input.touchCount <= 1)
         {
             ismultiTouch = false;

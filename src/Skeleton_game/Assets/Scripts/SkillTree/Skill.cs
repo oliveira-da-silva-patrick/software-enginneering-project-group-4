@@ -1,3 +1,21 @@
+/**
+    Script Description
+
+    This script is supposed to be attached to a single 'Skill' in the SkillTree scene. There are 4 serialized fields that are dynamically filled at runtime.
+    The Skill is clickable, which will lead to its connected skills, as well as the corresponding connectors, to appear.
+
+        * Id: A unique identifier for each skill, also the position of each skill in the various SkillTree arrays.
+
+        * Title Text: The title text provides the skills cost, as well as it's name.
+        
+        * Description Text: The description text provides a small description or explanation of the skills properties.
+
+        * ConnectedSkill: This int array is filled for each skill in the SkillTree Script at runtime and holds the id's of the connected skills.
+**/
+
+//----------------------------------------------------------
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
