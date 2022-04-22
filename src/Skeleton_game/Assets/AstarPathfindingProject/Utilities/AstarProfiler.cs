@@ -219,7 +219,7 @@ namespace Pathfinding {
 			output.Append("\n\n============================\n\t\tTotal runtime: ");
 			output.Append(endTime.TotalSeconds.ToString("F3"));
 			output.Append(" seconds\n============================");
-			Debug.Log(output.ToString());
+			//Debug.Log(output.ToString());
 		}
 	}
 }

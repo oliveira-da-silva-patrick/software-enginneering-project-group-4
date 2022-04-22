@@ -31,7 +31,7 @@ namespace Pathfinding {
 		private string pathTraceInfo = "";
 		private List<string> claimInfo = new List<string>();
 		~Path() {
-			Debug.Log("Destroying " + GetType().Name + " instance");
+			//Debug.Log("Destroying " + GetType().Name + " instance");
 			if (claimed.Count > 0) {
 				Debug.LogWarning("Pool Is Leaking. See list of claims:\n" +
 					"Each message below will list what objects are currently claiming the path." +

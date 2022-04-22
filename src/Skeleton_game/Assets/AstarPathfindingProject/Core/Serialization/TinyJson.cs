@@ -148,7 +148,7 @@ namespace Pathfinding.Serialization {
 				var helper = go.GetComponent<UnityReferenceHelper>();
 
 				if (helper == null) {
-					Debug.Log("Adding UnityReferenceHelper to Unity Reference '"+obj.name+"'");
+					//Debug.Log("Adding UnityReferenceHelper to Unity Reference '"+obj.name+"'");
 					helper = go.AddComponent<UnityReferenceHelper>();
 				}
 
