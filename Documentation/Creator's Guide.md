@@ -18,6 +18,7 @@ This document will be divided into **sections** and will be continuously updated
 * [Boundaries](#Boundaries)
 * [Tags](#Tags)
 * [Projectiles](#Projectiles)
+* [Collectibles](#Collectibles)
 * [Joystick](#Joystick)
 * [Animations](#Animations)
 * [UI-Design](#UI-Design)
@@ -70,7 +71,7 @@ This document will be divided into **sections** and will be continuously updated
    #### Attack types
    
    * Shooting
-   * DDirect hitters
+   * Direct hitters
 
 
   Used scripts:
@@ -130,6 +131,19 @@ This document will be divided into **sections** and will be continuously updated
   Used scripts:
   
    * Projectile.cs
+
+## Collectibles
+
+  A collectible is any item the player can pick up from the ground.
+  
+  - Coin - These can be found on the floor or inside _Chests_.
+  - Diamond - These can be found on the floor or inside _Chests_.
+
+  Generally we want these to act as triggers but also as collide with other objects. To see how we do this open the prefab of either the coin or diamond.
+  
+  ### Chests
+  
+  Chests are an interactable object that can be found around the map. It contains a defined amount of coins and/ or diamonds.
   
 ## JoyStick
 
@@ -142,6 +156,8 @@ This document will be divided into **sections** and will be continuously updated
   We chose to use the ***Floating*** joystick, which allows the player to touch anywhere on the screen to move the main character.
   
 ## Animations
+
+  _Insert explanation on how to create animations._
 
 ## UI-Design
 
