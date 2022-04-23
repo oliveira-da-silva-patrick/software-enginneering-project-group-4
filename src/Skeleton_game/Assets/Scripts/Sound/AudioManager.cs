@@ -22,6 +22,7 @@ public class AudioManager : MonoBehaviour {
     
     // Audio players components.
 	public AudioSource Coin_SoundFX;
+	public AudioSource Diamond_SoundFX;
 	public AudioSource Chest_SoundFX;
 
 	// Play a single clip through the sound effects source.
@@ -29,6 +30,11 @@ public class AudioManager : MonoBehaviour {
 	{
 		//gameObject.GetComponent<AudioSource>().Play();
 		Coin_SoundFX.Play();
+	}
+
+	public void playDiamondSound()
+	{
+		Diamond_SoundFX.Play();
 	}
 
 	public void playChestSound()

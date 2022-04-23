@@ -45,7 +45,9 @@ public class Chest : MonoBehaviour {
 
     // Loot
     public GameObject coin;
+    public GameObject diamond;
     [Range (1,30)]public int numberOfCoins;
+    [Range (1,50)]public int numberOfDiamonds;
 
     void Start() {
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -61,6 +63,7 @@ public class Chest : MonoBehaviour {
     //Called by clicking on chest
     public void DropLoot()
     {
+        //Spawns coins
         for (int i = 0; i < numberOfCoins; i++)
         {
         //Defines explosion radius for the collectibles in the chest
@@ -74,6 +77,19 @@ public class Chest : MonoBehaviour {
         //Adds velocity to each instantiated coin in a random direction to create explosion effect
         CoinObject.GetComponent<Rigidbody2D>().velocity = new Vector2(x*10,y*10);
         
+        }
+        //Spawns Diamonds
+        for (int i = 0; i < numberOfDiamonds; i++)
+        {
+           
+            var x = Random.Range(-2f, 2f); 
+            var y = Random.Range(-2f, 2f);
+            
+            GameObject DiamondObject = (GameObject)Instantiate(diamond, transform.position, Quaternion.identity);
+
+            diamond.GetComponent<Diamond>().audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+
+            DiamondObject.GetComponent<Rigidbody2D>().velocity = new Vector2(x*10,y*10);
         }
     }
 
