@@ -9,6 +9,10 @@ public class Magnet : MonoBehaviour
         {
             //If it is a coin
             coin.setTarget(transform.parent.position);
+            
+        }else if (collision.gameObject.TryGetComponent<Diamond>(out Diamond diamond))
+        {
+            diamond.setTarget(transform.parent.position);
         }
 
         //Not a coin
