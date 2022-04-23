@@ -138,12 +138,16 @@ This document will be divided into **sections** and will be continuously updated
   
   - Coin - These can be found on the floor or inside _Chests_.
   - Diamond - These can be found on the floor or inside _Chests_.
-
-  Generally we want these to act as triggers but also as collide with other objects. To see how we do this open the prefab of either the coin or diamond.
+  
+  The collectibles above are affected by the player's magnet. Within a certain range, they are  attracted to the player. This range can be adjusted by simply changing
+  the '_Circle Collider 2D_' radius or by creating a var in the script that does the same.
+  If you want to add a new object that should also be attracted to the player then you'll have to expand the `Magnet.cs` script.
   
   ### Chests
   
-  Chests are an interactable object that can be found around the map. It contains a defined amount of coins and/ or diamonds.
+  Chests are an interactable object that can be found around the map. It contains a defined amount of coins and/ or diamonds that can be adjusted in Unity. Once 
+  the player clicks on a chest, it will open (change sprites) and spawn items. These items will come out in an explosion effect. To adjust the explosion effect
+  you'll have to change the velocity value of the instantiated object and its linear drag in the corresponding '_RigidBody 2D_' component.
   
 ## JoyStick
 
@@ -154,7 +158,12 @@ This document will be divided into **sections** and will be continuously updated
   joystick inside the canvas.
   
   We chose to use the ***Floating*** joystick, which allows the player to touch anywhere on the screen to move the main character.
-  
+
+## Sound
+
+  In the scene we have an '_AudioManager_' which as name suggests manages the different sounds of multiple objects. This Audio Manager contains multiple 
+  '_Audio Sources_', each one with their own '_Audio Clip_'.
+
 ## Animations
 
   _Insert explanation on how to create animations._
