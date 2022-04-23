@@ -50,8 +50,8 @@ public class Chest : MonoBehaviour {
     // Loot
     public GameObject coin;
     public GameObject diamond;
-    [Range (1,30)]public int numberOfCoins;
-    [Range (1,50)]public int numberOfDiamonds;
+    [Range (0,30)]public int numberOfCoins;
+    [Range (0,50)]public int numberOfDiamonds;
 
     void Start() {
         player = GameObject.FindGameObjectWithTag("Player").transform;
