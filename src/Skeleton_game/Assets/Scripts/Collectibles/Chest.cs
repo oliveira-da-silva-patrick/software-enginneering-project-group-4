@@ -2,7 +2,7 @@
 /**
     Script Description
 
-    This script is supposed to be attached to a Coin in Unity. There are 5 serialized fields that need to be filled.
+    This script is supposed to be attached to a Coin in Unity. There are 7 serialized fields that need to be filled.
 
         Note: For this script to work the player should be tagged with a "Player" tag. (More info on 'Tags' in the 'Creator's Guide")
     
@@ -17,7 +17,11 @@
 
         * Coin: In here you have to put a coin prefab. All instantiated coins will be a copy of this prefab.
 
+        * Diamond: In here you have to put a diamond prefab. All instantiated diamonds will be a copy of this prefab.
+
         * Number of coins: This defines the number of coins that will pop out of the chest.
+
+        * Number of diamonds: This defines the number of diamonds that will pop out of the chest.
 
     Once this is done the chest should now be interactable within a defined range .
 **/

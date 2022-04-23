@@ -10,6 +10,13 @@
                         This  takes cares of the diamond soundFX.
 
     Once this is done the diamond should now be collectible and be attracted to player when in range.
+
+    NOTE: The 'AudioManager' on the hierarchy cannot be assigned to the prefab 'Diamond', therefore the instanciated diamonds
+            in the chest script are assigned the audiomanager during runtime.
+
+    ERRORS: 
+        
+        * If the diamond is no longer collectible, verify the player tag and make sure the AudioManager in the scene is correctly named.
 **/
 
 //----------------------------------------------------------
