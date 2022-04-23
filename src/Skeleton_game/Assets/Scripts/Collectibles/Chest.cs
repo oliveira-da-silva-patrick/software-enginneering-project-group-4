@@ -55,6 +55,11 @@ public class Chest : MonoBehaviour {
 
     void Start() {
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        if (audioManager == null)
+        {
+            //If developer forgets to add the 'audioManager' var then this is fail proof.
+            audioManager =  GameObject.Find("AudioManager").GetComponent<AudioManager>();
+        }
     }
 
     //Called by clicking on chest; Changes chest sprite Closed/Open
