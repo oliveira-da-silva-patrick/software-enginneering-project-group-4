@@ -68,12 +68,12 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         healthSystem opponent = other.GetComponent<healthSystem>();
-        if(opponent != null)
-        {
-            opponent.TakeDamage(damage);
-        }
         if (other.CompareTag("Player") || other.CompareTag("Boundary"))
         {
+            if(opponent != null)
+            {
+                opponent.TakeDamage(damage);
+            }
             DestroyProjectile();
         }
     }
