@@ -3,7 +3,7 @@
     Script Description
 
     This script is supposed to be attached to the Main player in Unity. There are 2 serialized fields that need to be filled.
-    
+
         * Speed: Set this to whatever value suits your needs.
 
         * rotateSpeed: Set this to whatever value suits your needs.
@@ -46,6 +46,8 @@
 //----------------------------------------------------------
 
 using UnityEngine;
+using System.Collections.Generic;
+using System.Linq;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -61,8 +63,16 @@ public class PlayerMovement : MonoBehaviour
     public float fireRate = 0.5f;
     private float nextFire = 0.0F;
 
+    public GameObject laserPrefab;
+    public float laserRate = 1f;
+    private float nextLaserDamage = 0f;
+
+    public GameObject linePrefab;
+    private List<GameObject> lineList;
+
 
     private GameObject enemy;
+    private GameObject[] enemies;
 
 
 
@@ -76,40 +86,21 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // destroy children with linerenderers
+        GameObject[] gos;
+        gos = GameObject.FindGameObjectsWithTag("LineRendererPrefab");
+        foreach(GameObject g in gos)
+        {
+            Destroy(g);
+        }
+
         movement.x = joystick.Horizontal;
         movement.y = joystick.Vertical;
         movement.Normalize();
 
-        enemy = FindClosestEnemy();
-        
-        if(enemy != null)
-        {
-            distance = Vector2.Distance (transform.position, enemy.transform.position);
-                if(distance <= 3f && movement == Vector2.zero)
-            {
-                Vector3 relPos = enemy.transform.position - transform.position;
-                Vector3  rotatedVectorToTarget = Quaternion.Euler(0, 0, 90) * relPos;
-                Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, rotatedVectorToTarget);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotateSpeed * Time.deltaTime);
-                if(transform.rotation == toRotation)
-                {
-                    Shoot();
-                }
-            }
-            else if(movement != Vector2.zero)
-            {
-                Quaternion toRotation2 = Quaternion.LookRotation(Vector3.forward, Quaternion.Euler(0, 0, 90) * movement);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation2, rotateSpeed * Time.deltaTime);
-            }
-        }
-        else
-        {
-            if(movement != Vector2.zero)
-            {
-                Quaternion toRotation2 = Quaternion.LookRotation(Vector3.forward, Quaternion.Euler(0, 0, 90) * movement);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation2, rotateSpeed * Time.deltaTime);
-            }
-        }
+        enemies = FindClosestEnemies();
+        //shootEnemy(movement, enemies);
+        shootLasers(enemies);
 
     }
 
@@ -118,32 +109,138 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(new Vector2(transform.position.x + (movement.x * speed * Time.deltaTime), transform.position.y + (movement.y * speed * Time.deltaTime)));
     }
 
-    void Shoot ()
+    void Shoot()
     {
-        if(Time.time > nextFire)
+        if (Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
             Instantiate(attackPrefab, firePoint.position, firePoint.rotation);
         }
     }
 
-    public GameObject FindClosestEnemy()
+    void shootLasers(GameObject[] enemies)
+    {
+        int laserDamage = 0;
+        if (SkillTree.UnlockedAbilities[0] && enemies.Length > 0)
+        {
+            laserDamage = 10;
+            if (SkillTree.UnlockedAbilities[1])
+            {
+                laserDamage = 20;
+            }
+            if (SkillTree.UnlockedAbilities[4])
+            {
+                laserDamage = 30;
+            }
+            // shoot closest enemy
+            shootLaser(enemies[0], laserDamage);
+        }
+        // shoot second closest enemies
+        if (SkillTree.UnlockedAbilities[2] && enemies.Length > 1)
+        {
+            shootLaser(enemies[1], laserDamage);
+        }
+        // shoot third closest enemies
+        if (SkillTree.UnlockedAbilities[3] && enemies.Length > 2)
+        {
+            shootLaser(enemies[2], laserDamage);
+        }
+        // shoot all enemies
+        if (SkillTree.UnlockedAbilities[5])
+        {
+            for (int i = 3; i < enemies.Length; i++)
+            {
+
+                shootLaser(enemies[i], laserDamage);
+            }
+        }
+    }
+
+    void shootLaser(GameObject enemy, float laserDamage)
+    {
+        distance = Vector2.Distance(transform.position, enemy.transform.position);
+        if (distance <= 5f && Physics2D.Raycast(transform.position, (enemy.transform.position - transform.position).normalized, 5f, 1 << 0))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, (enemy.transform.position - transform.position).normalized, 5f, 1 << 0);
+            if (hit.collider.tag == "Enemy")
+            {
+                draw2DRay(transform.position, hit.point);
+                //Debug.Log(hit.collider.tag);
+                if (Time.time > nextLaserDamage)
+                {
+                    nextLaserDamage = Time.time + laserRate;
+                    healthSystem health = enemy.GetComponent<healthSystem>();
+                    health.TakeDamage((int)laserDamage);
+                    Debug.Log(enemy.ToString());
+                }
+            }
+        }
+    }
+
+    void draw2DRay(Vector2 startPos, Vector2 endPos)
+    {
+        GameObject go = Instantiate(linePrefab);
+        LineRenderer line = go.GetComponent<LineRenderer>();
+        line.SetWidth(0.3f, 0.3f);
+        line.SetPosition(0, startPos);
+        line.SetPosition(1, endPos);
+    }
+
+    void shootEnemy(Vector2 movement, GameObject[] enemies)
+    {
+        if (enemies.Length > 0)
+        {
+            enemy = enemies[0];
+            distance = Vector2.Distance(transform.position, enemy.transform.position);
+            if (distance <= 3f && movement == Vector2.zero)
+            {
+                Vector3 relPos = enemy.transform.position - transform.position;
+                Vector3 rotatedVectorToTarget = Quaternion.Euler(0, 0, 90) * relPos;
+                Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, rotatedVectorToTarget);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotateSpeed * Time.deltaTime);
+                if (transform.rotation == toRotation)
+                {
+                    Shoot();
+                }
+            }
+            else if (movement != Vector2.zero)
+            {
+                Quaternion toRotation2 = Quaternion.LookRotation(Vector3.forward, Quaternion.Euler(0, 0, 90) * movement);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation2, rotateSpeed * Time.deltaTime);
+            }
+        }
+        else
+        {
+            if (movement != Vector2.zero)
+            {
+                Quaternion toRotation2 = Quaternion.LookRotation(Vector3.forward, Quaternion.Euler(0, 0, 90) * movement);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation2, rotateSpeed * Time.deltaTime);
+            }
+        }
+    }
+
+    // returns an array of all enemies in the scene, sorted by distance to the player
+    // called in Update()
+    public GameObject[] FindClosestEnemies()
     {
         GameObject[] gos;
         gos = GameObject.FindGameObjectsWithTag("Enemy");
-        GameObject closest = null;
-        float distance = Mathf.Infinity;
-        Vector3 position = transform.position;
-        foreach (GameObject go in gos)
+
+        EnemyDistance[] temp = new EnemyDistance[gos.Length];
+
+        for (int i = 0; i < gos.Length; i++)
         {
-            Vector3 diff = go.transform.position - position;
-            float curDistance = diff.sqrMagnitude;
-            if (curDistance < distance)
-            {
-                closest = go;
-                distance = curDistance;
-            }
+            temp[i] = new EnemyDistance((gos[i].transform.position - transform.position).sqrMagnitude, gos[i]);
         }
-        return closest;
+
+        temp = temp.OrderBy(x => x.distance).ToArray();
+
+        for (int i = 0; i < gos.Length; i++)
+        {
+            gos[i] = temp[i].enemy;
+            // Debug.Log(temp[i].enemy.ToString() + " " + temp[i].distance +  "Position : " + i);
+        }
+
+        return gos;
     }
 }

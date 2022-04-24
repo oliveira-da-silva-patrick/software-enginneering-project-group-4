@@ -38,8 +38,6 @@ public class Abilities : MonoBehaviour
             case 7:
                 break;
             case 8:
-                float stunDuration = 2;
-
                 break;
             case 9:
                 break;
