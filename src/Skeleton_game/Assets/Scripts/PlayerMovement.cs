@@ -69,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject linePrefab;
     private List<GameObject> lineList;
+    public LayerMask obstacleLayer;
 
 
     private GameObject enemy;
@@ -101,7 +102,6 @@ public class PlayerMovement : MonoBehaviour
         enemies = FindClosestEnemies();
         //shootEnemy(movement, enemies);
         shootLasers(enemies);
-
     }
 
     void FixedUpdate()
@@ -162,7 +162,7 @@ public class PlayerMovement : MonoBehaviour
         if (distance <= 5f && Physics2D.Raycast(transform.position, (enemy.transform.position - transform.position).normalized, 5f, 1 << 0))
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, (enemy.transform.position - transform.position).normalized, 5f, 1 << 0);
-            if (hit.collider.tag == "Enemy")
+            if (hit.collider.tag == "Enemy" && !Physics2D.Raycast(transform.position, (enemy.transform.position - transform.position).normalized, 5f, obstacleLayer))
             {
                 draw2DRay(transform.position, hit.point);
                 //Debug.Log(hit.collider.tag);
@@ -181,7 +181,8 @@ public class PlayerMovement : MonoBehaviour
     {
         GameObject go = Instantiate(linePrefab);
         LineRenderer line = go.GetComponent<LineRenderer>();
-        line.SetWidth(0.3f, 0.3f);
+        line.startWidth = 0.3f;
+        line.endWidth = 0.3f;
         line.SetPosition(0, startPos);
         line.SetPosition(1, endPos);
     }

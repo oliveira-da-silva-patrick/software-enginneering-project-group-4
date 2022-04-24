@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Boundary
   - Enemy
+  - LineRendererPrefab
   layers:
   - Default
   - TransparentFX
@@ -40,8 +41,14 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Ground
+    uniqueID: 304683191
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Laser
+    uniqueID: 1502188741
     locked: 0
   - name: above
     uniqueID: 1295079819
