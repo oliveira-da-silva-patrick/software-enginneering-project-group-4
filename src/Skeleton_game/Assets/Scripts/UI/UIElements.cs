@@ -13,7 +13,7 @@ public class UIElements : MonoBehaviour
     // loads the game
     public void goToGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Floor1");
     }
 
     // loads the skill tree
