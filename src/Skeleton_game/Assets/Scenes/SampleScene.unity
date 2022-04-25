@@ -2125,7 +2125,8 @@ MonoBehaviour:
   joystick: {fileID: 629774635}
   firePoint: {fileID: 979820863}
   attackPrefab: {fileID: 5040321003700504359, guid: 92f1d50b55199f74298a577245d9f426, type: 3}
-  fireRate: 0.5
+  attackPrefabAxis: {fileID: 4698708781868156295, guid: 0bd306af48c75e64cbc2f6a6334eede4, type: 3}
+  magnetPrefab: {fileID: 4186067969572830724, guid: 05cdf2c9662dfac449847a64281bab51, type: 3}
   laserPrefab: {fileID: 100000, guid: 4267c4f7628024c018e8bd0acd298526, type: 3}
   laserRate: 1
   linePrefab: {fileID: 976804240901722427, guid: b858e70e77df0604eb19aa6b5b3cef2d, type: 3}
@@ -30486,7 +30487,7 @@ Transform:
   - {fileID: 838725363}
   - {fileID: 895196601}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2069187917
 GameObject:

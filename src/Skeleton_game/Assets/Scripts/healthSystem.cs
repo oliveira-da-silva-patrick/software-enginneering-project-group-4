@@ -9,10 +9,23 @@ public class healthSystem : MonoBehaviour
     private bool isShootingStunned = false;
     private bool isMovementStunned = false;
     private float stunTime = 2;
+    float PoisonDamageInterval = 1;
 
     private void Start()
     {
         Load();
+        if (SkillTree.UnlockedAbilities[18])
+        {
+            health = health + 20;
+        }
+        if (SkillTree.UnlockedAbilities[20])
+        {
+            health = health + 30;
+        }
+        if (SkillTree.UnlockedAbilities[21])
+        {
+            health = health + 50;
+        }
     }
 
     public void TakeDamage(int damage)
@@ -38,6 +51,16 @@ public class healthSystem : MonoBehaviour
                 stunTime = 2;
             }
         }
+    }
+
+    public void poisonDamage1()
+    {
+        StartCoroutine("PoisonDamage1");
+    }
+
+    public void poisonDamage2()
+    {
+        StartCoroutine("PoisonDamage2");
     }
     private void Update()
     {
@@ -90,4 +113,32 @@ public class healthSystem : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    IEnumerator PoisonDamage2(){
+        float PoisonCounter = 0;
+     while(PoisonCounter < 5f){
+         health -= 5;
+         yield return new WaitForSeconds(PoisonDamageInterval);
+         PoisonCounter += PoisonDamageInterval;
+         if (health <= 0)
+        {
+            Die();
+        }
+     }
+    }
+
+    IEnumerator PoisonDamage1(){
+        float PoisonCounter = 0;
+     //$$anonymous$$eeps damaging player until the poison has "worn off"
+     while(PoisonCounter < 5f){
+         health -= 2;
+         yield return new WaitForSeconds(PoisonDamageInterval);
+         PoisonCounter += PoisonDamageInterval;
+         if (health <= 0)
+        {
+            Die();
+        }
+     }
+    }
 }
+

@@ -60,8 +60,14 @@ public class PlayerMovement : MonoBehaviour
     Vector2 movement;
     public Transform firePoint;
     public GameObject attackPrefab;
-    public float fireRate = 0.5f;
-    private float nextFire = 0.0F;
+    public GameObject attackPrefabAxis;
+    public GameObject magnetPrefab;
+
+    private float fireRateNormal = 1.5f;
+    private float fireRateAxis = 2f;
+    private float nextFireNormal = 0.0F;
+    private float nextFireAxis = 0.0F;
+
 
     public GameObject laserPrefab;
     public float laserRate = 1f;
@@ -81,6 +87,33 @@ public class PlayerMovement : MonoBehaviour
     {
         rotateSpeed = 1500f;
         rb = gameObject.GetComponent<Rigidbody2D>();
+        Load();
+        if(SkillTree.UnlockedAbilities[10])
+        {
+            fireRateNormal = fireRateNormal - 0.2F;
+        }
+        if(SkillTree.UnlockedAbilities[13])
+        {
+            fireRateNormal = fireRateNormal - 0.3F;
+        }
+        if(SkillTree.UnlockedAbilities[24])
+        {
+            fireRateAxis = 1f;
+        }
+        if(SkillTree.UnlockedAbilities[15])
+        {
+            Instantiate(magnetPrefab, new Vector2(transform.position.x - 3f, transform.position.y), Quaternion.Euler(0, 0, 0));
+            Instantiate(magnetPrefab, new Vector2(transform.position.x + 1.5f, transform.position.y + 2.6f), Quaternion.Euler(0, 0, 0));
+            Instantiate(magnetPrefab, new Vector2(transform.position.x + 1.5f, transform.position.y - 2.6f), Quaternion.Euler(0, 0, 0));
+        }else if(SkillTree.UnlockedAbilities[14])
+        {
+            Instantiate(magnetPrefab, new Vector2(transform.position.x - 3f, transform.position.y), Quaternion.Euler(0, 0, 0));
+            Instantiate(magnetPrefab, new Vector2(transform.position.x + 3f, transform.position.y), Quaternion.Euler(0, 0, 0));
+        } else if(SkillTree.UnlockedAbilities[11])
+        {
+            Instantiate(magnetPrefab, new Vector2(transform.position.x - 3f, transform.position.y), Quaternion.Euler(0, 0, 0));
+        }
+
     }
 
 
@@ -100,7 +133,7 @@ public class PlayerMovement : MonoBehaviour
         movement.Normalize();
 
         enemies = FindClosestEnemies();
-        //shootEnemy(movement, enemies);
+        shootEnemy(movement, enemies);
         shootLasers(enemies);
     }
 
@@ -111,12 +144,45 @@ public class PlayerMovement : MonoBehaviour
 
     void Shoot()
     {
-        if (Time.time > nextFire)
+        if (Time.time > nextFireNormal)
         {
-            nextFire = Time.time + fireRate;
+            nextFireNormal = Time.time + fireRateNormal;
             Instantiate(attackPrefab, firePoint.position, firePoint.rotation);
         }
+        if (Time.time > nextFireAxis)
+        {
+            nextFireAxis = Time.time + fireRateAxis;
+            if(SkillTree.UnlockedAbilities[22])
+            {
+                Instantiate(attackPrefabAxis, new Vector2(transform.position.x + 1.5f, transform.position.y), Quaternion.Euler(0, 0, 0));
+                Instantiate(attackPrefabAxis, new Vector2(transform.position.x - 1.5f, transform.position.y), Quaternion.Euler(0, 0, 180));
+            }
+            if(SkillTree.UnlockedAbilities[23])
+            {
+                Instantiate(attackPrefabAxis, new Vector2(transform.position.x, transform.position.y + 1.5f), Quaternion.Euler(0, 0, 90));
+                Instantiate(attackPrefabAxis, new Vector2(transform.position.x, transform.position.y - 1.5f), Quaternion.Euler(0, 0, 270));
+            }
+        }
     }
+
+    void ShootAxisXY()
+    {
+        if (Time.time > nextFireAxis)
+        {
+            nextFireAxis = Time.time + fireRateAxis;
+            if(SkillTree.UnlockedAbilities[22])
+            {
+                Instantiate(attackPrefabAxis, new Vector2(transform.position.x + 1.5f, transform.position.y), Quaternion.Euler(0, 0, 0));
+                Instantiate(attackPrefabAxis, new Vector2(transform.position.x - 1.5f, transform.position.y), Quaternion.Euler(0, 0, 180));
+            }
+            if(SkillTree.UnlockedAbilities[23])
+            {
+                Instantiate(attackPrefabAxis, new Vector2(transform.position.x, transform.position.y + 1.5f), Quaternion.Euler(0, 0, 90));
+                Instantiate(attackPrefabAxis, new Vector2(transform.position.x, transform.position.y - 1.5f), Quaternion.Euler(0, 0, 270));
+            }
+        }
+    }
+    
 
     void shootLasers(GameObject[] enemies)
     {
@@ -193,7 +259,7 @@ public class PlayerMovement : MonoBehaviour
         {
             enemy = enemies[0];
             distance = Vector2.Distance(transform.position, enemy.transform.position);
-            if (distance <= 3f && movement == Vector2.zero)
+            if (distance <= 10f && movement == Vector2.zero)
             {
                 Vector3 relPos = enemy.transform.position - transform.position;
                 Vector3 rotatedVectorToTarget = Quaternion.Euler(0, 0, 90) * relPos;
@@ -208,6 +274,8 @@ public class PlayerMovement : MonoBehaviour
             {
                 Quaternion toRotation2 = Quaternion.LookRotation(Vector3.forward, Quaternion.Euler(0, 0, 90) * movement);
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation2, rotateSpeed * Time.deltaTime);
+                ShootAxisXY();
+
             }
         }
         else
@@ -216,6 +284,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 Quaternion toRotation2 = Quaternion.LookRotation(Vector3.forward, Quaternion.Euler(0, 0, 90) * movement);
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation2, rotateSpeed * Time.deltaTime);
+                ShootAxisXY();
             }
         }
     }
@@ -243,5 +312,22 @@ public class PlayerMovement : MonoBehaviour
         }
 
         return gos;
+    }
+
+    public void Load()
+    {
+        SkillTreeData data = SaveLoadSystem.LoadSkillTree();
+
+        if (data != null)
+        {
+            SkillTree.UnlockedAbilities = (bool[])data.UnlockedAbilities.Clone();
+        }
+        else
+        {
+            for (var i = 0; i < SkillTree.UnlockedAbilities.Length; i++)
+            {
+                SkillTree.UnlockedAbilities[i] = false;
+            }
+        }
     }
 }
