@@ -6,6 +6,7 @@ using Pathfinding;
 public class healthSystem : MonoBehaviour
 {
     public int health = 250;
+    private int maxHealth;
     private bool isShootingStunned = false;
     private bool isMovementStunned = false;
     private float stunTime = 2;
@@ -22,9 +23,28 @@ public class healthSystem : MonoBehaviour
         {
             health = health + 30;
         }
-        if (SkillTree.UnlockedAbilities[21])
+        if (SkillTree.UnlockedAbilities[21])    
         {
             health = health + 50;
+        }
+        maxHealth = health;
+    }
+
+    public void smallPotion()
+    {
+        health += 25;
+        if(health > maxHealth)
+        {
+            health = maxHealth;
+        }
+    }
+
+    public void bigPotion()
+    {
+        health += 50;
+        if (health > maxHealth)
+        {
+            health = maxHealth;
         }
     }
 
@@ -51,6 +71,7 @@ public class healthSystem : MonoBehaviour
                 stunTime = 2;
             }
         }
+        Debug.Log(health);
     }
 
     public void poisonDamage1()
