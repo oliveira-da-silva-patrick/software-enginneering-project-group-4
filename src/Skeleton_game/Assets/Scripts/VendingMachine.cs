@@ -18,7 +18,8 @@ public class VendingMachine : MonoBehaviour
     //When player clicks on vending machine
     private void OnMouseDown()
     {
-        if (Vector2.Distance(player.position, transform.position) <= openRadius)
+        // second condition avoids opening the vm menu through the pause menu
+        if (Vector2.Distance(player.position, transform.position) <= openRadius && Time.timeScale != 0)
         {
             vmMenu.SetActive(true);
             Time.timeScale = 0f;
