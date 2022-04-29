@@ -16,7 +16,6 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] private Transform player;
 
-    
     private void Update() {
     
         //Camera follows player by updating its own position to the same position the player is every frame
