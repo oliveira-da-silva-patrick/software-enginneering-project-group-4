@@ -48,6 +48,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -114,7 +115,25 @@ public class PlayerMovement : MonoBehaviour
             Instantiate(magnetPrefab, new Vector2(transform.position.x - 3f, transform.position.y), Quaternion.Euler(0, 0, 0));
         }
 
+        if(SceneManager.GetActiveScene().name.Contains("Floor")) Spawn();
     }
+
+    private void Spawn()
+    {
+        int position = FloorInfo.getLastVisitedRoom();
+        Debug.Log(position);
+        if(position == 0)
+            rb.transform.position = GameObject.Find("LBSpawn").transform.position;
+        else if (position == 1)
+            rb.transform.position = GameObject.Find("RBSpawn").transform.position;
+        else if (position == 2)
+            rb.transform.position = GameObject.Find("LTSpawn").transform.position;
+        else if (position == 3)
+            rb.transform.position = GameObject.Find("RTSpawn").transform.position;
+        else
+            rb.transform.position = GameObject.Find("Spawn").transform.position;
+    }
+
 
 
     // Update is called once per frame
