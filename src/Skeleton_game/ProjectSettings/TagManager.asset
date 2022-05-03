@@ -7,6 +7,8 @@ TagManager:
   - Boundary
   - Enemy
   - LineRendererPrefab
+  - Door
+  - Escalator
   layers:
   - Default
   - TransparentFX
