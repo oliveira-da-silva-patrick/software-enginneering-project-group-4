@@ -131,7 +131,7 @@ public class PlayerMovement : MonoBehaviour
         else if (position == 3)
             rb.transform.position = GameObject.Find("RTSpawn").transform.position;
         else
-            rb.transform.position = GameObject.Find("Spawn").transform.position;
+            rb.transform.position = GameObject.Find("FloorSpawn").transform.position;
     }
 
 

@@ -13,7 +13,7 @@ public class UIElements : MonoBehaviour
     // loads the game
     public void goToGame()
     {
-        SceneManager.LoadScene("Floor1");
+        SceneManager.LoadScene("Floor_1");
     }
 
     // loads the skill tree
@@ -32,8 +32,11 @@ public class UIElements : MonoBehaviour
     // pauses everything and opens the pause menu
     public void PauseGame()
     {
-        pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
+        if (Time.timeScale != 0)
+        {
+            pauseMenu.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 
     // resumes everything and closes the pause menu

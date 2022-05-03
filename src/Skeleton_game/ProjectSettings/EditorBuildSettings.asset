@@ -9,12 +9,24 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 45b3725090f383f48a7b66a8e47a7b0e
   - enabled: 1
-    path: Assets/Scenes/Rooms/Floors/Floor1.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
     path: Assets/Scenes/SkillTree.unity
     guid: a4959837d02d72c4eb8cdeb367f33931
   - enabled: 1
-    path: Assets/Scenes/Rooms/BottomRooms/LB1.unity
-    guid: 6d734db7eac9f6449927b3b7327ae8d8
+    path: Assets/Scenes/Rooms/Floors/Floor_1.unity
+    guid: 413b98fa24d96224287e75275d7ad8bc
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Floor1 - Info/LB-F1.unity
+    guid: 9e02ca7357bfc0445b75a810bc2e5a4f
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Floor1 - Info/LT-F1.unity
+    guid: 842dd9f97aec541469e48fbac3158de5
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Floor1 - Info/RB-F1.unity
+    guid: f2c9a094dfc3a8c499246a3ab82ef8c7
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Floor1 - Info/RT-F1.unity
+    guid: 41506812bdd2dd442afd4f8a811bce64
+  - enabled: 1
+    path: Assets/Scenes/Rooms/Floors/Floor_2.unity
+    guid: 8bff62c5dea67d0489a936560d2b5dfa
   m_configObjects: {}
