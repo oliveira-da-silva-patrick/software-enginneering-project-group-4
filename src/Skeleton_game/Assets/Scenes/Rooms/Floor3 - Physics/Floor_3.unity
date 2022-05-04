@@ -15167,7 +15167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 365823191a060c34eb7b68f6cf9e5728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomToLoad: LT-F1
+  roomToLoad: LT-F3
 --- !u!212 &295199073
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16415,7 +16415,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 365823191a060c34eb7b68f6cf9e5728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomToLoad: RT-F1
+  roomToLoad: RT-F3
 --- !u!212 &416149786
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20768,7 +20768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 365823191a060c34eb7b68f6cf9e5728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomToLoad: LB-F1
+  roomToLoad: LB-F3
 --- !u!212 &1176873027
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23194,7 +23194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 365823191a060c34eb7b68f6cf9e5728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomToLoad: Floor_2
+  roomToLoad: Floor_4
 --- !u!212 &1534107325
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -34641,7 +34641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 365823191a060c34eb7b68f6cf9e5728, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomToLoad: RB-F1
+  roomToLoad: RB-F3
 --- !u!212 &2053818084
 SpriteRenderer:
   m_ObjectHideFlags: 0
