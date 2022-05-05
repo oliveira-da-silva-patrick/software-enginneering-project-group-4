@@ -557,7 +557,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 323589505}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.531702, y: -13.647803, z: 3.8455248}
+  m_LocalPosition: {x: -12.538794, y: -11.682638, z: 3.8455248}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1023919427}
@@ -7181,7 +7181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ConfineMode: 0
   m_BoundingVolume: {fileID: 0}
-  m_BoundingShape2D: {fileID: 0}
+  m_BoundingShape2D: {fileID: 1411596590}
   m_ConfineScreenEdges: 1
   m_Damping: 8
 --- !u!114 &666238582
@@ -9423,12 +9423,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -11.245592, y: -17.950935}
-      - {x: -11.171322, y: -1.1192493}
-      - {x: -19.99963, y: -1.0898991}
-      - {x: -27.03292, y: -1.046543}
-      - {x: -26.988113, y: -21.045473}
-      - {x: -11.200602, y: -21.130787}
+    - - {x: -26.936049, y: -21.020805}
+      - {x: 5.74708, y: -20.902864}
+      - {x: 5.650852, y: 8.801907}
+      - {x: -26.964703, y: 8.845266}
 --- !u!1 &1569911526
 GameObject:
   m_ObjectHideFlags: 0
