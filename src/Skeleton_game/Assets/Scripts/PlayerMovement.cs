@@ -120,7 +120,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Spawn()
     {
-        int position = FloorInfo.getLastVisitedRoom();
+        int position = GameInfo.GetLastVisitedRoom();
         Debug.Log(position);
         if(position == 0)
             rb.transform.position = GameObject.Find("LBSpawn").transform.position;
@@ -132,6 +132,16 @@ public class PlayerMovement : MonoBehaviour
             rb.transform.position = GameObject.Find("RTSpawn").transform.position;
         else
             rb.transform.position = GameObject.Find("FloorSpawn").transform.position;
+    }
+
+    public PlayerMovement getInstance()
+    {
+        return this;
+    }
+
+    public void setPosition(Vector2 newPosition)
+    {
+        rb.transform.position = newPosition;
     }
 
 

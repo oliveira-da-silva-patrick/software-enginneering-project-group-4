@@ -10,10 +10,16 @@ public class UIElements : MonoBehaviour
     // the pause menu canvas
     [SerializeField] GameObject pauseMenu;
 
-    // loads the game
-    public void goToGame()
+    public void startNewGame()
     {
         SceneManager.LoadScene("Floor_1");
+        GameInfo.Save();
+    }
+
+    public void continueGame()
+    {
+        GameInfo.Load();
+        SceneManager.LoadScene(GameInfo.currentSceneID);
     }
 
     // loads the skill tree
@@ -34,6 +40,7 @@ public class UIElements : MonoBehaviour
     {
         if (Time.timeScale != 0)
         {
+            GameInfo.Save();
             pauseMenu.SetActive(true);
             Time.timeScale = 0f;
         }

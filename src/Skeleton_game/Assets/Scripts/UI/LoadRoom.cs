@@ -14,15 +14,16 @@ public class LoadRoom : MonoBehaviour
         {
             Debug.Log(currentRoomName + " -> " + roomToLoad);
             if (currentRoomName.Contains("LB"))
-                FloorInfo.visitRoom(0);
+                GameInfo.VisitRoom(0);
             else if (currentRoomName.Contains("RB"))
-                FloorInfo.visitRoom(1);
+                GameInfo.VisitRoom(1);
             else if (currentRoomName.Contains("LT"))
-                FloorInfo.visitRoom(2);
+                GameInfo.VisitRoom(2);
             else if (currentRoomName.Contains("RT"))
-                FloorInfo.visitRoom(3);
-            else FloorInfo.visitRoom(-1);
+                GameInfo.VisitRoom(3);
+            else GameInfo.VisitRoom(-1);
             SceneManager.LoadScene(roomToLoad);
+            GameInfo.Save();
         }
     }
 }
