@@ -6,7 +6,7 @@ using UnityEngine;
 public static class GameInfo
 {
     public static bool[] lastRoom = new[] { false, false, false, false }; // lb, rb, lt, rt
-    public static bool[] clearedRoom = new[] { false, false, false, false }; // lb, rb, lt, rt
+    public static bool[] clearedRoom = new[] { false, false, false, false, false }; // lb, rb, lt, rt, floor
 
     public static int currentSceneID = 1;
 
@@ -52,4 +52,21 @@ public static class GameInfo
             currentSceneID = data.currentSceneID;
         }
     }
+    public static void isRoomCleared()
+    {
+        string currentRoomName = SceneManager.GetActiveScene().name;
+        int count = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        bool result = count == 0;
+        if (currentRoomName.Contains("LB"))
+            clearedRoom[0] = result;
+        else if (currentRoomName.Contains("RB"))
+            clearedRoom[1] = result;
+        else if (currentRoomName.Contains("LT"))
+            clearedRoom[2] = result;
+        else if (currentRoomName.Contains("RT"))
+            clearedRoom[3] = result;
+        else if (currentRoomName.Contains("Floor"))
+            clearedRoom[4] = result;
+    }
+
 }
