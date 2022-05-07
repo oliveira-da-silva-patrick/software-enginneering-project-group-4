@@ -510,9 +510,10 @@ GameObject:
   - component: {fileID: 159568116}
   - component: {fileID: 159568115}
   - component: {fileID: 159568114}
-  m_Layer: 0
+  - component: {fileID: 159568117}
+  m_Layer: 7
   m_Name: Character Sitting
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -821,6 +822,27 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!50 &159568117
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159568112}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &195615463
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,9 +855,9 @@ GameObject:
   - component: {fileID: 195615467}
   - component: {fileID: 195615466}
   - component: {fileID: 195615465}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Interior4
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2265,9 +2287,9 @@ GameObject:
   - component: {fileID: 248261629}
   - component: {fileID: 248261628}
   - component: {fileID: 248261627}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Used Chairs
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2556,9 +2578,10 @@ GameObject:
   - component: {fileID: 323821989}
   - component: {fileID: 323821988}
   - component: {fileID: 323821987}
-  m_Layer: 0
+  - component: {fileID: 323821990}
+  m_Layer: 7
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5767,6 +5790,27 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!50 &323821990
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323821985}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &380601170
 GameObject:
   m_ObjectHideFlags: 0
@@ -6826,9 +6870,10 @@ GameObject:
   - component: {fileID: 1083135959}
   - component: {fileID: 1083135958}
   - component: {fileID: 1083135957}
-  m_Layer: 0
+  - component: {fileID: 1083135960}
+  m_Layer: 7
   m_Name: Characters
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7325,6 +7370,27 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!50 &1083135960
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1083135955}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1086124533
 GameObject:
   m_ObjectHideFlags: 0
@@ -7573,9 +7639,9 @@ GameObject:
   - component: {fileID: 1179272703}
   - component: {fileID: 1179272702}
   - component: {fileID: 1179272701}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Interior3
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8292,9 +8358,9 @@ GameObject:
   - component: {fileID: 1243670392}
   - component: {fileID: 1243670391}
   - component: {fileID: 1243670390}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Interior
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

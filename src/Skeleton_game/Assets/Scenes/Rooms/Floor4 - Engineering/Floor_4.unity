@@ -25632,7 +25632,7 @@ GameObject:
   - component: {fileID: 2024016154}
   - component: {fileID: 2024016157}
   - component: {fileID: 2024016156}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wall
   m_TagString: Boundary
   m_Icon: {fileID: 0}
@@ -33959,7 +33959,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2024016152}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

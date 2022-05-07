@@ -4249,9 +4249,9 @@ GameObject:
   - component: {fileID: 401162386}
   - component: {fileID: 401162385}
   - component: {fileID: 401162384}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Interior
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5998,9 +5998,9 @@ GameObject:
   - component: {fileID: 554128608}
   - component: {fileID: 554128607}
   - component: {fileID: 554128606}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Interior3
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12292,9 +12292,10 @@ GameObject:
   - component: {fileID: 1427448785}
   - component: {fileID: 1427448784}
   - component: {fileID: 1427448783}
-  m_Layer: 0
+  - component: {fileID: 1427448786}
+  m_Layer: 7
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14383,6 +14384,27 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!50 &1427448786
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427448781}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &1443619731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15560,9 +15582,10 @@ GameObject:
   - component: {fileID: 2132064679}
   - component: {fileID: 2132064678}
   - component: {fileID: 2132064677}
-  m_Layer: 0
+  - component: {fileID: 2132064680}
+  m_Layer: 7
   m_Name: Characters
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16707,3 +16730,24 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!50 &2132064680
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132064675}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

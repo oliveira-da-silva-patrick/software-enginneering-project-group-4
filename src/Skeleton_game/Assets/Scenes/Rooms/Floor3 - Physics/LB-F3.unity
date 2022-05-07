@@ -2704,9 +2704,9 @@ GameObject:
   - component: {fileID: 355907294}
   - component: {fileID: 355907297}
   - component: {fileID: 355907296}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Characters
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3135,7 +3135,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 355907292}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -3161,9 +3161,9 @@ GameObject:
   - component: {fileID: 363545249}
   - component: {fileID: 363545252}
   - component: {fileID: 363545251}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Deco
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4330,9 +4330,9 @@ GameObject:
   - component: {fileID: 406949428}
   - component: {fileID: 406949431}
   - component: {fileID: 406949430}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Chairs
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6300,9 +6300,9 @@ GameObject:
   - component: {fileID: 838938703}
   - component: {fileID: 838938706}
   - component: {fileID: 838938705}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8875,7 +8875,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 838938701}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

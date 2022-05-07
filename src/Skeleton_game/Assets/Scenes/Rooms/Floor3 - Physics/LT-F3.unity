@@ -2096,7 +2096,7 @@ GameObject:
   - component: {fileID: 851974958}
   - component: {fileID: 851974957}
   - component: {fileID: 851974956}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Walls
   m_TagString: Boundary
   m_Icon: {fileID: 0}
@@ -2125,7 +2125,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851974954}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -8641,9 +8641,9 @@ GameObject:
   - component: {fileID: 1098486012}
   - component: {fileID: 1098486011}
   - component: {fileID: 1098486010}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Objects_behind
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9179,9 +9179,9 @@ GameObject:
   - component: {fileID: 1448039674}
   - component: {fileID: 1448039673}
   - component: {fileID: 1448039672}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Objects
-  m_TagString: Untagged
+  m_TagString: Boundary
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
