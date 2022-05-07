@@ -58,7 +58,6 @@ public class Diamond : MonoBehaviour
     
     public void Collect()
     {
-        //ADD TO MONEY COUNT
 
         //Debug.Log("Diamond Collected");
         Destroy(gameObject);
@@ -74,6 +73,8 @@ public class Diamond : MonoBehaviour
                 Destroy(gameObject);
             }
             audioManager.playDiamondSound();
+            //ADD TO MONEY COUNT
+            other.GetComponent<PlayerMoney>().money += 20;
             Collect();
         }
     }
