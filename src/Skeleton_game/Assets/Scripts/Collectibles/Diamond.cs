@@ -4,10 +4,11 @@
 
     This script is supposed to be attached to a Diamond in Unity. There is 1 serialized field that needs to be filled.
 
-        Note: For this script to work the player should be tagged with a "Player" tag. (More info on 'Tags' in the 'Creator's Guide")
+        Note: 
+        
+                * For this script to work the player should be tagged with a "Player" tag. (More info on 'Tags' in the 'Creator's Guide")
     
-        * Audio Manager: In the scene's hierarchy you will find a game object 'AudioManager'. Assign it to this variable.
-                        This  takes cares of the diamond soundFX.
+                *  Make sure there's an audioManager in the hierarchy for the diamonds to work properly without errors.
 
     Once this is done the diamond should now be collectible and be attracted to player when in range.
 
@@ -30,7 +31,7 @@ public class Diamond : MonoBehaviour
 {
 
     //Sound
-    public AudioManager audioManager;
+    AudioManager audioManager;
 
     Rigidbody2D rb;
     bool hasTarget;
@@ -39,6 +40,10 @@ public class Diamond : MonoBehaviour
 
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Start() {
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
 
     private void FixedUpdate() {
@@ -67,12 +72,14 @@ public class Diamond : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.CompareTag("Player"))
         {
-            //Prevents ocasional bug where 'Chest' script will fail to attribute an audioManager to the instantiated coin.
+            //Prevents ocasional bug where script will fail to attribute an audioManager to the instantiated coin.
             if(audioManager == null)
             {
                 Destroy(gameObject);
+            } else
+            {
+                audioManager.playDiamondSound();
             }
-            audioManager.playDiamondSound();
             //ADD TO MONEY COUNT
             other.GetComponent<PlayerMoney>().money += 20;
             Collect();

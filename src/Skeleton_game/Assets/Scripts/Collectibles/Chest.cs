@@ -81,8 +81,6 @@ public class Chest : MonoBehaviour {
         //Creates Coin game object in scene
         GameObject CoinObject = (GameObject)Instantiate(coin, transform.position, Quaternion.identity);
 
-        //Finds and assigns "AudioManager" found in hierarchy to the 'audioManager' var of the coin game object
-        coin.GetComponent<Coin>().audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         //Adds velocity to each instantiated coin in a random direction to create explosion effect
         CoinObject.GetComponent<Rigidbody2D>().velocity = new Vector2(x*10,y*10);
         
@@ -95,8 +93,6 @@ public class Chest : MonoBehaviour {
             var y = Random.Range(-2f, 2f);
             
             GameObject DiamondObject = (GameObject)Instantiate(diamond, transform.position, Quaternion.identity);
-
-            diamond.GetComponent<Diamond>().audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
 
             DiamondObject.GetComponent<Rigidbody2D>().velocity = new Vector2(x*10,y*10);
         }
