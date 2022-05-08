@@ -51,7 +51,6 @@ public class Coin : MonoBehaviour
     
     public void Collect()
     {
-        //ADD TO MONEY COUNT
 
         //Debug.Log("Coin Collected");
         Destroy(gameObject);
@@ -67,6 +66,8 @@ public class Coin : MonoBehaviour
                 Destroy(gameObject);
             }
             audioManager.playCoinSound();
+            //ADD TO MONEY COUNT
+            other.GetComponent<PlayerMoney>().money += 5;
             Collect();
         }
     }

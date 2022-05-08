@@ -5,12 +5,16 @@ using Pathfinding;
 
 public class healthSystem : MonoBehaviour
 {
+    
     public int health = 250;
     private int maxHealth;
     private bool isShootingStunned = false;
     private bool isMovementStunned = false;
     private float stunTime = 2;
     float PoisonDamageInterval = 1;
+
+    PlayerMoney playerMoney;
+    int hasMoney;
 
     private void Start()
     {
@@ -28,23 +32,36 @@ public class healthSystem : MonoBehaviour
             health = health + 50;
         }
         maxHealth = health;
+
+        playerMoney = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMoney>();
     }
 
     public void smallPotion()
     {
-        health += 25;
-        if(health > maxHealth)
+        hasMoney = playerMoney.money;
+        if (hasMoney >= 50)
         {
-            health = maxHealth;
+            playerMoney.money -= 50;
+            health += 25;
+            if(health > maxHealth)
+            {
+                health = maxHealth;
+            }
         }
+
     }
 
     public void bigPotion()
     {
-        health += 50;
-        if (health > maxHealth)
+        hasMoney = playerMoney.money;
+        if (hasMoney >= 80)
         {
-            health = maxHealth;
+            playerMoney.money -= 80;
+            health += 50;
+            if(health > maxHealth)
+            {
+                health = maxHealth;
+            }
         }
     }
 
