@@ -121,7 +121,7 @@ public class PlayerMovement : MonoBehaviour
     private void Spawn()
     {
         int position = GameInfo.GetLastVisitedRoom();
-        Debug.Log(position);
+        // Debug.Log(position);
         if(position == 0)
             rb.transform.position = GameObject.Find("LBSpawn").transform.position;
         else if (position == 1)
@@ -266,7 +266,7 @@ public class PlayerMovement : MonoBehaviour
                     nextLaserDamage = Time.time + laserRate;
                     healthSystem health = enemy.GetComponent<healthSystem>();
                     health.TakeDamage((int)laserDamage);
-                    Debug.Log(enemy.ToString());
+                    // Debug.Log(enemy.ToString());
                 }
             }
         }

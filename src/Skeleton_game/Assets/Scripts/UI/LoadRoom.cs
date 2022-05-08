@@ -25,17 +25,30 @@ public class LoadRoom : MonoBehaviour
             GameInfo.isRoomCleared();
             SceneManager.LoadScene(roomToLoad);
             GameInfo.Save();
+        }
+    }
 
-            int position = roomPosition(roomToLoad);
-            if (GameInfo.clearedRoom[position])
+    void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
+    {
+        int position = roomPosition(roomToLoad);
+        if (GameInfo.clearedRoom[position])
+        {
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+            for (int i = 0; i < enemies.Length; i++)
             {
-                GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-                for(int i = 0; i < enemies.Length; i++)
-                {
-                    Destroy(enemies[i].gameObject);
-                }
+                Destroy(enemies[i].gameObject);
             }
         }
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnLevelFinishedLoading;
+    }
+
+    void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnLevelFinishedLoading;
     }
 
     public int roomPosition(string roomName)

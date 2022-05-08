@@ -88,7 +88,7 @@ public class healthSystem : MonoBehaviour
                 stunTime = 2;
             }
         }
-        Debug.Log(health);
+        // Debug.Log(health);
     }
 
     public void poisonDamage1()
