@@ -5,8 +5,8 @@ using Pathfinding;
 
 public class healthSystem : MonoBehaviour
 {
-
-    public int health = 250;
+    
+    public int health = 50;
     private int maxHealth;
     private bool isShootingStunned = false;
     private bool isMovementStunned = false;
@@ -15,6 +15,9 @@ public class healthSystem : MonoBehaviour
 
     PlayerMoney playerMoney;
     int hasMoney;
+    // Loot
+    public GameObject coin;
+    public GameObject diamond;
 
     private void Start()
     {
@@ -27,7 +30,7 @@ public class healthSystem : MonoBehaviour
         {
             health = health + 30;
         }
-        if (SkillTree.UnlockedAbilities[21])
+        if (SkillTree.UnlockedAbilities[21])    
         {
             health = health + 50;
         }
@@ -43,7 +46,7 @@ public class healthSystem : MonoBehaviour
         {
             playerMoney.money -= 50;
             health += 25;
-            if (health > maxHealth)
+            if(health > maxHealth)
             {
                 health = maxHealth;
             }
@@ -58,7 +61,7 @@ public class healthSystem : MonoBehaviour
         {
             playerMoney.money -= 80;
             health += 50;
-            if (health > maxHealth)
+            if(health > maxHealth)
             {
                 health = maxHealth;
             }
@@ -71,6 +74,7 @@ public class healthSystem : MonoBehaviour
 
         if (health <= 0)
         {
+            DropLoot();
             Die();
         }
         if (gameObject.CompareTag("Enemy"))
@@ -88,7 +92,7 @@ public class healthSystem : MonoBehaviour
                 stunTime = 2;
             }
         }
-        // Debug.Log(health);
+        Debug.Log(health);
     }
 
     public void poisonDamage1()
@@ -152,34 +156,65 @@ public class healthSystem : MonoBehaviour
         Destroy(gameObject);
     }
 
-    IEnumerator PoisonDamage2()
-    {
+    IEnumerator PoisonDamage2(){
         float PoisonCounter = 0;
-        while (PoisonCounter < 5f)
+     while(PoisonCounter < 5f){
+         health -= 5;
+         yield return new WaitForSeconds(PoisonDamageInterval);
+         PoisonCounter += PoisonDamageInterval;
+         if (health <= 0)
         {
-            health -= 5;
-            yield return new WaitForSeconds(PoisonDamageInterval);
-            PoisonCounter += PoisonDamageInterval;
-            if (health <= 0)
-            {
-                Die();
-            }
+            Die();
         }
+     }
     }
 
-    IEnumerator PoisonDamage1()
-    {
+    IEnumerator PoisonDamage1(){
         float PoisonCounter = 0;
-        //$$anonymous$$eeps damaging player until the poison has "worn off"
-        while (PoisonCounter < 5f)
+     //$$anonymous$$eeps damaging player until the poison has "worn off"
+     while(PoisonCounter < 5f){
+         health -= 2;
+         yield return new WaitForSeconds(PoisonDamageInterval);
+         PoisonCounter += PoisonDamageInterval;
+         if (health <= 0)
         {
-            health -= 2;
-            yield return new WaitForSeconds(PoisonDamageInterval);
-            PoisonCounter += PoisonDamageInterval;
-            if (health <= 0)
-            {
-                Die();
-            }
+            Die();
+        }
+     }
+    }
+
+    public void DropLoot()
+    {
+        var cn = Random.Range(0,4);
+        var dn = Random.Range(0,5);
+        //Spawns coins
+        for (int i = 0; i < cn; i++)
+        {
+        //Defines explosion radius for the collectibles dropped by the enemy
+        var x = Random.Range(-1.5f, 1.5f); 
+        var y = Random.Range(-1.5f, 1.5f);
+        //Creates Coin game object in scene
+        GameObject CoinObject = (GameObject)Instantiate(coin, transform.position, Quaternion.identity);
+
+        //Adds velocity to each instantiated coin in a random direction to create explosion effect
+        CoinObject.GetComponent<Rigidbody2D>().velocity = new Vector2(x*10,y*10);
+        
+        }
+        //Spawns Diamonds
+        switch (dn)
+        {
+            case 1:
+                var x = Random.Range(-1.5f, 1.5f); 
+                var y = Random.Range(-1.5f, 1.5f);
+                
+                GameObject DiamondObject = (GameObject)Instantiate(diamond, transform.position, Quaternion.identity);
+
+                DiamondObject.GetComponent<Rigidbody2D>().velocity = new Vector2(x*10,y*10);
+                break;
+            default:
+                //Do nothing
+                break;
         }
     }
 }
+
