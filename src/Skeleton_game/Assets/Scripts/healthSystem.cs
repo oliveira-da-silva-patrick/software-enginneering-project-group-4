@@ -6,7 +6,7 @@ using Pathfinding;
 public class healthSystem : MonoBehaviour
 {
     
-    public int health = 250;
+    public int health = 50;
     private int maxHealth;
     private bool isShootingStunned = false;
     private bool isMovementStunned = false;
@@ -15,6 +15,9 @@ public class healthSystem : MonoBehaviour
 
     PlayerMoney playerMoney;
     int hasMoney;
+    // Loot
+    public GameObject coin;
+    public GameObject diamond;
 
     private void Start()
     {
@@ -71,6 +74,7 @@ public class healthSystem : MonoBehaviour
 
         if (health <= 0)
         {
+            DropLoot();
             Die();
         }
         if (gameObject.CompareTag("Enemy"))
@@ -177,6 +181,40 @@ public class healthSystem : MonoBehaviour
             Die();
         }
      }
+    }
+
+    public void DropLoot()
+    {
+        var cn = Random.Range(0,4);
+        var dn = Random.Range(0,5);
+        //Spawns coins
+        for (int i = 0; i < cn; i++)
+        {
+        //Defines explosion radius for the collectibles dropped by the enemy
+        var x = Random.Range(-1.5f, 1.5f); 
+        var y = Random.Range(-1.5f, 1.5f);
+        //Creates Coin game object in scene
+        GameObject CoinObject = (GameObject)Instantiate(coin, transform.position, Quaternion.identity);
+
+        //Adds velocity to each instantiated coin in a random direction to create explosion effect
+        CoinObject.GetComponent<Rigidbody2D>().velocity = new Vector2(x*10,y*10);
+        
+        }
+        //Spawns Diamonds
+        switch (dn)
+        {
+            case 1:
+                var x = Random.Range(-1.5f, 1.5f); 
+                var y = Random.Range(-1.5f, 1.5f);
+                
+                GameObject DiamondObject = (GameObject)Instantiate(diamond, transform.position, Quaternion.identity);
+
+                DiamondObject.GetComponent<Rigidbody2D>().velocity = new Vector2(x*10,y*10);
+                break;
+            default:
+                //Do nothing
+                break;
+        }
     }
 }
 
