@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
+using static SkillTree;
 
 public static class GameInfo
 {
@@ -52,11 +53,35 @@ public static class GameInfo
             currentSceneID = data.currentSceneID;
         }
     }
+
+    public static int returnRoomIndex(string currentRoomName)
+    {
+        if (currentRoomName.Contains("LB"))
+            return 0;
+        else if (currentRoomName.Contains("RB"))
+            return 1;
+        else if (currentRoomName.Contains("LT"))
+            return 2;
+        else if (currentRoomName.Contains("RT"))
+            return 3;
+        else if (currentRoomName.Contains("Floor"))
+            return 4;
+        else
+            return -1;
+    }
+
     public static void isRoomCleared()
     {
         string currentRoomName = SceneManager.GetActiveScene().name;
         int count = GameObject.FindGameObjectsWithTag("Enemy").Length;
         bool result = count == 0;
+
+        if(result != clearedRoom[returnRoomIndex(currentRoomName)])
+        {
+            SkillTree.ECTS += 6;
+        }
+        // Debug.Log(SkillTree.ECTS);
+
         if (currentRoomName.Contains("LB"))
             clearedRoom[0] = result;
         else if (currentRoomName.Contains("RB"))

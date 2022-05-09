@@ -21,7 +21,7 @@ public class LoadRoom : MonoBehaviour
             else if (currentRoomName.Contains("RT"))
                 GameInfo.VisitRoom(3);
             else GameInfo.VisitRoom(-1);
-
+            
             GameInfo.isRoomCleared();
             SceneManager.LoadScene(roomToLoad);
             GameInfo.Save();
@@ -30,20 +30,16 @@ public class LoadRoom : MonoBehaviour
 
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
-        int position = roomPosition(roomToLoad);
+        int position = roomPosition(scene.name);
         if (GameInfo.clearedRoom[position])
         {
+            //Debug.Log("room cleared");
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
             for (int i = 0; i < enemies.Length; i++)
             {
                 Destroy(enemies[i].gameObject);
             }
         }
-    }
-
-    void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnLevelFinishedLoading;
     }
 
     void OnEnable()

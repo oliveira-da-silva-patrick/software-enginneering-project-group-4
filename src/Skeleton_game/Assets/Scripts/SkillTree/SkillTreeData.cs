@@ -10,9 +10,9 @@ public class SkillTreeData // "copy" of skill tree with only its most important 
     public int ECTS;
     public bool[] UnlockedAbilities;
 
-    public SkillTreeData(SkillTree skillTree)
+    public SkillTreeData()
     {
         UnlockedAbilities = (bool[]) SkillTree.UnlockedAbilities.Clone();
-        ECTS = skillTree.ECTS;
+        ECTS = SkillTree.ECTS;
     }
 }

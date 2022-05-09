@@ -48,8 +48,8 @@ public class Skill : MonoBehaviour
 
     public void Buy()
     {
-        if (skillTree.ECTS < skillTree.SkillCosts[id] || SkillTree.UnlockedAbilities[id]) return;
-        skillTree.ECTS -= skillTree.SkillCosts[id];
+        if (SkillTree.ECTS < skillTree.SkillCosts[id] || SkillTree.UnlockedAbilities[id]) return;
+        SkillTree.ECTS -= skillTree.SkillCosts[id];
         SkillTree.UnlockedAbilities[id] = true;
         Abilities.unlockAbility(id);
         skillTree.UpdateAllSkillUI();
@@ -58,7 +58,7 @@ public class Skill : MonoBehaviour
     public void refund()
     {
         if (!SkillTree.UnlockedAbilities[id]) return;
-        skillTree.ECTS += skillTree.SkillCosts[id];
+        SkillTree.ECTS += skillTree.SkillCosts[id];
         SkillTree.UnlockedAbilities[id] = false;
         UpdateUI();
     }

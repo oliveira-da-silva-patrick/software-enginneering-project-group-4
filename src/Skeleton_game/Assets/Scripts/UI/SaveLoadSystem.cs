@@ -13,7 +13,7 @@ public static class SaveLoadSystem
         string path = Application.persistentDataPath + "/skillTree.dfk";
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        SkillTreeData data = new SkillTreeData(skillTree);
+        SkillTreeData data = new SkillTreeData();
 
         formatter.Serialize(stream, data);
         stream.Close();

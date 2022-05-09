@@ -52,12 +52,11 @@ public class SkillTree : MonoBehaviour
     public List<GameObject> ConnectorsList;
     public GameObject ConnectorsHolder;
 
-    public int ECTS;
+    public static int ECTS = 0;
     public Text ECTS_Text;
 
     private void Start()
     {        
-        ECTS = 20;
         ECTS_Text = GameObject.Find("ECTSInfoText").GetComponent<Text>();
 
         SkillCosts = new[] { 

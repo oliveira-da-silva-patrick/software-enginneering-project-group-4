@@ -5,7 +5,8 @@ using Pathfinding;
 
 public class healthSystem : MonoBehaviour
 {
-    
+    private float initialShootingSpeed;
+    private float initialMovementSpeed;
     public int health = 50;
     private int maxHealth;
     private bool isShootingStunned = false;
@@ -92,7 +93,7 @@ public class healthSystem : MonoBehaviour
                 stunTime = 2;
             }
         }
-        Debug.Log(health);
+        // Debug.Log(health);
     }
 
     public void poisonDamage1()
@@ -106,11 +107,43 @@ public class healthSystem : MonoBehaviour
     }
     private void Update()
     {
-        AI_Shooting shootingScript = GetComponent<AI_Shooting>();
-        AIPath movementScript = GetComponent<AIPath>();
 
-        if (shootingScript != null && movementScript != null && gameObject.CompareTag("Enemy"))
+        AI_Shooting AI_shootingScript = GetComponent<AI_Shooting>();
+        AIPath AI_movementScript = GetComponent<AIPath>();
+
+        Shooting shootingScript = GetComponent<Shooting>();
+        FieldOfView movementScript = GetComponent<FieldOfView>();
+
+        if (AI_shootingScript != null && AI_movementScript != null && gameObject.CompareTag("Enemy"))
         {
+            initialMovementSpeed = AI_movementScript.maxSpeed;
+            initialShootingSpeed = AI_shootingScript.startTimeBtwShots;
+            if (stunTime >= 0 && (isShootingStunned || isMovementStunned))
+            {
+                if (isShootingStunned)
+                {
+                    AI_shootingScript.startTimeBtwShots = 2f;
+                }
+                if (isMovementStunned)
+                {
+                    AI_movementScript.maxSpeed = 1;
+                }
+                stunTime -= Time.deltaTime;
+            }
+            else
+            {
+                // TODO
+                AI_movementScript.maxSpeed = initialMovementSpeed;
+                AI_shootingScript.startTimeBtwShots = initialShootingSpeed;
+                isShootingStunned = false;
+                isMovementStunned = false;
+            }
+
+            // Debug.Log("Movement speed: " + movementScript.maxAcceleration + "Shooting Speed " + shootingScript.startTimeBtwShots);
+        } else if(shootingScript != null && movementScript != null && gameObject.CompareTag("Enemy"))
+        {
+            initialMovementSpeed = movementScript.speed;
+            initialShootingSpeed = shootingScript.startTimeBtwShots;
             if (stunTime >= 0 && (isShootingStunned || isMovementStunned))
             {
                 if (isShootingStunned)
@@ -119,19 +152,18 @@ public class healthSystem : MonoBehaviour
                 }
                 if (isMovementStunned)
                 {
-                    movementScript.maxSpeed = 1;
+                    movementScript.speed = 1;
                 }
                 stunTime -= Time.deltaTime;
             }
             else
             {
-                movementScript.maxSpeed = 1;
-                shootingScript.startTimeBtwShots = 0.8f;
+                // TODO
+                movementScript.speed = initialMovementSpeed;
+                shootingScript.startTimeBtwShots = initialShootingSpeed;
                 isShootingStunned = false;
                 isMovementStunned = false;
             }
-
-            // Debug.Log("Movement speed: " + movementScript.maxAcceleration + "Shooting Speed " + shootingScript.startTimeBtwShots);
         }
     }
     public void Load()
