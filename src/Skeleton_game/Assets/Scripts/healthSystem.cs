@@ -5,7 +5,9 @@ using Pathfinding;
 
 public class healthSystem : MonoBehaviour
 {
-    public int health = 250;
+    private int currHealth;
+    public int health  = 250;
+    public HealthBar healthBar = null;
     private bool isShootingStunned = false;
     private bool isMovementStunned = false;
     private float stunTime = 2;
@@ -13,6 +15,11 @@ public class healthSystem : MonoBehaviour
 
     private void Start()
     {
+        currHealth = health;
+        if(healthBar != null)
+        {
+            healthBar.setMaxHealth(health);
+        }
         Load();
         if (SkillTree.UnlockedAbilities[18])
         {
@@ -30,9 +37,14 @@ public class healthSystem : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
+        currHealth -= damage;
 
-        if (health <= 0)
+        if(healthBar != null)
+        {
+            healthBar.setHealth(currHealth);
+        }
+
+        if (currHealth <= 0)
         {
             Die();
         }
@@ -117,10 +129,10 @@ public class healthSystem : MonoBehaviour
     IEnumerator PoisonDamage2(){
         float PoisonCounter = 0;
      while(PoisonCounter < 5f){
-         health -= 5;
+         currHealth -= 5;
          yield return new WaitForSeconds(PoisonDamageInterval);
          PoisonCounter += PoisonDamageInterval;
-         if (health <= 0)
+         if (currHealth <= 0)
         {
             Die();
         }
@@ -131,10 +143,10 @@ public class healthSystem : MonoBehaviour
         float PoisonCounter = 0;
      //$$anonymous$$eeps damaging player until the poison has "worn off"
      while(PoisonCounter < 5f){
-         health -= 2;
+         currHealth -= 2;
          yield return new WaitForSeconds(PoisonDamageInterval);
          PoisonCounter += PoisonDamageInterval;
-         if (health <= 0)
+         if (currHealth <= 0)
         {
             Die();
         }
