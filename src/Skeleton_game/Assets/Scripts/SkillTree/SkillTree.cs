@@ -56,27 +56,27 @@ public class SkillTree : MonoBehaviour
     public Text ECTS_Text;
 
     private void Start()
-    {        
+    {
         ECTS_Text = GameObject.Find("ECTSInfoText").GetComponent<Text>();
 
         SkillCosts = new[] { 
                         // Engineering
-                        1, 2, 2, 2, 2, 2
+                        4, 6, 8, 8, 10, 20
                         // Comp Sci
-                        , 2, 2, 2, 2
+                        , 4, 4, 12, 12
                         // Physics
-                        , 2, 2, 2, 2, 2, 2, 2
+                        , 6, 4, 8, 8, 6, 10, 12
                         // Medicine
-                        , 2, 2, 2, 2, 2
+                        , 4, 8, 8, 10, 10
                         // Maths
-                        , 2, 2, 2, 2};
+                        , 6, 8, 8, 10};
         SkillNames = new[] {
-        "Lightning",
+        "Laser",
         "Damage increase",
         "2 enemies",
         "3 enemies",
         "Damage increase",
-        "Lightning Bolt",
+        "Super Laser",
         "Piercing Shot",
         "Hacking",
         "Shooting hack",
@@ -101,11 +101,11 @@ public class SkillTree : MonoBehaviour
         SkillDescriptions = new[]
         {
         "10 damage per second to closest enemy in range",
-        "Lightning damage is increased to 20",
-        "Lightning attacks 2 closest enemies in range",
-        "Lightning attacks 3 closest enemies in range",
-        "Lightning damage is increased to 30",
-        "Lightning strikes all enemies in range",
+        "Laser damage is increased to 20",
+        "Laser attacks 2 closest enemies in range",
+        "Laser attacks 3 closest enemies in range",
+        "Laser damage is increased to 30",
+        "Laser strikes all enemies in range",
         "Bullets go through enemies",
         "Player learns the ability to hack",
         "When enemies are hit, they are hacked and shoot at a slower rate for 2 seconds",
@@ -215,5 +215,4 @@ public class SkillTree : MonoBehaviour
             UnlockedAbilities = (bool[]) data.UnlockedAbilities.Clone();
         }
     }
-
 }
