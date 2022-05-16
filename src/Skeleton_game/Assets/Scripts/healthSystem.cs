@@ -9,6 +9,7 @@ public class healthSystem : MonoBehaviour
     private float initialMovementSpeed;
     public int health = 50;
     private int maxHealth;
+    public HealthBar healthBar;
     private bool isShootingStunned = false;
     private bool isMovementStunned = false;
     private float stunTime = 2;
@@ -36,6 +37,7 @@ public class healthSystem : MonoBehaviour
             health = health + 50;
         }
         maxHealth = health;
+        healthBar.setMaxHealth(maxHealth);
 
         playerMoney = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMoney>();
     }
@@ -72,6 +74,7 @@ public class healthSystem : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        healthBar.setHealth(health);
         if (health <= 0)
         {
             DropLoot();
@@ -202,7 +205,6 @@ public class healthSystem : MonoBehaviour
 
     IEnumerator PoisonDamage1(){
         float PoisonCounter = 0;
-     //$$anonymous$$eeps damaging player until the poison has "worn off"
      while(PoisonCounter < 5f){
          health -= 2;
          yield return new WaitForSeconds(PoisonDamageInterval);
