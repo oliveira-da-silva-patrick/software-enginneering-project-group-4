@@ -54,13 +54,8 @@ public class healthSystem : MonoBehaviour
         hasMoney = PlayerMoney.money;
         if (hasMoney >= 50)
         {
-<<<<<<< HEAD
-            if(health + 25 >=  maxHealth)
-=======
             PlayerMoney.money -= 50;
-            health += 25;
-            if(health > maxHealth)
->>>>>>> main
+            if(health + 25 >=  maxHealth)
             {
                 health = maxHealth;
             }
@@ -78,14 +73,8 @@ public class healthSystem : MonoBehaviour
         hasMoney = PlayerMoney.money;
         if (hasMoney >= 80)
         {
-<<<<<<< HEAD
-            playerMoney.money -= 80;
-            if(health + 50 >=  maxHealth)
-=======
             PlayerMoney.money -= 80;
-            health += 50;
-            if(health > maxHealth)
->>>>>>> main
+            if(health + 50 >=  maxHealth)
             {
                 health = maxHealth;
             }
@@ -154,13 +143,10 @@ public class healthSystem : MonoBehaviour
     }
     private void Update()
     {
-<<<<<<< HEAD
-=======
         checkStuns();
     }
     private void checkStuns()
     {
->>>>>>> main
         AI_Shooting AI_shootingScript = GetComponent<AI_Shooting>();
         AIPath AI_movementScript = GetComponent<AIPath>();
 
