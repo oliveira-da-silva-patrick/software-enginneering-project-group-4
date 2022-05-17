@@ -10,7 +10,12 @@ public class LoadRoom : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         string currentRoomName = SceneManager.GetActiveScene().name;
-        if (other.gameObject.name == "Main_player")
+        bool go = true;
+        if(currentRoomName.Contains("Floor_") && roomToLoad.Contains("Floor_"))
+        {
+            go = GameInfo.isFloorCleared();
+        }
+        if (go && other.gameObject.name == "Main_player")
         {
             if (currentRoomName.Contains("LB"))
                 GameInfo.VisitRoom(0);
@@ -23,7 +28,12 @@ public class LoadRoom : MonoBehaviour
             else GameInfo.VisitRoom(-1);
             
             GameInfo.isRoomCleared();
-            SceneManager.LoadScene(roomToLoad);
+            if(currentRoomName.Contains("Floor_") && roomToLoad.Contains("Floor_")) {
+                GameInfo.ResetRoom();
+            }
+            GameObject gameObject = GameObject.Find("LevelLoader");
+            LevelLoader levelloader = (LevelLoader)gameObject.GetComponent(typeof(LevelLoader));
+            levelloader.LoadNextLevel(roomToLoad);
             GameInfo.Save();
         }
     }
