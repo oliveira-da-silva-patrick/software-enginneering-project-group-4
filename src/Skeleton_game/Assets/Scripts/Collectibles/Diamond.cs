@@ -81,7 +81,7 @@ public class Diamond : MonoBehaviour
                 audioManager.playDiamondSound();
             }
             //ADD TO MONEY COUNT
-            other.GetComponent<PlayerMoney>().money += 20;
+            PlayerMoney.money += 20;
             Collect();
         }
     }

@@ -23,7 +23,9 @@ public class LoadRoom : MonoBehaviour
             else GameInfo.VisitRoom(-1);
             
             GameInfo.isRoomCleared();
-            SceneManager.LoadScene(roomToLoad);
+            GameObject go = GameObject.Find("LevelLoader");
+            LevelLoader levelloader = (LevelLoader)go.GetComponent(typeof(LevelLoader));
+            levelloader.LoadNextLevel(roomToLoad);
             GameInfo.Save();
         }
     }

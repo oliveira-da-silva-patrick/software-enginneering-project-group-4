@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
+using UnityEngine.SceneManagement;
 
 public class healthSystem : MonoBehaviour
 {
@@ -47,31 +48,32 @@ public class healthSystem : MonoBehaviour
 
     public void smallPotion()
     {
-        hasMoney = playerMoney.money;
+        hasMoney = PlayerMoney.money;
         if (hasMoney >= 50)
         {
-            playerMoney.money -= 50;
+            PlayerMoney.money -= 50;
             health += 25;
             if(health > maxHealth)
             {
                 health = maxHealth;
             }
         }
-
+        healthBar.setHealth(health);
     }
 
     public void bigPotion()
     {
-        hasMoney = playerMoney.money;
+        hasMoney = PlayerMoney.money;
         if (hasMoney >= 80)
         {
-            playerMoney.money -= 80;
+            PlayerMoney.money -= 80;
             health += 50;
             if(health > maxHealth)
             {
                 health = maxHealth;
             }
         }
+        healthBar.setHealth(health);
     }
 
     public void TakeDamage(int damage)
@@ -115,7 +117,10 @@ public class healthSystem : MonoBehaviour
     }
     private void Update()
     {
-
+        checkStuns();
+    }
+    private void checkStuns()
+    {
         AI_Shooting AI_shootingScript = GetComponent<AI_Shooting>();
         AIPath AI_movementScript = GetComponent<AIPath>();
 
@@ -148,7 +153,8 @@ public class healthSystem : MonoBehaviour
             }
 
             // Debug.Log("Movement speed: " + movementScript.maxAcceleration + "Shooting Speed " + shootingScript.startTimeBtwShots);
-        } else if(shootingScript != null && movementScript != null && gameObject.CompareTag("Enemy"))
+        }
+        else if (shootingScript != null && movementScript != null && gameObject.CompareTag("Enemy"))
         {
             initialMovementSpeed = movementScript.speed;
             initialShootingSpeed = shootingScript.startTimeBtwShots;
@@ -194,6 +200,10 @@ public class healthSystem : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);
+        if (gameObject.CompareTag("Player"))
+        {
+            SceneManager.LoadScene("DeathScene");
+        }
     }
 
     IEnumerator PoisonDamage2(){
