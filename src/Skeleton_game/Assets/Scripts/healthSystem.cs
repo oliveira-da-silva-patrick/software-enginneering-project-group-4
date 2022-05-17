@@ -8,8 +8,10 @@ public class healthSystem : MonoBehaviour
     private float initialShootingSpeed;
     private float initialMovementSpeed;
     public int health = 50;
-    private int maxHealth;
+    public int shield = 0;
+    public int maxHealth;
     public HealthBar healthBar;
+    public ShieldBar shieldBar;
     private bool isShootingStunned = false;
     private bool isMovementStunned = false;
     private float stunTime = 2;
@@ -40,6 +42,7 @@ public class healthSystem : MonoBehaviour
         if (gameObject.tag == "Player")
         {
             healthBar.setMaxHealth(maxHealth);
+            shieldBar.setMaxShield(250);
         }
 
         playerMoney = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMoney>();
@@ -50,12 +53,15 @@ public class healthSystem : MonoBehaviour
         hasMoney = playerMoney.money;
         if (hasMoney >= 50)
         {
-            playerMoney.money -= 50;
-            health += 25;
-            if(health > maxHealth)
+            if(health + 25 >=  maxHealth)
             {
                 health = maxHealth;
             }
+            else
+            {
+                health += 25;
+            }
+            healthBar.setHealth(health);
         }
 
     }
@@ -66,20 +72,39 @@ public class healthSystem : MonoBehaviour
         if (hasMoney >= 80)
         {
             playerMoney.money -= 80;
-            health += 50;
-            if(health > maxHealth)
+            if(health + 50 >=  maxHealth)
             {
                 health = maxHealth;
             }
+            else
+            {
+                health += 50;
+            }
+            healthBar.setHealth(health);
         }
     }
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
+        int storeDamage = damage;
+        if (shield > 0)
+        {
+            if (damage > shield)
+            {
+                shield = 0;
+                storeDamage-=shield;
+            }
+            else
+            {
+                shield-=damage;
+                storeDamage = 0;
+            }
+        }
+        health -= storeDamage;
         if (gameObject.tag == "Player")
         {
             healthBar.setHealth(health);
+            shieldBar.setShield(shield);
         }
         if (health <= 0)
         {
@@ -115,7 +140,6 @@ public class healthSystem : MonoBehaviour
     }
     private void Update()
     {
-
         AI_Shooting AI_shootingScript = GetComponent<AI_Shooting>();
         AIPath AI_movementScript = GetComponent<AIPath>();
 
@@ -199,10 +223,10 @@ public class healthSystem : MonoBehaviour
     IEnumerator PoisonDamage2(){
         float PoisonCounter = 0;
      while(PoisonCounter < 5f){
-         health -= 5;
-         yield return new WaitForSeconds(PoisonDamageInterval);
-         PoisonCounter += PoisonDamageInterval;
-         if (health <= 0)
+        health -= 5;
+        yield return new WaitForSeconds(PoisonDamageInterval);
+        PoisonCounter += PoisonDamageInterval;
+        if (health <= 0)
         {
             Die();
         }
@@ -212,10 +236,10 @@ public class healthSystem : MonoBehaviour
     IEnumerator PoisonDamage1(){
         float PoisonCounter = 0;
      while(PoisonCounter < 5f){
-         health -= 2;
-         yield return new WaitForSeconds(PoisonDamageInterval);
-         PoisonCounter += PoisonDamageInterval;
-         if (health <= 0)
+        health -= 2;
+        yield return new WaitForSeconds(PoisonDamageInterval);
+        PoisonCounter += PoisonDamageInterval;
+        if (health <= 0)
         {
             Die();
         }

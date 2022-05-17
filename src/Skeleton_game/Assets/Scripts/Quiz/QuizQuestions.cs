@@ -129,7 +129,21 @@ public class QuizQuestions : MonoBehaviour
         } else if (rd > 20 && rd <= 40)
         {
             //Give player 50 health
-            hs.health += 50;
+            if(hs.health + 50 >=  hs.maxHealth)
+            {
+                hs.shield = hs.shield + 50 - hs.maxHealth + hs.health;
+                hs.health = hs.maxHealth;
+                if (hs.shield >= hs.maxHealth)
+                {
+                    hs.shield = hs.maxHealth;
+                }
+            }
+            else
+            {
+                hs.health += 50;
+            }
+            hs.healthBar.setHealth(hs.health);
+            hs.shieldBar.setShield(hs.shield);
             reward = "50 health bonus";
             
         } else if (rd > 40 && rd <= 55)
@@ -141,7 +155,21 @@ public class QuizQuestions : MonoBehaviour
         } else if (rd > 55 && rd <= 70)
         {
             //Give player 100 health
-            hs.health += 100;
+            if(hs.health + 100 >=  hs.maxHealth)
+            {
+                hs.shield = hs.shield + 100 - hs.maxHealth + hs.health;
+                hs.health = hs.maxHealth;
+                if (hs.shield >= hs.maxHealth)
+                {
+                    hs.shield = hs.maxHealth;
+                }
+            }
+            else
+            {
+                hs.health += 100;
+            }
+            hs.healthBar.setHealth(hs.health);
+            hs.shieldBar.setShield(hs.shield);
             reward = "100 health bonus";
 
         } else if (rd > 70 && rd <= 80)
@@ -153,7 +181,21 @@ public class QuizQuestions : MonoBehaviour
         } else if (rd > 80 && rd <= 90)
         {
             //Give player 150
-            hs.health += 150;
+            if(hs.health + 150 >=  hs.maxHealth)
+            {
+                hs.shield = hs.shield + 150 - hs.maxHealth + hs.health;
+                hs.health = hs.maxHealth;
+                if (hs.shield >= hs.maxHealth)
+                {
+                    hs.shield = hs.maxHealth;
+                }
+            }
+            else
+            {
+                hs.health += 150;
+            }
+            hs.healthBar.setHealth(hs.health);
+            hs.shieldBar.setShield(hs.shield);
             reward = "150 health bonus";
 
         } else if (rd > 90 && rd <= 95)
@@ -165,7 +207,21 @@ public class QuizQuestions : MonoBehaviour
         } else if (rd > 95 && rd <= 100)
         {
             //Give player 250 health
-            hs.health += 250;
+            if(hs.health + 250 >=  hs.maxHealth)
+            {
+                hs.shield = hs.shield + 250 - hs.maxHealth + hs.health;
+                hs.health = hs.maxHealth;
+                if (hs.shield >= hs.maxHealth)
+                {
+                    hs.shield = hs.maxHealth;
+                }
+            }
+            else
+            {
+                hs.health += 250;
+            }
+            hs.healthBar.setHealth(hs.health);
+            hs.shieldBar.setShield(hs.shield);
             reward = "250 health bonus";
         }
     }
