@@ -37,7 +37,10 @@ public class healthSystem : MonoBehaviour
             health = health + 50;
         }
         maxHealth = health;
-        healthBar.setMaxHealth(maxHealth);
+        if (gameObject.tag == "Player")
+        {
+            healthBar.setMaxHealth(maxHealth);
+        }
 
         playerMoney = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMoney>();
     }
@@ -74,7 +77,10 @@ public class healthSystem : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        healthBar.setHealth(health);
+        if (gameObject.tag == "Player")
+        {
+            healthBar.setHealth(health);
+        }
         if (health <= 0)
         {
             DropLoot();

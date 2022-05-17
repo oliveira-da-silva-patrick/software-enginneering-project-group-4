@@ -178,7 +178,9 @@ public class PlayerMovement : MonoBehaviour
             nextFireNormal = Time.time + fireRateNormal;
             Instantiate(attackPrefab, firePoint.position, firePoint.rotation);
         }
-        if (Time.time > nextFireAxis)
+        if(SkillTree.UnlockedAbilities[22]||SkillTree.UnlockedAbilities[23])
+        {
+            if (Time.time > nextFireAxis)
         {
             nextFireAxis = Time.time + fireRateAxis;
             if(SkillTree.UnlockedAbilities[22])
@@ -191,6 +193,7 @@ public class PlayerMovement : MonoBehaviour
                 Instantiate(attackPrefabAxis, new Vector2(transform.position.x, transform.position.y + 1.5f), Quaternion.Euler(0, 0, 90));
                 Instantiate(attackPrefabAxis, new Vector2(transform.position.x, transform.position.y - 1.5f), Quaternion.Euler(0, 0, 270));
             }
+        }
         }
     }
 

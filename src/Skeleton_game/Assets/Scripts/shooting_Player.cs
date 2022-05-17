@@ -54,13 +54,13 @@ public class shooting_Player : MonoBehaviour
         // if piercing shot is enabled
         if (piercingEnabled)
         {
-            if (hitInfo.CompareTag("Boundary")){
+            if (hitInfo.name == "Wall" || hitInfo.name == "Doors" || hitInfo.name == "Escalator"){
                 Destroy(gameObject);
             }
         }
         else
         {
-            if (hitInfo.name != "Player_shooting(Clone)" && hitInfo.name != "Projectile_ball(Clone)")
+            if (hitInfo.CompareTag("Enemy"))
             {
                 Destroy(gameObject);
             }
