@@ -18,7 +18,7 @@ public class MoneyText : MonoBehaviour
     
     void Update()
     {
-        moneycount = PlayerMoney.money;
+        moneycount = player.GetComponent<PlayerMoney>().money;
         textBox.text = "Money = " + moneycount; 
     }
 }

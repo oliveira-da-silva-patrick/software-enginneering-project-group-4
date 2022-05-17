@@ -5,5 +5,10 @@ using UnityEngine;
 public class PlayerMoney : MonoBehaviour
 {
     [HideInInspector]
-    public static int money = 0;
+    public int money;
+
+    void Start() {
+        money = 0;
+    }
+    
 }

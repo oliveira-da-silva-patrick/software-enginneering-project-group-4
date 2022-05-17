@@ -117,12 +117,13 @@ public class QuizQuestions : MonoBehaviour
     public void SelectReward() {
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
+        PlayerMoney pm = player.GetComponent<PlayerMoney>();
         healthSystem hs = player.GetComponent<healthSystem>();
         int rd = UnityEngine.Random.Range(1,101);
         if (rd <= 20)
         {
             //Give player 150 coins
-            PlayerMoney.money += 150;
+            pm.money += 150;
             reward = "150 coins";
 
         } else if (rd > 20 && rd <= 40)
@@ -148,7 +149,7 @@ public class QuizQuestions : MonoBehaviour
         } else if (rd > 40 && rd <= 55)
         {
             //Give player 250 coins
-            PlayerMoney.money += 250;
+            pm.money += 250;
             reward = "250 coins";
 
         } else if (rd > 55 && rd <= 70)
@@ -174,7 +175,7 @@ public class QuizQuestions : MonoBehaviour
         } else if (rd > 70 && rd <= 80)
         {
             //Give player 400 coins
-            PlayerMoney.money += 400;
+            pm.money += 400;
             reward = "400 coins";
 
         } else if (rd > 80 && rd <= 90)
@@ -200,7 +201,7 @@ public class QuizQuestions : MonoBehaviour
         } else if (rd > 90 && rd <= 95)
         {
             //Give player 500 coins
-            PlayerMoney.money += 500;
+            pm.money += 500;
             reward = "500 coins";
 
         } else if (rd > 95 && rd <= 100)

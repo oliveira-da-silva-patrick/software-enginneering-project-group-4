@@ -12,9 +12,7 @@ public class UIElements : MonoBehaviour
 
     public void startNewGame()
     {
-        GameObject go = GameObject.Find("LevelLoader");
-        LevelLoader levelloader = (LevelLoader)go.GetComponent(typeof(LevelLoader));
-        levelloader.LoadNextLevel("Floor_1");
+        SceneManager.LoadScene("Floor_1");
         GameInfo.Save();
     }
 
