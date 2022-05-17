@@ -124,15 +124,15 @@ public class PlayerMovement : MonoBehaviour
         int position = GameInfo.GetLastVisitedRoom();
         // Debug.Log(position);
         if(position == 0)
-            rb.transform.position = GameObject.Find("LBSpawn").transform.position;
+            rb.transform.position = GameObject.Find("sLB-Fx").transform.position;
         else if (position == 1)
-            rb.transform.position = GameObject.Find("RBSpawn").transform.position;
+            rb.transform.position = GameObject.Find("sRB-Fx").transform.position;
         else if (position == 2)
-            rb.transform.position = GameObject.Find("LTSpawn").transform.position;
+            rb.transform.position = GameObject.Find("sLT-Fx").transform.position;
         else if (position == 3)
-            rb.transform.position = GameObject.Find("RTSpawn").transform.position;
+            rb.transform.position = GameObject.Find("sRT-Fx").transform.position;
         else
-            rb.transform.position = GameObject.Find("FloorSpawn").transform.position;
+            rb.transform.position = GameObject.Find("sFloor").transform.position;
     }
 
     public PlayerMovement getInstance()
