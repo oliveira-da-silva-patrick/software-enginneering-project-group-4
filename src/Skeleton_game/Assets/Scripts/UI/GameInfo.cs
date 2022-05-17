@@ -93,4 +93,12 @@ public static class GameInfo
             clearedRoom[4] = result;
     }
 
+    public static bool isFloorCleared()
+    {
+        for (int i = 0; i < clearedRoom.Length; i++)
+        {
+            if (clearedRoom[i] == false) return false;
+        }
+        return true;
+    }
 }
