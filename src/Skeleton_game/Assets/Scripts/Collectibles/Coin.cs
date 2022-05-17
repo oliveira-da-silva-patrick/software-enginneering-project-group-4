@@ -74,7 +74,7 @@ public class Coin : MonoBehaviour
                 audioManager.playCoinSound();
             }
             //ADD TO MONEY COUNT
-            other.GetComponent<PlayerMoney>().money += 5;
+            PlayerMoney.money += 5;
             Collect();
         }
     }

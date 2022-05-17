@@ -280,8 +280,6 @@ public class PlayerMovement : MonoBehaviour
     {
         GameObject go = Instantiate(linePrefab);
         LineRenderer line = go.GetComponent<LineRenderer>();
-        line.startWidth = 0.3f;
-        line.endWidth = 0.3f;
         line.SetPosition(0, startPos);
         line.SetPosition(1, endPos);
     }
