@@ -31,8 +31,8 @@ public class LoadRoom : MonoBehaviour
             if(currentRoomName.Contains("Floor_") && roomToLoad.Contains("Floor_")) {
                 GameInfo.ResetRoom();
             }
-            GameObject go = GameObject.Find("LevelLoader");
-            LevelLoader levelloader = (LevelLoader)go.GetComponent(typeof(LevelLoader));
+            GameObject gameObject = GameObject.Find("LevelLoader");
+            LevelLoader levelloader = (LevelLoader)gameObject.GetComponent(typeof(LevelLoader));
             levelloader.LoadNextLevel(roomToLoad);
             GameInfo.Save();
         }
