@@ -101,6 +101,9 @@ public class PlayerMovement : MonoBehaviour
         {
             fireRateAxis = 1f;
         }
+
+        if(SceneManager.GetActiveScene().name.Contains("Floor")) Spawn();
+        
         if(SkillTree.UnlockedAbilities[15])
         {
             Instantiate(magnetPrefab, new Vector2(transform.position.x - 3f, transform.position.y), Quaternion.Euler(0, 0, 0));
@@ -114,8 +117,6 @@ public class PlayerMovement : MonoBehaviour
         {
             Instantiate(magnetPrefab, new Vector2(transform.position.x - 3f, transform.position.y), Quaternion.Euler(0, 0, 0));
         }
-
-        if(SceneManager.GetActiveScene().name.Contains("Floor")) Spawn();
     }
 
     private void Spawn()
