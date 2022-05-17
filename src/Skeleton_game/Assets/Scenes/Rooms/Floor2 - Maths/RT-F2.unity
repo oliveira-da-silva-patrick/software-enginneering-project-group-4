@@ -5725,6 +5725,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AI_Follower
       objectReference: {fileID: 0}
+    - target: {fileID: 671670225406854527, guid: d687fb1209c23314cb35143aa867b5a7, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 884803803}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d687fb1209c23314cb35143aa867b5a7, type: 3}
 --- !u!4 &510233313 stripped
