@@ -14473,6 +14473,17 @@ Sprite:
   m_PhysicsShape: []
   m_Bones: []
   m_SpriteID: 
+--- !u!114 &629190651 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5272321928208501665, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
+  m_PrefabInstance: {fileID: 1400190616}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2987e5c17aa6c2440b24db9806e1634b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &687975752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15228,6 +15239,22 @@ PrefabInstance:
       propertyPath: roomToLoad
       value: RT-F4
       objectReference: {fileID: 0}
+    - target: {fileID: 5842302777706736796, guid: bf874ed0ef7b76f4db958452a959087b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 629190651}
+    - target: {fileID: 5842302777706736796, guid: bf874ed0ef7b76f4db958452a959087b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: bigPotion
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842302779019821291, guid: bf874ed0ef7b76f4db958452a959087b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 629190651}
+    - target: {fileID: 5842302779019821291, guid: bf874ed0ef7b76f4db958452a959087b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: smallPotion
+      objectReference: {fileID: 0}
     - target: {fileID: 8186969322815914797, guid: bf874ed0ef7b76f4db958452a959087b, type: 3}
       propertyPath: m_Name
       value: Floor
@@ -15285,6 +15312,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 673205481765112219, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 673205481765112219, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2403708187470113599, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
       propertyPath: m_Name
       value: RoomEssentials
@@ -15350,6 +15385,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5272321929609713174, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8884392552712217521, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8884392552712217521, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
