@@ -10,6 +10,7 @@ public class healthSystem : MonoBehaviour
     private float initialMovementSpeed;
     public int health = 50;
     public int shield = 0;
+    public int maxShield = 250;
     public int maxHealth;
     public HealthBar healthBar;
     public ShieldBar shieldBar;
@@ -42,8 +43,13 @@ public class healthSystem : MonoBehaviour
         maxHealth = health;
         if (gameObject.tag == "Player")
         {
+            LoadHealth();
             healthBar.setMaxHealth(maxHealth);
             shieldBar.setMaxShield(250);
+            health -= Damage.lostHealth;
+            shield -= Damage.lostShield;
+            healthBar.setHealth(health);
+            shieldBar.setShield(shield);
         }
 
         playerMoney = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMoney>();
@@ -58,10 +64,12 @@ public class healthSystem : MonoBehaviour
             if(health + 25 >=  maxHealth)
             {
                 health = maxHealth;
+                Damage.lostHealth = 0;
             }
             else
             {
                 health += 25;
+                Damage.lostHealth = Damage.lostHealth - 25;
             }
             healthBar.setHealth(health);
         }
@@ -77,10 +85,12 @@ public class healthSystem : MonoBehaviour
             if(health + 50 >=  maxHealth)
             {
                 health = maxHealth;
+                Damage.lostHealth = 0; 
             }
             else
             {
                 health += 50;
+                Damage.lostHealth = Damage.lostHealth - 50; 
             }
             healthBar.setHealth(health);
         }
@@ -106,6 +116,8 @@ public class healthSystem : MonoBehaviour
         health -= storeDamage;
         if (gameObject.tag == "Player")
         {
+            Damage.lostHealth += storeDamage;
+            Damage.lostShield = maxShield - shield;
             healthBar.setHealth(health);
             shieldBar.setShield(shield);
         }
@@ -230,32 +242,33 @@ public class healthSystem : MonoBehaviour
         {
             SceneManager.LoadScene("DeathScene");
         }
+        SaveLoadSystem.deleteSaveFile();
     }
 
     IEnumerator PoisonDamage2(){
-        float PoisonCounter = 0;
-     while(PoisonCounter < 5f){
-        health -= 5;
-        yield return new WaitForSeconds(PoisonDamageInterval);
-        PoisonCounter += PoisonDamageInterval;
-        if (health <= 0)
-        {
-            Die();
-        }
-     }
+         float PoisonCounter = 0;
+         while(PoisonCounter < 5f){
+            health -= 5;
+            yield return new WaitForSeconds(PoisonDamageInterval);
+            PoisonCounter += PoisonDamageInterval;
+            if (health <= 0)
+            {
+                Die();
+            }
+         }
     }
 
-    IEnumerator PoisonDamage1(){
-        float PoisonCounter = 0;
-     while(PoisonCounter < 5f){
-        health -= 2;
-        yield return new WaitForSeconds(PoisonDamageInterval);
-        PoisonCounter += PoisonDamageInterval;
-        if (health <= 0)
-        {
-            Die();
-        }
-     }
+    IEnumerator PoisonDamage1() {
+         float PoisonCounter = 0;
+         while(PoisonCounter < 5f){
+            health -= 2;
+            yield return new WaitForSeconds(PoisonDamageInterval);
+            PoisonCounter += PoisonDamageInterval;
+            if (health <= 0)
+            {
+                Die();
+            }
+         }
     }
 
     public void DropLoot()
@@ -289,6 +302,17 @@ public class healthSystem : MonoBehaviour
             default:
                 //Do nothing
                 break;
+        }
+    }
+
+    public void LoadHealth()
+    {
+        HealthData data = SaveLoadSystem.LoadHealth();
+
+        if(data != null)
+        {
+            Damage.lostHealth = data.lostHealth;
+            Damage.lostShield = data.lostShield;
         }
     }
 }

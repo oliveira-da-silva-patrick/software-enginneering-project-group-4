@@ -8,7 +8,7 @@ public static class SaveLoadSystem
 
     public static void deleteSaveFile()
     {
-        string path = Application.persistentDataPath + "/skillTree.dfk";
+        string path = Application.persistentDataPath + "/gameinfo.dfk";
         if (File.Exists(path)) { 
             File.Delete(path);
         }
@@ -72,6 +72,38 @@ public static class SaveLoadSystem
             if (stream.Length > 0)
             {
                 GameData data = formatter.Deserialize(stream) as GameData;
+                stream.Close();
+                return data;
+            }
+            stream.Close();
+        }
+        return null;
+    }
+
+    public static void SaveHealth()
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+
+        string path = Application.persistentDataPath + "/health.dfk";
+        FileStream stream = new FileStream(path, FileMode.Create);
+
+        HealthData data = new HealthData();
+
+        formatter.Serialize(stream, data);
+        stream.Close();
+    }
+
+    public static HealthData LoadHealth()
+    {
+        string path = Application.persistentDataPath + "/health.dfk";
+        if (File.Exists(path))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(path, FileMode.Open);
+
+            if (stream.Length > 0)
+            {
+                HealthData data = formatter.Deserialize(stream) as HealthData;
                 stream.Close();
                 return data;
             }

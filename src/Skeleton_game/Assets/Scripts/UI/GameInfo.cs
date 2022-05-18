@@ -10,30 +10,30 @@ public static class GameInfo
 
     public static int currentSceneID = 1;
 
-    private static bool areAllRoomsCleared()
-    {
-        bool cleared = false;
-        foreach (bool i in clearedRoom)
-        {
-            if (!i)
-            {
-                cleared = i;
-            }
-        }
-        return cleared;
-    }
+    //private static bool areAllRoomsCleared()
+    //{
+    //    bool cleared = false;
+    //    foreach (bool i in clearedRoom)
+    //    {
+    //        if (!i)
+    //        {
+    //            cleared = i;
+    //        }
+    //    }
+    //    return cleared;
+    //}
 
-    private static void enableElevator()
-    {
-        if(currentSceneID == 4)
-        {
-            GameObject escalator = GameObject.Find("Escalator");
-            if (!escalator.activeSelf)
-            {
-                escalator.SetActive(true);
-            }
-        }
-    }
+    //private static void enableElevator()
+    //{
+    //    if(currentSceneID == 4)
+    //    {
+    //        GameObject escalator = GameObject.Find("Escalator");
+    //        if (!escalator.activeSelf)
+    //        {
+    //            escalator.SetActive(true);
+    //        }
+    //    }
+    //}
 
     public static void ResetRoom()
     {
@@ -75,11 +75,14 @@ public static class GameInfo
             lastRoom = (bool[]) data.lastRoom.Clone();
             clearedRoom = (bool[]) data.clearedRoom.Clone();
             currentSceneID = data.currentSceneID;
-        }
-        if (areAllRoomsCleared())
+        } else
         {
-            enableElevator();
+            currentSceneID = 0;
         }
+        //if (areAllRoomsCleared())
+        //{
+        //    enableElevator();
+        //}
     }
 
     public static int returnRoomIndex(string currentRoomName)
