@@ -15,6 +15,7 @@ public class UIElements : MonoBehaviour
         GameObject go = GameObject.Find("LevelLoader");
         LevelLoader levelloader = (LevelLoader)go.GetComponent(typeof(LevelLoader));
         levelloader.LoadNextLevel("Floor_1");
+        SaveLoadSystem.deleteSaveFile();
         GameInfo.Save();
     }
 

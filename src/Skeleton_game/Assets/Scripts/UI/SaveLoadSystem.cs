@@ -5,6 +5,15 @@ using System.Runtime.Serialization.Formatters.Binary;
 // static is responsible for making it impossible to create multiple instances of this class
 public static class SaveLoadSystem
 {
+
+    public static void deleteSaveFile()
+    {
+        string path = Application.persistentDataPath + "/skillTree.dfk";
+        if (File.Exists(path)) { 
+            File.Delete(path);
+        }
+    }
+
     // saves the skill tree's current state
     public static void SaveSkillTree(SkillTree skillTree)
     {
