@@ -16,13 +16,17 @@ public class UIElements : MonoBehaviour
         LevelLoader levelloader = (LevelLoader)go.GetComponent(typeof(LevelLoader));
         levelloader.LoadNextLevel("Floor_1");
         SaveLoadSystem.deleteSaveFile();
+        SaveLoadSystem.SaveHealth();
         GameInfo.Save();
     }
 
     public void continueGame()
     {
         GameInfo.Load();
-        SceneManager.LoadScene(GameInfo.currentSceneID);
+        if (GameInfo.currentSceneID >= 2)
+        {
+            SceneManager.LoadScene(GameInfo.currentSceneID);
+        }
     }
 
     // loads the skill tree
