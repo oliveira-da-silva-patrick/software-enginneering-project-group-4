@@ -55,14 +55,20 @@ public class shooting_Player : MonoBehaviour
         if (piercingEnabled)
         {
             if (hitInfo.name == "Wall" || hitInfo.name == "Doors" || hitInfo.name == "Escalator" || hitInfo.CompareTag("Player") || hitInfo.CompareTag("Boundary")){
-                Destroy(gameObject);
+                if (!hitInfo.name.Contains("Camera"))
+                {
+                    Destroy(gameObject);
+                }
             }
         }
         else
         {
             if (hitInfo.CompareTag("Enemy") || hitInfo.CompareTag("Player") || hitInfo.CompareTag("Boundary"))
             {
-                Destroy(gameObject);
+                if (!hitInfo.name.Contains("Camera"))
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }

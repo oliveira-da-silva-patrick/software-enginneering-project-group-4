@@ -233,6 +233,7 @@ public class PlayerMovement : MonoBehaviour
             }
             // shoot closest enemy
             shootLaser(enemies[0], laserDamage);
+            // Debug.Log("yo");
         }
         // shoot second closest enemies
         if (SkillTree.UnlockedAbilities[2] && enemies.Length > 1)
@@ -261,7 +262,7 @@ public class PlayerMovement : MonoBehaviour
         if (distance <= 5f && Physics2D.Raycast(transform.position, (enemy.transform.position - transform.position).normalized, 5f, 1 << 0))
         {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, (enemy.transform.position - transform.position).normalized, 5f, 1 << 0);
-            if (hit.collider.tag == "Enemy" && !Physics2D.Raycast(transform.position, (enemy.transform.position - transform.position).normalized, 5f, obstacleLayer))
+            if (hit.collider.tag.Equals("Enemy") && !Physics2D.Raycast(transform.position, (enemy.transform.position - transform.position).normalized, 5f, obstacleLayer))
             {
                 draw2DRay(transform.position, hit.point);
                 //Debug.Log(hit.collider.tag);
