@@ -14688,6 +14688,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 673205481765112219, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 673205481765112219, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2403708187470113599, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
       propertyPath: m_Name
       value: RoomEssentials
@@ -14764,6 +14772,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8884392552712217521, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8884392552712217521, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
 --- !u!4 &837224304 stripped
@@ -14771,6 +14787,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5272321928208501674, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
   m_PrefabInstance: {fileID: 837224303}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &837224305 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5272321928208501665, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
+  m_PrefabInstance: {fileID: 837224303}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2987e5c17aa6c2440b24db9806e1634b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &895196600
 GameObject:
   m_ObjectHideFlags: 0
@@ -15363,6 +15390,22 @@ PrefabInstance:
     - target: {fileID: 3341676579590815493, guid: bf874ed0ef7b76f4db958452a959087b, type: 3}
       propertyPath: roomToLoad
       value: RT-F3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842302777706736796, guid: bf874ed0ef7b76f4db958452a959087b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 837224305}
+    - target: {fileID: 5842302777706736796, guid: bf874ed0ef7b76f4db958452a959087b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: bigPotion
+      objectReference: {fileID: 0}
+    - target: {fileID: 5842302779019821291, guid: bf874ed0ef7b76f4db958452a959087b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 837224305}
+    - target: {fileID: 5842302779019821291, guid: bf874ed0ef7b76f4db958452a959087b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: smallPotion
       objectReference: {fileID: 0}
     - target: {fileID: 8186969322815914797, guid: bf874ed0ef7b76f4db958452a959087b, type: 3}
       propertyPath: m_Name
