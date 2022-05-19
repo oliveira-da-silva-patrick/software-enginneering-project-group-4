@@ -12,10 +12,13 @@ public class UIElements : MonoBehaviour
 
     public void startNewGame()
     {
+        SaveLoadSystem.deleteSaveFile();
+        GameInfo.newGame();
         GameObject go = GameObject.Find("LevelLoader");
         LevelLoader levelloader = (LevelLoader)go.GetComponent(typeof(LevelLoader));
         levelloader.LoadNextLevel("Floor_1");
-        SaveLoadSystem.deleteSaveFile();
+        Damage.lostHealth = 0;
+        Damage.lostShield = 250;
         SaveLoadSystem.SaveHealth();
         GameInfo.Save();
     }
