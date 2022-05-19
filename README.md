@@ -18,7 +18,7 @@ and then start a new game.
 
 ### Issues Feedback
 Please feel free to fill the feedback form after playing the game for some time.
-Small issues can be mentionned in the feedback form.
+Small issues can be mentionned in the feedback form. You can find the feedback farm in "/Documentation"
 Should you find a gamebreaking bug please contact "020152332A@uni.lu".
 
 ### Android
