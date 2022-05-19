@@ -12,6 +12,7 @@ public class UIElements : MonoBehaviour
 
     public void startNewGame()
     {
+        GameInfo.Load(false);
         SaveLoadSystem.deleteSaveFile();
         GameInfo.newGame();
         GameObject go = GameObject.Find("LevelLoader");
@@ -25,7 +26,7 @@ public class UIElements : MonoBehaviour
 
     public void continueGame()
     {
-        GameInfo.Load();
+        GameInfo.Load(true);
         if (GameInfo.currentSceneID >= 2)
         {
             SceneManager.LoadScene(GameInfo.currentSceneID);
