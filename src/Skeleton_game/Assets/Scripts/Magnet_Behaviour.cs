@@ -5,7 +5,7 @@ using UnityEngine;
 public class Magnet_Behaviour : MonoBehaviour
 {
     public float orbitDistance = 3.0f;
-    private float rotationSpeed = 50f;
+    private float rotationSpeed = 100f;
     private GameObject pivotObject;
     public int damage = 15;
     public Vector3 relativeDistance = Vector3.zero;

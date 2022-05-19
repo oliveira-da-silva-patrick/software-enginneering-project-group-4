@@ -110,8 +110,9 @@ public static class GameInfo
         if(result != clearedRoom[returnRoomIndex(currentRoomName)])
         {
             SkillTree.ECTS += 6;
+            SaveLoadSystem.SaveSkillTree();
         }
-        // Debug.Log(SkillTree.ECTS);
+        Debug.Log(SkillTree.ECTS);
 
         if (currentRoomName.Contains("LB"))
             clearedRoom[0] = result;

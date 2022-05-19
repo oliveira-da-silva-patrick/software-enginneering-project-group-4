@@ -202,7 +202,7 @@ public class SkillTree : MonoBehaviour
 
     public void Save()
     {
-        SaveLoadSystem.SaveSkillTree(skillTree);
+        SaveLoadSystem.SaveSkillTree();
     }
 
     public void Load()

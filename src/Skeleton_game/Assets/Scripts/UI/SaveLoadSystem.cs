@@ -15,7 +15,7 @@ public static class SaveLoadSystem
     }
 
     // saves the skill tree's current state
-    public static void SaveSkillTree(SkillTree skillTree)
+    public static void SaveSkillTree()
     {
         BinaryFormatter formatter = new BinaryFormatter();
 
