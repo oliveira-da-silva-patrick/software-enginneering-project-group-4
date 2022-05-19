@@ -12,7 +12,7 @@ public class ClearedText : MonoBehaviour
     void Update()
     {
         int count = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        if (count == 0)
+        if (count == 0 && !clearedText.active)
         {
             if (SceneManager.GetActiveScene().name.Contains("Floor_6"))
             {
@@ -20,8 +20,11 @@ public class ClearedText : MonoBehaviour
                 LevelLoader levelloader = (LevelLoader)gameObject.GetComponent(typeof(LevelLoader));
                 levelloader.LoadNextLevel("WinScene");
             }
+            GameInfo.isRoomCleared();
+            GameInfo.Save();
+            SaveLoadSystem.SaveHealth();
             clearedText.SetActive(true);
-        } else
+        } else if(count != 0)
         {
             clearedText.SetActive(false);
         }

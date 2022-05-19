@@ -17,22 +17,25 @@ public class shooting_Player : MonoBehaviour
     {
         Load();
         rb.velocity = transform.right * speed;
-        piercingEnabled = SkillTree.UnlockedAbilities[6];
-        if (SkillTree.UnlockedAbilities[12])
+        if (SkillTree.UnlockedAbilities != null)
         {
-            damage = damage + 15;
-        }
-        if (SkillTree.UnlockedAbilities[16])
-        {
-            damage = damage + 25;
-        }
-        if (SkillTree.UnlockedAbilities[17])
-        {
-            poison1Enabled = true;
-        }
-        if (SkillTree.UnlockedAbilities[19])
-        {
-            poison2Enabled = true;
+            piercingEnabled = SkillTree.UnlockedAbilities[6];
+            if (SkillTree.UnlockedAbilities[12])
+            {
+                damage = damage + 15;
+            }
+            if (SkillTree.UnlockedAbilities[16])
+            {
+                damage = damage + 25;
+            }
+            if (SkillTree.UnlockedAbilities[17])
+            {
+                poison1Enabled = true;
+            }
+            if (SkillTree.UnlockedAbilities[19])
+            {
+                poison2Enabled = true;
+            }
         }
     }
 
@@ -79,7 +82,10 @@ public class shooting_Player : MonoBehaviour
 
         if (data != null)
         {
-            SkillTree.UnlockedAbilities = (bool[])data.UnlockedAbilities.Clone();
+            if (data.UnlockedAbilities != null)
+            {
+                SkillTree.UnlockedAbilities = (bool[])data.UnlockedAbilities.Clone();
+            }
         }
         else
         {

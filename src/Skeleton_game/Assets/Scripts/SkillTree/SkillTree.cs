@@ -44,7 +44,7 @@ public class SkillTree : MonoBehaviour
     public int[] SkillCosts;
     public string[] SkillNames;
     public string[] SkillDescriptions;
-    public static bool[] UnlockedAbilities;
+    public static bool[] UnlockedAbilities = null;
 
     public List<Skill> SkillList;
     public GameObject SkillHolder;
@@ -213,7 +213,10 @@ public class SkillTree : MonoBehaviour
         {
             ECTS = data.ECTS;
             // ECTS = 0;
-            UnlockedAbilities = (bool[]) data.UnlockedAbilities.Clone();
+            if (data.UnlockedAbilities != null)
+            {
+                UnlockedAbilities = (bool[])data.UnlockedAbilities.Clone();
+            }
         }
     }
 

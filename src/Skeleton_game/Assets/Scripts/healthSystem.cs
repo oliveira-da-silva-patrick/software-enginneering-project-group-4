@@ -28,26 +28,29 @@ public class healthSystem : MonoBehaviour
     private void Start()
     {
         Load();
-        if (SkillTree.UnlockedAbilities[18])
+        if (SkillTree.UnlockedAbilities != null)
         {
-            health = health + 20;
-        }
-        if (SkillTree.UnlockedAbilities[20])
-        {
-            health = health + 30;
-        }
-        if (SkillTree.UnlockedAbilities[21])    
-        {
-            health = health + 50;
+            if (SkillTree.UnlockedAbilities[18])
+            {
+                health = health + 20;
+            }
+            if (SkillTree.UnlockedAbilities[20])
+            {
+                health = health + 30;
+            }
+            if (SkillTree.UnlockedAbilities[21])
+            {
+                health = health + 50;
+            }
         }
         maxHealth = health;
         if (gameObject.tag == "Player")
         {
             LoadHealth();
             healthBar.setMaxHealth(maxHealth);
-            shieldBar.setMaxShield(250);
+            shieldBar.setMaxShield(maxHealth);
             health -= Damage.lostHealth;
-            shield -= Damage.lostShield;
+            shield = maxShield - Damage.lostShield;
             healthBar.setHealth(health);
             shieldBar.setShield(shield);
         }
@@ -129,16 +132,19 @@ public class healthSystem : MonoBehaviour
         if (gameObject.CompareTag("Enemy"))
         {
             // shooting stun
-            if (SkillTree.UnlockedAbilities[8])
+            if (SkillTree.UnlockedAbilities != null)
             {
-                isShootingStunned = true;
-                stunTime = 2;
-            }
-            // movement stun
-            else if (SkillTree.UnlockedAbilities[9])
-            {
-                isMovementStunned = true;
-                stunTime = 2;
+                if (SkillTree.UnlockedAbilities[8])
+                {
+                    isShootingStunned = true;
+                    stunTime = 2;
+                }
+                // movement stun
+                else if (SkillTree.UnlockedAbilities[9])
+                {
+                    isMovementStunned = true;
+                    stunTime = 2;
+                }
             }
         }
         // Debug.Log(health);
@@ -224,7 +230,10 @@ public class healthSystem : MonoBehaviour
 
         if (data != null)
         {
-            SkillTree.UnlockedAbilities = (bool[])data.UnlockedAbilities.Clone();
+            if (SkillTree.UnlockedAbilities != null)
+            {
+                SkillTree.UnlockedAbilities = (bool[])data.UnlockedAbilities.Clone();
+            }
         }
         else
         {

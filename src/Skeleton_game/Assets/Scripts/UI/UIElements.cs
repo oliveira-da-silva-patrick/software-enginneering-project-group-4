@@ -12,8 +12,13 @@ public class UIElements : MonoBehaviour
     [SerializeField] GameObject pauseMenu;
 
     public void startNewGame()
-    {        
+    {
+        if (GameInfo.allclearedRoomsEver == null)
+        {
+            GameInfo.fillEmpty();
+        }
         GameInfo.newGame();
+        SaveLoadSystem.SaveSkillTree();
         GameObject go = GameObject.Find("LevelLoader");
         LevelLoader levelloader = (LevelLoader)go.GetComponent(typeof(LevelLoader));
         levelloader.LoadNextLevel("Floor_1");

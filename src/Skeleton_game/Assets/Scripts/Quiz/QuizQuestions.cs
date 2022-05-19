@@ -223,6 +223,9 @@ public class QuizQuestions : MonoBehaviour
             hs.shieldBar.setShield(hs.shield);
             reward = "250 health bonus";
         }
+
+        Damage.lostShield = hs.maxShield - hs.shield;
+        Damage.lostHealth = hs.maxHealth - hs.health;
     }
 
     public void terminateQuiz() {

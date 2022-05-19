@@ -12,7 +12,10 @@ public class SkillTreeData // "copy" of skill tree with only its most important 
 
     public SkillTreeData()
     {
-        UnlockedAbilities = (bool[]) SkillTree.UnlockedAbilities.Clone();
+        if(SkillTree.UnlockedAbilities != null)
+        {
+            UnlockedAbilities = (bool[])SkillTree.UnlockedAbilities.Clone();
+        }
         ECTS = SkillTree.ECTS;
     }
 }
