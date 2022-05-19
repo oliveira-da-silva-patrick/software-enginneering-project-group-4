@@ -10,6 +10,16 @@ public static class GameInfo
 
     public static int currentSceneID = 1;
 
+    public static void newGame()
+    {
+        ResetRoom();
+        for (int i = 0; i < lastRoom.Length; i++)
+        {
+            lastRoom[i] = false;
+        }
+
+    }
+
     //private static bool areAllRoomsCleared()
     //{
     //    bool cleared = false;
