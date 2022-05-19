@@ -216,4 +216,12 @@ public class SkillTree : MonoBehaviour
             UnlockedAbilities = (bool[]) data.UnlockedAbilities.Clone();
         }
     }
+
+    public void HardReset()
+    {
+        resetSkillTree();
+        ECTS = 0;
+        GameInfo.fillEmpty();
+        UpdateAllSkillUI();
+    }
 }
