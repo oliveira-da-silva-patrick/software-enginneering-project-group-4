@@ -1,7 +1,6 @@
 # U.V.O University Virus Outbreak
-U.V.O University Virus Outbreak
 
-## What is it about?
+### What is it about?
 In this game, you are trying to cure the virus attacking the University of Luxembourg. 
 A new virus turns contaminated people into some kind of mutants.
 These are now trying to infest students, teachers and university personal who are hiding in the Maison du Savoir.
