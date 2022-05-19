@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement; // Necessary for switching scenes
-using System.IO;
 
 
 public class UIElements : MonoBehaviour
@@ -12,7 +11,9 @@ public class UIElements : MonoBehaviour
     [SerializeField] GameObject pauseMenu;
 
     public void startNewGame()
-    {        
+    {
+        GameInfo.Load(false);
+        SaveLoadSystem.deleteSaveFile();
         GameInfo.newGame();
         GameObject go = GameObject.Find("LevelLoader");
         LevelLoader levelloader = (LevelLoader)go.GetComponent(typeof(LevelLoader));
@@ -25,7 +26,7 @@ public class UIElements : MonoBehaviour
 
     public void continueGame()
     {
-        GameInfo.Load();
+        GameInfo.Load(true);
         if (GameInfo.currentSceneID >= 2)
         {
             SceneManager.LoadScene(GameInfo.currentSceneID);
@@ -61,11 +62,6 @@ public class UIElements : MonoBehaviour
     {
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
-    }
-
-    public void Exit()
-    {
-        Application.Quit();
     }
 
 }

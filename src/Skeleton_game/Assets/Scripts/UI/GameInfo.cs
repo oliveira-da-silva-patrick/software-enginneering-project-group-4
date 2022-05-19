@@ -8,24 +8,17 @@ public static class GameInfo
 {
     public static bool[] lastRoom = new[] { false, false, false, false }; // lb, rb, lt, rt
     public static bool[] clearedRoom = new[] { false, false, false, false, false }; // lb, rb, lt, rt, floor
-    public static bool[,] allclearedRoomsEver = null;
+    public static bool[,] allclearedRoomsEver = new bool[6,5];
 
     public static int currentSceneID = 1;
 
     public static void newGame()
     {
-        Load();
-        SaveLoadSystem.deleteSaveFile();
-        if (allclearedRoomsEver == null)
-        {
-            fillEmpty();
-        }
         ResetRoom();
         for (int i = 0; i < lastRoom.Length; i++)
         {
             lastRoom[i] = false;
         }
-        Save();
 
     }
 
@@ -85,24 +78,25 @@ public static class GameInfo
         SaveLoadSystem.SaveGameInfo();
     }
 
-    public static void Load()
+    public static void Load(bool continueGame)
     {
         GameData data = SaveLoadSystem.LoadGameInfo();
 
-        if (data != null)
+        if (data != null && continueGame)
         {
             lastRoom = (bool[]) data.lastRoom.Clone();
             clearedRoom = (bool[]) data.clearedRoom.Clone();
             currentSceneID = data.currentSceneID;
-            if(data.allClearedRoomsEver != null)
+        } else
+        {
+            if (data != null && !continueGame)
             {
                 allclearedRoomsEver = (bool[,])data.allClearedRoomsEver.Clone();
-            } else
+            }
+            else
             {
                 fillEmpty();
             }
-        } else
-        {
             currentSceneID = 0;
         }
         //if (areAllRoomsCleared())
@@ -113,15 +107,13 @@ public static class GameInfo
 
     public static void fillEmpty()
     {
-        allclearedRoomsEver = new bool[6, 5];
-        for (int i = 0; i < allclearedRoomsEver.GetLength(0); i++)
+        for(int i = 0; i < allclearedRoomsEver.GetLength(0); i++)
         {
             for (int j = 0; j < allclearedRoomsEver.GetLength(1); j++)
             {
                 allclearedRoomsEver[i, j] = false;
             }
         }
-        GameInfo.Save();
     }
 
     public static int returnRoomIndex(string currentRoomName)
