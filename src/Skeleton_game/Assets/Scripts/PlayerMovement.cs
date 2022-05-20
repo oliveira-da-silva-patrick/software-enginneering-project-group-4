@@ -82,6 +82,8 @@ public class PlayerMovement : MonoBehaviour
     private GameObject enemy;
     private GameObject[] enemies;
 
+    public Animator animator;
+
 
 
     void Start()
@@ -169,6 +171,10 @@ public class PlayerMovement : MonoBehaviour
         movement.y = joystick.Vertical;
         movement.Normalize();
 
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
+
         enemies = FindClosestEnemies();
         shootEnemy(movement, enemies);
         shootLasers(enemies);
@@ -176,7 +182,8 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.MovePosition(new Vector2(transform.position.x + (movement.x * speed * Time.deltaTime), transform.position.y + (movement.y * speed * Time.deltaTime)));
+        rb.MovePosition(rb.position + movement * speed * Time.deltaTime);
+        // rb.MovePosition(new Vector2(transform.position.x + (movement.x * speed * Time.deltaTime), transform.position.y + (movement.y * speed * Time.deltaTime)));
     }
 
     void Shoot()
@@ -307,22 +314,22 @@ public class PlayerMovement : MonoBehaviour
         if (enemies.Length > 0)
         {
             enemy = enemies[0];
-            distance = Vector2.Distance(transform.position, enemy.transform.position);
+            distance = Vector2.Distance(firePoint.position, enemy.transform.position);
             if (distance <= 10f && movement == Vector2.zero)
             {
-                Vector3 relPos = enemy.transform.position - transform.position;
+                Vector3 relPos = enemy.transform.position - firePoint.position;
                 Vector3 rotatedVectorToTarget = Quaternion.Euler(0, 0, 90) * relPos;
                 Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, rotatedVectorToTarget);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotateSpeed * Time.deltaTime);
-                if (transform.rotation == toRotation)
+                firePoint.rotation = Quaternion.RotateTowards(firePoint.rotation, toRotation, rotateSpeed * Time.deltaTime);
+                if (firePoint.rotation == toRotation)
                 {
                     Shoot();
                 }
             }
             else if (movement != Vector2.zero)
             {
-                Quaternion toRotation2 = Quaternion.LookRotation(Vector3.forward, Quaternion.Euler(0, 0, 90) * movement);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation2, rotateSpeed * Time.deltaTime);
+                //Quaternion toRotation2 = Quaternion.LookRotation(Vector3.forward, Quaternion.Euler(0, 0, 90) * movement);
+                //transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation2, rotateSpeed * Time.deltaTime);
                 ShootAxisXY();
 
             }
@@ -331,8 +338,8 @@ public class PlayerMovement : MonoBehaviour
         {
             if (movement != Vector2.zero)
             {
-                Quaternion toRotation2 = Quaternion.LookRotation(Vector3.forward, Quaternion.Euler(0, 0, 90) * movement);
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation2, rotateSpeed * Time.deltaTime);
+                //Quaternion toRotation2 = Quaternion.LookRotation(Vector3.forward, Quaternion.Euler(0, 0, 90) * movement);
+                //transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation2, rotateSpeed * Time.deltaTime);
                 ShootAxisXY();
             }
         }
