@@ -21,7 +21,7 @@ public class UIElements : MonoBehaviour
         SaveLoadSystem.SaveSkillTree();
         GameObject go = GameObject.Find("LevelLoader");
         LevelLoader levelloader = (LevelLoader)go.GetComponent(typeof(LevelLoader));
-        levelloader.LoadNextLevel("Floor_1");
+        levelloader.LoadNextLevel("Floor_0");
         Damage.lostHealth = 0;
         Damage.lostShield = 250;
         SaveLoadSystem.SaveHealth();

@@ -14798,6 +14798,62 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2428939681950283209, guid: 9cc9ece0e4d1b77459ad8a450c70604f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -20.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428939681950283209, guid: 9cc9ece0e4d1b77459ad8a450c70604f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428939681991298330, guid: 9cc9ece0e4d1b77459ad8a450c70604f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 19.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428939681991298330, guid: 9cc9ece0e4d1b77459ad8a450c70604f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428939682282554146, guid: 9cc9ece0e4d1b77459ad8a450c70604f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -24.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428939682282554146, guid: 9cc9ece0e4d1b77459ad8a450c70604f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428939682570849711, guid: 9cc9ece0e4d1b77459ad8a450c70604f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -23.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428939682570849711, guid: 9cc9ece0e4d1b77459ad8a450c70604f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.74
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428939683123332464, guid: 9cc9ece0e4d1b77459ad8a450c70604f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428939683123332464, guid: 9cc9ece0e4d1b77459ad8a450c70604f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.88
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428939683411202132, guid: 9cc9ece0e4d1b77459ad8a450c70604f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 23.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428939683411202132, guid: 9cc9ece0e4d1b77459ad8a450c70604f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428939683643994765, guid: 9cc9ece0e4d1b77459ad8a450c70604f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 2428939683643994765, guid: 9cc9ece0e4d1b77459ad8a450c70604f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.05
+      objectReference: {fileID: 0}
     - target: {fileID: 4205257542863861262, guid: 9cc9ece0e4d1b77459ad8a450c70604f, type: 3}
       propertyPath: m_Name
       value: FloorEnemies
@@ -14806,6 +14862,14 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 797403828}
+    - target: {fileID: 7571215260152352008, guid: 9cc9ece0e4d1b77459ad8a450c70604f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -19.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571215260152352008, guid: 9cc9ece0e4d1b77459ad8a450c70604f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.15
+      objectReference: {fileID: 0}
     - target: {fileID: 7571215260152352020, guid: 9cc9ece0e4d1b77459ad8a450c70604f, type: 3}
       propertyPath: target
       value: 
@@ -16069,6 +16133,14 @@ PrefabInstance:
     - target: {fileID: 3341676579590815493, guid: bf874ed0ef7b76f4db958452a959087b, type: 3}
       propertyPath: roomToLoad
       value: RT-F2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476631401419197265, guid: bf874ed0ef7b76f4db958452a959087b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476631401419197265, guid: bf874ed0ef7b76f4db958452a959087b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 15.24
       objectReference: {fileID: 0}
     - target: {fileID: 5842302777706736796, guid: bf874ed0ef7b76f4db958452a959087b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

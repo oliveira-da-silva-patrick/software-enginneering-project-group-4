@@ -15,6 +15,12 @@ public class GameData
         lastRoom = (bool[]) GameInfo.lastRoom.Clone();
         clearedRoom = (bool[]) GameInfo.clearedRoom.Clone();
         currentSceneID = GameInfo.currentSceneID;
-        allClearedRoomsEver = (bool[,])GameInfo.allclearedRoomsEver.Clone();
+        if (GameInfo.allclearedRoomsEver != null)
+        {
+            allClearedRoomsEver = (bool[,])GameInfo.allclearedRoomsEver.Clone();
+        } else
+        {
+            allClearedRoomsEver = null;
+        }
     }
 }

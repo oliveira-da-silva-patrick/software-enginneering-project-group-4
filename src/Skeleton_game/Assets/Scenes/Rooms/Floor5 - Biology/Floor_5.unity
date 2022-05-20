@@ -46735,6 +46735,14 @@ PrefabInstance:
       propertyPath: roomToLoad
       value: RT-F5
       objectReference: {fileID: 0}
+    - target: {fileID: 3476631401419197265, guid: bf874ed0ef7b76f4db958452a959087b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3476631401419197265, guid: bf874ed0ef7b76f4db958452a959087b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 15.51
+      objectReference: {fileID: 0}
     - target: {fileID: 5842302777706736796, guid: bf874ed0ef7b76f4db958452a959087b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

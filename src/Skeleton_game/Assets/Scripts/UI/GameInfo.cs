@@ -29,31 +29,6 @@ public static class GameInfo
 
     }
 
-    //private static bool areAllRoomsCleared()
-    //{
-    //    bool cleared = false;
-    //    foreach (bool i in clearedRoom)
-    //    {
-    //        if (!i)
-    //        {
-    //            cleared = i;
-    //        }
-    //    }
-    //    return cleared;
-    //}
-
-    //private static void enableElevator()
-    //{
-    //    if(currentSceneID == 4)
-    //    {
-    //        GameObject escalator = GameObject.Find("Escalator");
-    //        if (!escalator.activeSelf)
-    //        {
-    //            escalator.SetActive(true);
-    //        }
-    //    }
-    //}
-
     public static void ResetRoom()
     {
         for(int i = 0; i < clearedRoom.Length; i++)
@@ -105,10 +80,6 @@ public static class GameInfo
         {
             currentSceneID = 0;
         }
-        //if (areAllRoomsCleared())
-        //{
-        //    enableElevator();
-        //}
     }
 
     public static void fillEmpty()
@@ -161,34 +132,42 @@ public static class GameInfo
     public static void isRoomCleared()
     {
         string currentRoomName = SceneManager.GetActiveScene().name;
-        int count = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        bool result = count == 0;
-        int floor = returnFloorIndex(currentRoomName);
-
-        // clearedroom updated below
-        if(result && !clearedRoom[returnRoomIndex(currentRoomName)] && !allclearedRoomsEver[floor , returnRoomIndex(currentRoomName)])
+        if(!currentRoomName.Equals("Floor_0"))
         {
-            SkillTree.ECTS += 6;
-            if(floor == 5)
+            int count = GameObject.FindGameObjectsWithTag("Enemy").Length;
+            bool result = count == 0;
+            int floor = returnFloorIndex(currentRoomName);
+            if(allclearedRoomsEver == null)
             {
-                SkillTree.ECTS += 24;
+                fillEmpty();
             }
-            allclearedRoomsEver[floor, returnRoomIndex(currentRoomName)] = true;
-            SaveLoadSystem.SaveSkillTree();
+
+            // clearedroom updated below
+            if (result && !clearedRoom[returnRoomIndex(currentRoomName)] && !allclearedRoomsEver[floor, returnRoomIndex(currentRoomName)])
+            {
+                SkillTree.ECTS += 6;
+                if (floor == 5)
+                {
+                    SkillTree.ECTS += 24;
+                }
+                allclearedRoomsEver[floor, returnRoomIndex(currentRoomName)] = true;
+                SaveLoadSystem.SaveSkillTree();
+            }
+
+            if (currentRoomName.Contains("LB"))
+                clearedRoom[0] = result;
+            else if (currentRoomName.Contains("RB"))
+                clearedRoom[1] = result;
+            else if (currentRoomName.Contains("LT"))
+                clearedRoom[2] = result;
+            else if (currentRoomName.Contains("RT"))
+                clearedRoom[3] = result;
+            else if (currentRoomName.Contains("Floor"))
+                clearedRoom[4] = result;
+
+            Save();
+
         }
-
-        if (currentRoomName.Contains("LB"))
-            clearedRoom[0] = result;
-        else if (currentRoomName.Contains("RB"))
-            clearedRoom[1] = result;
-        else if (currentRoomName.Contains("LT"))
-            clearedRoom[2] = result;
-        else if (currentRoomName.Contains("RT"))
-            clearedRoom[3] = result;
-        else if (currentRoomName.Contains("Floor"))
-            clearedRoom[4] = result;
-
-        Save();
     }
 
     public static bool isFloorCleared()

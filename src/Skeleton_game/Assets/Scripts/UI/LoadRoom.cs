@@ -15,6 +15,10 @@ public class LoadRoom : MonoBehaviour
         {
             go = GameInfo.isFloorCleared();
         }
+        if(currentRoomName.Equals("Floor_0"))
+        {
+            go = true;
+        }
         if (go && other.gameObject.name == "Main_player")
         {
             if (currentRoomName.Contains("LB"))

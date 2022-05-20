@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6943053556793133617, guid: 46ea79b0b4b555d4681ae71e37bd336b, type: 3}
       propertyPath: text
-      value: Now's really not the time for that!
+      value: Eat some snacks from the vending machine they will heal you!
       objectReference: {fileID: 0}
     - target: {fileID: 6943053556793133617, guid: 46ea79b0b4b555d4681ae71e37bd336b, type: 3}
       propertyPath: dMenu
@@ -8501,15 +8501,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5272321928360370177, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5272321928466023595, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -49.77878
+      value: -50.598705
       objectReference: {fileID: 0}
     - target: {fileID: 5272321928466023595, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -16.010029
+      value: -16.010675
       objectReference: {fileID: 0}
     - target: {fileID: 5272321929609713174, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
       propertyPath: m_AnchorMax.x
@@ -8669,7 +8669,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6943053556793133617, guid: 46ea79b0b4b555d4681ae71e37bd336b, type: 3}
       propertyPath: text
-      value: Do you want to study with me for the math exam this afternoon?
+      value: I got hurt while running away.
       objectReference: {fileID: 0}
     - target: {fileID: 6943053556793133617, guid: 46ea79b0b4b555d4681ae71e37bd336b, type: 3}
       propertyPath: dMenu
@@ -8979,7 +8979,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6943053556793133617, guid: 46ea79b0b4b555d4681ae71e37bd336b, type: 3}
       propertyPath: text
-      value: This manual is useless. There is nothing we can use right now!
+      value: The faculties worked together to build the weapon you are using. Use
+        it wisely!
       objectReference: {fileID: 0}
     - target: {fileID: 6943053556793133617, guid: 46ea79b0b4b555d4681ae71e37bd336b, type: 3}
       propertyPath: dMenu
