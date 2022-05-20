@@ -41,19 +41,23 @@ public class shooting_Player : MonoBehaviour
 
     void OnTriggerEnter2D (Collider2D hitInfo)
     {
-        healthSystem opponent = hitInfo.GetComponent<healthSystem>();
-        if(opponent != null)
+        if (!hitInfo.CompareTag("Player"))
         {
-            opponent.TakeDamage(damage);
-            if(poison2Enabled)
+            healthSystem opponent = hitInfo.GetComponent<healthSystem>();
+            if(opponent != null)
             {
-                opponent.poisonDamage2();
-            }
-            else if(poison1Enabled)
-            {
-                opponent.poisonDamage1();
+                opponent.TakeDamage(damage);
+                if(poison2Enabled)
+                {
+                    opponent.poisonDamage2();
+                }
+                else if(poison1Enabled)
+                {
+                    opponent.poisonDamage1();
+                }
             }
         }
+        
         // if piercing shot is enabled
         if (piercingEnabled)
         {
@@ -66,7 +70,7 @@ public class shooting_Player : MonoBehaviour
         }
         else
         {
-            if (hitInfo.CompareTag("Enemy") || hitInfo.CompareTag("Player") || hitInfo.CompareTag("Boundary"))
+            if (hitInfo.CompareTag("Enemy") || hitInfo.CompareTag("Boundary"))
             {
                 if (!hitInfo.name.Contains("Camera"))
                 {
