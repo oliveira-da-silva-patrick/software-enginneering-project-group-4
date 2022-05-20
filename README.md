@@ -22,9 +22,8 @@ Small issues can be mentionned in the feedback form. You can find the feedback f
 Should you find a gamebreaking bug please contact "020152332A@uni.lu".
 
 ### Android
-To play the game on an Android device or emulator, download the whole repo as a .zip file. 
-Then, go to "/Android" and in there you will find an .apk file. Open that file in your phone or emulator and the game will be installed.
-You can delete everything you downloaded from github (.apk file included), but don't delete the app itself.
+To play the game on an Android device or emulator, go to releases, and download the latest android release as apk. 
+Open that file in your phone or emulator and the game will be installed.
 
 ### Windows
 To play the game on a Windows device, download the whole repo as a .zip file. 
