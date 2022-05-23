@@ -25,6 +25,7 @@ the feedback form.
 ### Android (current v0.5)
 To play the game on an Android device or emulator, go to releases, and download the latest android release as apk. 
 Open that file in your phone or emulator and the game will be installed.
+If you are trying to download the apk file from your smartphone, try changing the github page to its desktop version.
 
 ### Windows (current v0.5)
 To play the game on a Windows device, download the whole repo as a .zip file. 
