@@ -7,15 +7,20 @@ Students, teachers and university personal are now hiding in the Maison du Savoi
 You are trying to get to the top of the building where infested people have gathered believing that destroying it will cure the university.
 
 ### How to play
-There is not much to know about the game. There is only one input. You can only move the player.
+There is not much to know about the game. There is only one input. You can only move the player. 
+In your smartphone you move the player with your finger and in pc you move it with your mouse.
 The shooting is done automatically when you are standing still.
 You go through rooms, clear them and earn ECTS and once every room of a floor has been cleared you can go to the next floor.
 In the Skill tree under Main Menu you can manage the earned ECTS and unlock new abilities.
 
-### Issues Feedback
-Please feel free to fill the feedback form after playing the game for some time.
-Small issues can be mentionned in the feedback form. You can find the feedback farm in "/Documentation"
-Should you find a gamebreaking bug please contact "020152332A@uni.lu".
+### Feedback
+Please fill the feedback form that you can find in "Documentation/". The form is called "Feedback_Form.docx".
+Send it please to the mentionned email in the form after having completed it.
+
+### Small Note
+Please prioritize playing on your smartphone (only Android is supported). If you don't have an Android you can still play the Windows version.
+It is possible that the game does not scale correctly with your phone screen. If this is the case please switch to the Windows version and mention it in
+the feedback form.
 
 ### Android
 To play the game on an Android device or emulator, go to releases, and download the latest android release as apk. 
