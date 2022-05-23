@@ -14,7 +14,7 @@ You go through rooms, clear them and earn ECTS and once every room of a floor ha
 In the Skill tree under Main Menu you can manage the earned ECTS and unlock new abilities.
 
 ### Feedback
-Please fill the feedback form that you can find in "Documentation/". The form is called "Feedback_Form.docx".
+Please fill the feedback form at: https://forms.gle/Z9AkH93gwubiG9fr6
 Send it please to the mentionned email in the form after having completed it.
 
 ### Small Note
