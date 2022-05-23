@@ -29,18 +29,19 @@ public class shooting_Player_Axis : MonoBehaviour
         {
             opponent.TakeDamage(damage);
         }
+        Debug.Log(hitInfo.name);
         // if piercing shot is enabled
         if (piercingEnabled)
         {
-            if (hitInfo.CompareTag("Boundary")){
+            if (hitInfo.name == "Wall" || hitInfo.name == "Doors" || hitInfo.name == "Escalator" || hitInfo.CompareTag("Player") || hitInfo.CompareTag("Boundary")){
                 Destroy(gameObject);
             }
         }
         else
         {
-            if (hitInfo.name != "Player_shooting(Clone)" && hitInfo.name != "Projectile_ball(Clone)")
+            if (hitInfo.CompareTag("Enemy") || hitInfo.CompareTag("Boundary"))
             {
-                Destroy(gameObject);
+                    Destroy(gameObject);
             }
         }
     }
