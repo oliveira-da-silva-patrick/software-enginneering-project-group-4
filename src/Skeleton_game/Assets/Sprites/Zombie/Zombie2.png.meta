@@ -1,19 +1,31 @@
 fileFormatVersion: 2
-guid: 1dbbb592d11c2ac4880e7d3d9ff3d848
+guid: cdf310eae278c7a49ba7136573a18fc3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3238489610162658564
-    second: Zombie_idle_48x48_0
+      213: -7940732629061621449
+    second: Zombie2_0
   - first:
-      213: -4239073043096315083
-    second: Zombie_idle_48x48_1
+      213: -2189060898207238722
+    second: Zombie2_1
   - first:
-      213: 3455903118747109988
-    second: Zombie_idle_48x48_2
+      213: 1370108866432329628
+    second: Zombie2_2
   - first:
-      213: 3727697579034035140
-    second: Zombie_idle_48x48_3
+      213: 8494301190925829389
+    second: Zombie2_3
+  - first:
+      213: -4988573774405841114
+    second: Zombie2_4
+  - first:
+      213: 9209320343260846192
+    second: Zombie2_5
+  - first:
+      213: -220562484400166207
+    second: Zombie2_6
+  - first:
+      213: -2792395259150004611
+    second: Zombie2_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -127,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Zombie_idle_48x48_0
+      name: Zombie2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 47
-        height: 69
+        x: 16
+        y: 18
+        width: 27
+        height: 72
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf226799bd29e03d0800000000000000
-      internalID: -3238489610162658564
+      spriteID: 739ad64eeb9dcc190800000000000000
+      internalID: -7940732629061621449
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_idle_48x48_1
+      name: Zombie2_1
       rect:
         serializedVersion: 2
-        x: 102
-        y: 0
-        width: 36
-        height: 69
+        x: 69
+        y: 18
+        width: 40
+        height: 75
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,41 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 53b5f41e689cb25c0800000000000000
-      internalID: -4239073043096315083
+      spriteID: eb5f8a216b4ee91e0800000000000000
+      internalID: -2189060898207238722
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zombie_idle_48x48_2
+      name: Zombie2_2
       rect:
         serializedVersion: 2
-        x: 150
-        y: 0
-        width: 36
-        height: 69
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 46a061b8395d5ff20800000000000000
-      internalID: 3455903118747109988
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Zombie_idle_48x48_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
+        x: 130
+        y: 18
         width: 48
-        height: 69
+        height: 77
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,8 +195,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c3486ca2317bb330800000000000000
-      internalID: 3727697579034035140
+      spriteID: c97ef4f31ca930310800000000000000
+      internalID: 1370108866432329628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie2_3
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 18
+        width: 39
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d05cf4cade1d1e570800000000000000
+      internalID: 8494301190925829389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie2_4
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 18
+        width: 26
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62fc5b0359605cab0800000000000000
+      internalID: -4988573774405841114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie2_5
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 18
+        width: 30
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07857d22f041ecf70800000000000000
+      internalID: 9209320343260846192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie2_6
+      rect:
+        serializedVersion: 2
+        x: 385
+        y: 18
+        width: 39
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1caec8ac69760fcf0800000000000000
+      internalID: -220562484400166207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zombie2_7
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 18
+        width: 34
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7e01e97e4b6f39d0800000000000000
+      internalID: -2792395259150004611
       vertices: []
       indices: 
       edges: []

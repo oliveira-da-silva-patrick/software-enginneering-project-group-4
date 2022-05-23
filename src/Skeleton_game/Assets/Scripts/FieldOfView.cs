@@ -43,17 +43,16 @@ public class FieldOfView : MonoBehaviour
 
     private GameObject playerRef;
 
-    private Vector2 enemySize;
-
     public bool CanSeePlayer { get; private set;} // If true then follow player
 
     public bool CanAttack { get; private set;} //Used to turn shooting on/off, can be checked by one of the attacking scripts (Ex: Shooting)
+
+    public Animator animator;
 
     
     void Start()
     {
         playerRef = GameObject.FindGameObjectWithTag("Player");
-        enemySize = new Vector2(transform.localScale.x,transform.localScale.y); // Saves player scale (used in flipping)
 
     }
 
@@ -81,24 +80,35 @@ public class FieldOfView : MonoBehaviour
                     if (Vector2.Distance(transform.position, target.position) > stoppingDistance)
                     {
                         transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+                        if (Mathf.Abs((transform.position.x - target.position.x)) > 0)
+                        {
+                            animator.SetBool("Moving", true);
+                            animator.SetFloat("Horizontal", (target.position.x - transform.position.x));
+                        }else{
+                            animator.SetBool("Moving", false);
+                        }
                     }
                     else if (Vector2.Distance(transform.position, target.position) < retreatDistance)
                     {
                         transform.position = Vector2.MoveTowards(transform.position, target.position, -speed * Time.deltaTime);
+                        if (Mathf.Abs((transform.position.x - target.position.x)) > 0)
+                        {
+                            animator.SetBool("Moving", true);
+                            animator.SetFloat("Horizontal", (transform.position.x - target.position.x));
+                        }else{
+                            animator.SetBool("Moving", false);
+                        }
+                        
+                    }else if (Vector2.Distance(transform.position, target.position) <= stoppingDistance && Vector2.Distance(transform.position, target.position) >= retreatDistance)
+                    {
+                        animator.SetBool("Moving", false);
                     }
-
-                    // Flipping mechanism
-                    float flip = transform.position.x - lastPos;
-
-                    if (flip > 0f)
-                        transform.localScale = Vector3.Scale(new Vector3(1,1,1) , enemySize);
-                    else if (flip < 0f)
-                        transform.localScale = Vector3.Scale(new Vector3(-1,1,1) , enemySize);
 
                 }
                 else
                 {
                     CanSeePlayer = false;
+                    animator.SetBool("Moving", false);
                 }
             }
             else
