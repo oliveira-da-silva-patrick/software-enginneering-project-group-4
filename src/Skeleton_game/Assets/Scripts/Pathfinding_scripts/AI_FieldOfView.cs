@@ -32,36 +32,35 @@ public class AI_FieldOfView : MonoBehaviour
 
     private GameObject playerRef;
 
-    private float enemySize;
-    private float lastPos;
 
     public bool CanSeePlayer { get; private set;} // If true then follow player
 
     public bool CanAttack { get; private set;} //Used to turn shooting on/off, can be checked by one of the attacking scripts (Ex: Shooting)
 
+    public Animator animator;
     
     void Start()
     {
         playerRef = GameObject.FindGameObjectWithTag("Player");
-        enemySize = transform.localScale.x; // Saves player scale (used in flipping)
-        lastPos = transform.position.x;
+        animator.SetBool("Moving", true);
 
     }
 
 
     private void FOV()
     {
+
         Collider2D[] rangeCheck = Physics2D.OverlapCircleAll(transform.position, radius, targetLayer);
         CanAttack = false;
 
-        if (transform.position.x > lastPos)
+        if (Vector2.Distance(transform.position, playerRef.transform.position) < 3.2f)
         {
-            transform.localScale = new Vector3(enemySize,transform.localScale.y,transform.localScale.z);
-        } else if (transform.position.x < lastPos)
+            animator.SetBool("Moving", false);
+        } else
         {
-            transform.localScale = new Vector3(-enemySize,transform.localScale.y,transform.localScale.z);
+            animator.SetFloat("Horizontal", (playerRef.transform.position.x - transform.position.x));
+            animator.SetBool("Moving", true);;
         }
-        lastPos = transform.position.x;
 
         if (rangeCheck.Length > 0)
         {
