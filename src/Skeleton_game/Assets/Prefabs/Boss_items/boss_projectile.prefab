@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2350958632033592277}
   - component: {fileID: 1283751518963052965}
   - component: {fileID: 1641987657234024209}
+  - component: {fileID: -1906771963661986459}
   m_Layer: 0
   m_Name: boss_projectile
   m_TagString: Untagged
@@ -113,3 +114,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 15
+  speed: 5
+--- !u!50 &-1906771963661986459
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5557582593144014789}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
