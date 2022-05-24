@@ -116,11 +116,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2987e5c17aa6c2440b24db9806e1634b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 700
+  health: 1400
   shield: 0
   maxShield: 250
   maxHealth: 0
   healthBar: {fileID: 0}
+  enemyHealthBar: {fileID: 0}
   shieldBar: {fileID: 0}
   coin: {fileID: 551608877045837893, guid: 4af2e43a8d57a674fa3ec91b6e4b0790, type: 3}
   diamond: {fileID: 4234763062008344232, guid: 93e4bff1294984649bd8a34724d58980, type: 3}
