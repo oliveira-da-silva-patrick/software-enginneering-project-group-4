@@ -44,7 +44,7 @@ PlayerSettings:
     duration: 2
   - logo: {fileID: 21300000, guid: a1c28519de18fbc498d082dba2cde2ad, type: 3}
     duration: 2
-  m_VirtualRealitySplashScreen: {fileID: 2800000, guid: a1c28519de18fbc498d082dba2cde2ad, type: 3}
+  m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1920
   defaultScreenHeight: 1080
@@ -278,7 +278,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: a1c28519de18fbc498d082dba2cde2ad, type: 3}
+      m_Icon: {fileID: 2800000, guid: c8b1b950fb0419849b9801d8cff55144, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
