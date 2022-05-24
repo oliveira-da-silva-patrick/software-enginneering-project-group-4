@@ -14263,6 +14263,63 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1001 &204217903
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4763889588330293717, guid: 8a281295cf842a64f94c8ea2ca7698bf, type: 3}
+      propertyPath: m_Name
+      value: FloorAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763889588330293719, guid: 8a281295cf842a64f94c8ea2ca7698bf, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763889588330293719, guid: 8a281295cf842a64f94c8ea2ca7698bf, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 44.77604
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763889588330293719, guid: 8a281295cf842a64f94c8ea2ca7698bf, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.0492194
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763889588330293719, guid: 8a281295cf842a64f94c8ea2ca7698bf, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -510.76752
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763889588330293719, guid: 8a281295cf842a64f94c8ea2ca7698bf, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763889588330293719, guid: 8a281295cf842a64f94c8ea2ca7698bf, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763889588330293719, guid: 8a281295cf842a64f94c8ea2ca7698bf, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763889588330293719, guid: 8a281295cf842a64f94c8ea2ca7698bf, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763889588330293719, guid: 8a281295cf842a64f94c8ea2ca7698bf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763889588330293719, guid: 8a281295cf842a64f94c8ea2ca7698bf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4763889588330293719, guid: 8a281295cf842a64f94c8ea2ca7698bf, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8a281295cf842a64f94c8ea2ca7698bf, type: 3}
 --- !u!213 &262616542
 Sprite:
   m_ObjectHideFlags: 0

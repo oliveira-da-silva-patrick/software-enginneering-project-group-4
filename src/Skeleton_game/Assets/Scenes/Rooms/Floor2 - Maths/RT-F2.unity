@@ -232,11 +232,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5272321928466023595, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -50.092937
+      value: -47.72883
       objectReference: {fileID: 0}
     - target: {fileID: 5272321928466023595, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.9609165
+      value: -15.959261
       objectReference: {fileID: 0}
     - target: {fileID: 5272321929609713174, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
       propertyPath: m_AnchorMax.x
@@ -4986,6 +4986,63 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!1001 &490116030
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3449679916531950669, guid: 5d4b62900cb1460458dd18dbd31d72f8, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449679916531950669, guid: 5d4b62900cb1460458dd18dbd31d72f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.23750742
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449679916531950669, guid: 5d4b62900cb1460458dd18dbd31d72f8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.4707664
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449679916531950669, guid: 5d4b62900cb1460458dd18dbd31d72f8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -407.3746
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449679916531950669, guid: 5d4b62900cb1460458dd18dbd31d72f8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449679916531950669, guid: 5d4b62900cb1460458dd18dbd31d72f8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449679916531950669, guid: 5d4b62900cb1460458dd18dbd31d72f8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449679916531950669, guid: 5d4b62900cb1460458dd18dbd31d72f8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449679916531950669, guid: 5d4b62900cb1460458dd18dbd31d72f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449679916531950669, guid: 5d4b62900cb1460458dd18dbd31d72f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449679916531950669, guid: 5d4b62900cb1460458dd18dbd31d72f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3449679916531950671, guid: 5d4b62900cb1460458dd18dbd31d72f8, type: 3}
+      propertyPath: m_Name
+      value: FightAudio
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5d4b62900cb1460458dd18dbd31d72f8, type: 3}
 --- !u!1001 &491239709
 PrefabInstance:
   m_ObjectHideFlags: 0
