@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 5421013845620659534}
   - component: {fileID: 2350958632033592277}
   - component: {fileID: 1283751518963052965}
-  - component: {fileID: 5866163552967414744}
+  - component: {fileID: 1641987657234024209}
   m_Layer: 0
-  m_Name: Projectile_ball
+  m_Name: boss_projectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,7 +100,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &5866163552967414744
+--- !u!114 &1641987657234024209
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,8 +109,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5557582593144014789}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db66640959543434593bdedd69dac1de, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ab03107437e2674d9edba22d472a3d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
   damage: 15
