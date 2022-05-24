@@ -645,8 +645,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 98ece7b355b521048920c6d7056b6d26, type: 2}
+  m_sharedMaterial: {fileID: 4794135599128414421, guid: 98ece7b355b521048920c6d7056b6d26, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -670,8 +670,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 80
-  m_fontSizeBase: 80
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1379,8 +1379,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e2979ccef7449014a933ab54d6d4e530, type: 2}
-  m_sharedMaterial: {fileID: 3551244274795561951, guid: e2979ccef7449014a933ab54d6d4e530, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 98ece7b355b521048920c6d7056b6d26, type: 2}
+  m_sharedMaterial: {fileID: 4794135599128414421, guid: 98ece7b355b521048920c6d7056b6d26, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1513,8 +1513,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Shouldn't this be a question?
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: e2979ccef7449014a933ab54d6d4e530, type: 2}
-  m_sharedMaterial: {fileID: 3551244274795561951, guid: e2979ccef7449014a933ab54d6d4e530, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
