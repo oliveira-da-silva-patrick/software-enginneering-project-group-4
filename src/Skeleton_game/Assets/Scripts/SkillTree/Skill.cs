@@ -37,7 +37,7 @@ public class Skill : MonoBehaviour
         TitleText.text = $"{skillTree.SkillCosts[id]} ECTS\n{skillTree.SkillNames[id]}";
         DescriptionText.text = $"{skillTree.SkillDescriptions[id]}";
 
-        GetComponent<Image>().color = SkillTree.UnlockedAbilities[id] ? Color.yellow : Color.white;
+        GetComponent<Image>().color = SkillTree.UnlockedAbilities[id] ? new Color((110/255.0f), (84/255.0f), (141/255.0f)) : Color.white;
         
         foreach (var connectedSkill in ConnectedSkill)
         {

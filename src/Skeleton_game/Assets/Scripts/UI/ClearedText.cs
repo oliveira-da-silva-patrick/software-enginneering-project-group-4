@@ -12,6 +12,7 @@ public class ClearedText : MonoBehaviour
     void Update()
     {
         int count = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        Debug.Log(count);
         if (count == 0 && !clearedText.active)
         {
             if (SceneManager.GetActiveScene().name.Contains("Floor_6"))

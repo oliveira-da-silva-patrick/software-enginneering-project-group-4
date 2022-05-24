@@ -187,6 +187,7 @@ public class SkillTree : MonoBehaviour
         {
             skill.UpdateUI();
         }
+        Debug.Log(ECTS);
         ECTS_Text.text = "ECTS: " + ECTS;
         Save();
     }
