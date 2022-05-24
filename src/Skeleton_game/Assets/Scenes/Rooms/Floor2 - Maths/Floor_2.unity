@@ -14724,6 +14724,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Quiz (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7402423101294125956, guid: 55dc9694d85b9af42a6ed983d586258c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7402423101294125957, guid: 55dc9694d85b9af42a6ed983d586258c, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -15001,6 +15005,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 673205482331385884, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.000019073
+      objectReference: {fileID: 0}
+    - target: {fileID: 673205482331385884, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 315
+      objectReference: {fileID: 0}
     - target: {fileID: 2403708187470113599, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
       propertyPath: m_Name
       value: RoomEssentials
@@ -15061,6 +15073,10 @@ PrefabInstance:
       propertyPath: m_BoundingShape2D
       value: 
       objectReference: {fileID: 1252062558}
+    - target: {fileID: 5272321928360370177, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5272321928466023595, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -47.857426
@@ -17062,6 +17078,10 @@ PrefabInstance:
     - target: {fileID: 7402423101294125956, guid: 55dc9694d85b9af42a6ed983d586258c, type: 3}
       propertyPath: m_Name
       value: Quiz
+      objectReference: {fileID: 0}
+    - target: {fileID: 7402423101294125956, guid: 55dc9694d85b9af42a6ed983d586258c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7402423101294125956, guid: 55dc9694d85b9af42a6ed983d586258c, type: 3}
       propertyPath: m_StaticEditorFlags
