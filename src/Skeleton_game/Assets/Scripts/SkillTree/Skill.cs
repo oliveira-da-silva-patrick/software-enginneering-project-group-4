@@ -34,7 +34,7 @@ public class Skill : MonoBehaviour
 
     public void UpdateUI()
     {
-        TitleText.text = $"Cost: {skillTree.SkillCosts[id]} ECTS\n{skillTree.SkillNames[id]}";
+        TitleText.text = $"{skillTree.SkillCosts[id]} ECTS\n{skillTree.SkillNames[id]}";
         DescriptionText.text = $"{skillTree.SkillDescriptions[id]}";
 
         GetComponent<Image>().color = SkillTree.UnlockedAbilities[id] ? Color.yellow : Color.white;
