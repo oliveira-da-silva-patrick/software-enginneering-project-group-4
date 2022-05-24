@@ -13,6 +13,7 @@ public class healthSystem : MonoBehaviour
     public int maxShield = 250;
     public int maxHealth;
     public HealthBar healthBar;
+    public HealthBar enemyHealthBar;
     public ShieldBar shieldBar;
     private bool isShootingStunned = false;
     private bool isMovementStunned = false;
@@ -53,6 +54,11 @@ public class healthSystem : MonoBehaviour
             shield = maxShield - Damage.lostShield;
             healthBar.setHealth(health);
             shieldBar.setShield(shield);
+        }
+
+        if (gameObject.name == "AI_FinalBoss")
+        {
+            enemyHealthBar.setMaxHealth(maxHealth-100);
         }
 
         playerMoney = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMoney>();
@@ -123,6 +129,17 @@ public class healthSystem : MonoBehaviour
             Damage.lostShield = maxShield - shield;
             healthBar.setHealth(health);
             shieldBar.setShield(shield);
+        }
+        if (gameObject.name == "AI_FinalBoss")
+        {
+            if(health > 100)
+            {
+                enemyHealthBar.setHealth(health-100);
+            }
+            else
+            {
+                enemyHealthBar.setHealth(0);
+            }
         }
         if (health <= 0)
         {
