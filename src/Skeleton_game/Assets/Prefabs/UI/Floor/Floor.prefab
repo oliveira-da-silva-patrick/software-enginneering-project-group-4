@@ -173,6 +173,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2130296305972277343, guid: 73cd748210cabec43b463192706b6e5a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2130296306620088572, guid: 73cd748210cabec43b463192706b6e5a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -267,7 +271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4248456721592927074, guid: 73cd748210cabec43b463192706b6e5a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73cd748210cabec43b463192706b6e5a, type: 3}
