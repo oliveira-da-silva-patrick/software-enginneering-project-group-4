@@ -573,11 +573,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2013336693205135123, guid: e0e3fb40d56247f4f8dc7eb3e0dcc3e5, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -35.12973
+      value: -0.000022888
       objectReference: {fileID: 0}
     - target: {fileID: 2013336693205135123, guid: e0e3fb40d56247f4f8dc7eb3e0dcc3e5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 387.80396
+      value: 390
       objectReference: {fileID: 0}
     - target: {fileID: 2013336693205135123, guid: e0e3fb40d56247f4f8dc7eb3e0dcc3e5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1168,6 +1168,14 @@ PrefabInstance:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 7185032596703051179}
+    - target: {fileID: 5492775494526970772, guid: 3ec3c7dcd3e7f2d4995d73f4cc5e976a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -734
+      objectReference: {fileID: 0}
+    - target: {fileID: 5492775494526970772, guid: 3ec3c7dcd3e7f2d4995d73f4cc5e976a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 392
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ec3c7dcd3e7f2d4995d73f4cc5e976a, type: 3}
 --- !u!224 &365159811449945384 stripped

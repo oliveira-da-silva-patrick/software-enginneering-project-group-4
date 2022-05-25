@@ -48334,11 +48334,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 365159810133625102, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -738
+      value: -744
       objectReference: {fileID: 0}
     - target: {fileID: 365159810133625102, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 310
+      value: 375
       objectReference: {fileID: 0}
     - target: {fileID: 365159810133625105, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
       propertyPath: pauseMenu
@@ -48358,7 +48358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 673205482331385884, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 312
+      value: 387
       objectReference: {fileID: 0}
     - target: {fileID: 2403708187470113599, guid: 231cbb0f3299f9f40ac2db47cd3dbcb0, type: 3}
       propertyPath: m_Name
