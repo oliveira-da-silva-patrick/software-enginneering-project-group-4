@@ -1,3 +1,12 @@
+/**
+*
+*   Script Description: This script has the purpose of controlling the buttons aspect of quizzes.
+*                       It displays the reward and failure message and changes the color of the buttons.
+*
+*   Author: Daniel Sousa
+*
+**/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

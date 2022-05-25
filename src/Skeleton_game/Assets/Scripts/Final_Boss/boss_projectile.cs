@@ -1,3 +1,11 @@
+/**
+*
+*   Script Description: This script has the purpose of controlling the Final Boss"s projectiles.
+*
+*   Author: Daniel Sousa
+*
+**/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

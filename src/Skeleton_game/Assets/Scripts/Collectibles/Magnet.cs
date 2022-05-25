@@ -1,12 +1,16 @@
 
 /**
-    Script Description
-
-    This script is supposed to be attached to the MagnetCollector (child game object of Main_Player) in Unity.
-
-    Once this is done the collectibles should now be attracted to player when in range.
-
-    To change the radius of the magnet, either change the radius of the Circle Collider 2D or create a var in this script that does the same.
+*   Script Description: This script has the purpose of controlling the player's collectible magnet.
+*                       It detects if a collectible is in range and attracts it to the player.
+*
+*   This script is supposed to be attached to the MagnetCollector (child game object of Main_Player) in Unity.
+*
+*   Once this is done the collectibles should now be attracted to player when in range.
+*
+*   To change the radius of the magnet, either change the radius of the Circle Collider 2D or create a var in this script that does the same.
+*
+*   Author: Daniel Sousa
+*
 **/
 
 //----------------------------------------------------------

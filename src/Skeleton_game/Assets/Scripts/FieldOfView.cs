@@ -1,26 +1,30 @@
 
 /**
-    Script Description
-
-    This script is supposed to be attached to an Enemy in Unity. There are 7 serialized fields that need to be filled.
-
-        Note: For this script to work the player should be tagged with a "Player" tag. (More info on 'Tags' in the 'Creator's Guide")
-    
-        * Radius: Set this to whatever value suits your needs. - (Recommended: Higher than the 'StoppingDistance')
-
-        * Stopping Distance: Once the enemy gets this close to the player, it will stop following. - (Recommended: Lower than 'Radius')
-
-        * Retreat Distance: If the player gets within this radius the enemy will run away from player. - (Recommended: Lower than the 'StoppingDistance')
-
-        * Speed: Set this to whatever value suits your needs. - (Recommended: Lower than player's)
-
-        * Angle: Between 0 and 360, the higher the the value the wider the entity's FOV (Field of View).
-
-        * Target Layer: Set to "Player".
-
-        * Obstacle Layer: Set to "Obstacle".
-
-    Once this is done this entity should now follow the player's position.
+*   Script Description: This script has the purpose of controlling the normal enemies' player detection.
+*                       It also tells the animator when to play certain animations.
+*
+*   This script is supposed to be attached to an Enemy in Unity. There are 7 serialized fields that need to be filled.
+*
+*       Note: For this script to work the player should be tagged with a "Player" tag. (More info on 'Tags' in the 'Creator's Guide")
+*   
+*       * Radius: Set this to whatever value suits your needs. - (Recommended: Higher than the 'StoppingDistance')
+*
+*       * Stopping Distance: Once the enemy gets this close to the player, it will stop following. - (Recommended: Lower than 'Radius')
+*
+*       * Retreat Distance: If the player gets within this radius the enemy will run away from player. - (Recommended: Lower than the 'StoppingDistance')
+*
+*       * Speed: Set this to whatever value suits your needs. - (Recommended: Lower than player's)
+*
+*       * Angle: Between 0 and 360, the higher the the value the wider the entity's FOV (Field of View).
+*
+*       * Target Layer: Set to "Player".
+*
+*       * Obstacle Layer: Set to "Obstacle".
+*
+*   Once this is done this entity should now follow the player's position.
+*
+*   Author: Daniel Sousa
+*
 **/
 
 //----------------------------------------------------------

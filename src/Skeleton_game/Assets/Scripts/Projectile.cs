@@ -1,17 +1,20 @@
 
 /**
-    Script Description
-
-    This script is supposed to be attached to a projectile Game Object in Unity. There is a serialized field that needs to be filled.
-    
-        * Speed: Set this to whatever value suits your needs.
-
-    Once this is done the projectile should now be shot in the player's direction.
-
-    Note: The projectile is set to travel 10 units of distance and the self-destruct. You can change this by altering the 'maxDistance'
-          variable.
-
-    For more info on how to create a projectile please read the 'Creator's Guide'
+*   Script Description: This script has the purpose of controlling the projectiles used by enemies.
+*
+*   This script is supposed to be attached to a projectile Game Object in Unity. There is a serialized field that needs to be filled.
+*   
+*       * Speed: Set this to whatever value suits your needs.
+*
+*   Once this is done the projectile should now be shot in the player's direction.
+*
+*   Note: The projectile is set to travel 10 units of distance and the self-destruct. You can change this by altering the 'maxDistance'
+*         variable.
+*
+*   For more info on how to create a projectile please read the 'Creator's Guide'
+*
+*   Author: Daniel Sousa
+*
 **/
 
 //----------------------------------------------------------
