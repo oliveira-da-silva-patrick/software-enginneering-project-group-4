@@ -1,3 +1,13 @@
+/**
+*
+*   Script Description: This script has the purpose of controlling the Quiz Points.
+*                       Out of a set of predefined questions, 1 is randomly selected and presented to the player.
+*                       This also determines if the player's answer is correct. If so a reward is randomly given.
+*
+*   Author: Daniel Sousa
+*
+**/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

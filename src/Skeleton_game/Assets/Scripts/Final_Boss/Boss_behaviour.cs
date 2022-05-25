@@ -1,3 +1,12 @@
+/**
+*
+*   Script Description: This script has the purpose of controlling the Final Boss once he is awake.
+*                       Controlled actions in this script are movement and attacks.
+*
+*   Author: Daniel Sousa
+*
+**/
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,6 +25,7 @@ public class Boss_behaviour : MonoBehaviour
     public LayerMask obstacleLayer;
 
     private GameObject playerRef;
+    private healthSystem healthsys;
 
     public bool CanSeePlayer { get; private set;} // If true then follow player
 
@@ -98,9 +108,10 @@ public class Boss_behaviour : MonoBehaviour
     // This method starts the Boss. It is called in an animation event, namely in the 'Boss_Awaken' animation.
     void startBoss() {
         animator.SetBool("startFight", true);
+        gameObject.GetComponent<healthSystem>().enabled = true;
     }
 
-    // Each 
+    // Each 5 seconds this method determines which attack will be used next
     void attackCallerTimer() {
 
         if (attackloop <= 0)

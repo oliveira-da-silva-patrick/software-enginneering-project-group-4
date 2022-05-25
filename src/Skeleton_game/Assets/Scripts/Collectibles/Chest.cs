@@ -1,29 +1,33 @@
 
 /**
-    Script Description
-
-    This script is supposed to be attached to a Coin in Unity. There are 7 serialized fields that need to be filled.
-
-        Note: For this script to work the player should be tagged with a "Player" tag. (More info on 'Tags' in the 'Creator's Guide")
-    
-        * Open Radius: Minimum distance at which the player should be to open the chest.
-        
-        * Sprite Renderer: Initial sprite of chest. (Initial state)
-
-        * New Sprite: Sprite of opened chest.
-
-           -- NOTE: Instead of assigning sprites to vars manually, have the method find the sprite by name and auto assign it.
-                    This may cause problems if sprite is rellocated.
-
-        * Coin: In here you have to put a coin prefab. All instantiated coins will be a copy of this prefab.
-
-        * Diamond: In here you have to put a diamond prefab. All instantiated diamonds will be a copy of this prefab.
-
-        * Number of coins: This defines the number of coins that will pop out of the chest.
-
-        * Number of diamonds: This defines the number of diamonds that will pop out of the chest.
-
-    Once this is done the chest should now be interactable within a defined range .
+*   Script Description: This script has the purpose of controlling the Chests.
+*                       It controls its animation, instantiates collectibles and plays sound.
+*
+*   This script is supposed to be attached to a Chest in Unity. There are 7 serialized fields that need to be filled.
+*
+*       Note: For this script to work the player should be tagged with a "Player" tag. (More info on 'Tags' in the 'Creator's Guide")
+*   
+*       * Open Radius: Minimum distance at which the player should be to open the chest.
+*       
+*       * Sprite Renderer: Initial sprite of chest. (Initial state)
+*
+*       * New Sprite: Sprite of opened chest.
+*
+*          -- NOTE: Instead of assigning sprites to vars manually, have the method find the sprite by name and auto assign it.
+*                   This may cause problems if sprite is rellocated.
+*
+*       * Coin: In here you have to put a coin prefab. All instantiated coins will be a copy of this prefab.
+*
+*       * Diamond: In here you have to put a diamond prefab. All instantiated diamonds will be a copy of this prefab.
+*
+*       * Number of coins: This defines the number of coins that will pop out of the chest.
+*
+*       * Number of diamonds: This defines the number of diamonds that will pop out of the chest.
+*
+*   Once this is done the chest should now be interactable within a defined range .
+*
+*   Author: Daniel Sousa
+*
 **/
 
 //----------------------------------------------------------

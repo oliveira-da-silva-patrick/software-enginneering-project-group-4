@@ -1,18 +1,22 @@
 
 /**
-    Script Description
-
-    This script is supposed to be attached to an AI_Enemy in Unity. There are 3 serialized fields that need to be filled.
-
-        Note: For this script to work the player should be tagged with a "Player" tag. (More info on 'Tags' in the 'Creator's Guide")
-    
-        * Radius: Set this to whatever value suits your needs.
-
-        * Target Layer: Set to "Player".
-
-        * Obstacle Layer: Set to "Obstacle".
-
-    Once this is done this entity should now be able to attack when in range (and also flip).
+*   Script Description: This script has the purpose of controlling intelligent enemies' Field of View (player detection used for shooting in this case).
+*                       This also sends info to the animator for animation controlling.
+*
+*   This script is supposed to be attached to an AI_Enemy in Unity. There are 3 serialized fields that need to be filled.
+*
+*       Note: For this script to work the player should be tagged with a "Player" tag. (More info on 'Tags' in the 'Creator's Guide")
+*   
+*       * Radius: Set this to whatever value suits your needs.
+*
+*       * Target Layer: Set to "Player".
+*
+*       * Obstacle Layer: Set to "Obstacle".
+*
+*   Once this is done this entity should now be able to attack when in range (and also flip).
+*
+*   Author: Daniel Sousa
+*
 **/
 
 //----------------------------------------------------------

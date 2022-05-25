@@ -1,23 +1,27 @@
 
 /**
-    Script Description
-
-    This script is supposed to be attached to a Diamond in Unity. There is 1 serialized field that needs to be filled.
-
-        Note: 
-        
-                * For this script to work the player should be tagged with a "Player" tag. (More info on 'Tags' in the 'Creator's Guide")
-    
-                *  Make sure there's an audioManager in the hierarchy for the diamonds to work properly without errors.
-
-    Once this is done the diamond should now be collectible and be attracted to player when in range.
-
-    NOTE: The 'AudioManager' on the hierarchy cannot be assigned to the prefab 'Diamond', therefore the instanciated diamonds
-            in the chest script are assigned the audiomanager during runtime.
-
-    ERRORS: 
-        
-        * If the diamond is no longer collectible, verify the player tag and make sure the AudioManager in the scene is correctly named.
+*   Script Description: This script has the purpose of controlling the diamonds.
+*                       It also increments the player's currency upon collection.
+*
+*   This script is supposed to be attached to a Diamond in Unity. There is 1 serialized field that needs to be filled.
+*
+*       Note: 
+*       
+*               * For this script to work the player should be tagged with a "Player" tag. (More info on 'Tags' in the 'Creator's Guide")
+*   
+*               *  Make sure there's an audioManager in the hierarchy for the diamonds to work properly without errors.
+*
+*   Once this is done the diamond should now be collectible and be attracted to player when in range.
+*
+*   NOTE: The 'AudioManager' on the hierarchy cannot be assigned to the prefab 'Diamond', therefore the instanciated diamonds
+*           in the chest script are assigned the audiomanager during runtime.
+*
+*   ERRORS: 
+*       
+*       * If the diamond is no longer collectible, verify the player tag and make sure the AudioManager in the scene is correctly named.
+*
+*   Author: Daniel Sousa
+*
 **/
 
 //----------------------------------------------------------

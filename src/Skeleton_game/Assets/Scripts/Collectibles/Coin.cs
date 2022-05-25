@@ -1,16 +1,20 @@
 
 /**
-    Script Description
-
-    This script is supposed to be attached to a Coin in Unity. There is 1 serialized field that needs to be filled.
-
-        Notes: 
-        
-            * For this script to work the player should be tagged with a "Player" tag. (More info on 'Tags' in the 'Creator's Guide")
-    
-            * Make sure there's an audioManager in the hierarchy for the coins to work properly without errors.
-
-    Once this is done the coin should now be collectible and be attracted to player when in range.
+*   Script Description: This script has the purpose of controlling the coins.
+*                       It also increments the player's currency upon collection.
+*
+*   This script is supposed to be attached to a Coin in Unity. There is 1 serialized field that needs to be filled.
+*
+*       Notes: 
+*       
+*           * For this script to work the player should be tagged with a "Player" tag. (More info on 'Tags' in the 'Creator's Guide")
+*   
+*           * Make sure there's an audioManager in the hierarchy for the coins to work properly without errors.
+*
+*   Once this is done the coin should now be collectible and be attracted to player when in range.
+*
+*   Author: Daniel Sousa
+*
 **/
 
 //----------------------------------------------------------
