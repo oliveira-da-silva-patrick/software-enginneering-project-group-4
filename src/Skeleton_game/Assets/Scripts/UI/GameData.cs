@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// the game data that need to be stored in and loaded from save files
+
 [System.Serializable]
 public class GameData
 {

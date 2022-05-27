@@ -6,29 +6,37 @@ using System;
 
 public static class GameInfo
 {
+    // this array works similar to radiobuttons, not more than one value should be true. the one which is true corresponds to the last visited room
     public static bool[] lastRoom = new[] { false, false, false, false }; // lb, rb, lt, rt
+
+    // saves which rooms have been cleared in the current floor
     public static bool[] clearedRoom = new[] { false, false, false, false, false }; // lb, rb, lt, rt, floor
+
+    // saves whose room's ects has already been claimed
     public static bool[,] allclearedRoomsEver = null;
 
     public static int currentSceneID = 1;
 
+    // is called when starting a new run
     public static void newGame()
     {
-        Load();
+        Load(); // loads everything as if the player would continue, because not everything should be deleted
         SaveLoadSystem.deleteSaveFile();
-        if (allclearedRoomsEver == null)
+        if (allclearedRoomsEver == null) // instantiates the ects flags if not already done
         {
             fillEmpty();
         }
+        // sets the flags to false
         ResetRoom();
         for (int i = 0; i < lastRoom.Length; i++)
         {
-            lastRoom[i] = false;
+            lastRoom[i] = false;    
         }
-        Save();
+        Save(); // save what has beeen changed
 
     }
 
+    // sets the floor flags to false
     public static void ResetRoom()
     {
         for(int i = 0; i < clearedRoom.Length; i++)
@@ -37,6 +45,7 @@ public static class GameInfo
         }
     }
 
+    // sets the last room's flag to true and the other's to false
     public static void VisitRoom(int position)
     {
         for (int i = 0; i < lastRoom.Length; i++)
@@ -45,6 +54,7 @@ public static class GameInfo
         }
     }
 
+    // returns which room has been visitted last
     public static int GetLastVisitedRoom()
     {
         for (int i = 0; i < lastRoom.Length; i++)
@@ -54,12 +64,14 @@ public static class GameInfo
         return -1; 
     }
 
+    // saves the current state of the run
     public static void Save()
     {
         currentSceneID = SceneManager.GetActiveScene().buildIndex;
         SaveLoadSystem.SaveGameInfo();
     }
 
+    // loads the data stored in the save file
     public static void Load()
     {
         GameData data = SaveLoadSystem.LoadGameInfo();
@@ -82,6 +94,7 @@ public static class GameInfo
         }
     }
 
+    // sets the ects flags to false
     public static void fillEmpty()
     {
         allclearedRoomsEver = new bool[6, 5];
@@ -95,6 +108,7 @@ public static class GameInfo
         GameInfo.Save();
     }
 
+    // translates the rooms to numbers that can be worked with
     public static int returnRoomIndex(string currentRoomName)
     {
         if (currentRoomName.Contains("LB"))
@@ -111,6 +125,7 @@ public static class GameInfo
             return -1;
     }
 
+    // return the floor we are currently in
     public static int returnFloorIndex(string currentRoomName)
     {
         if (currentRoomName.Contains("1"))
@@ -129,6 +144,7 @@ public static class GameInfo
             return -1;
     }
 
+    // checks if the room has been cleared, adds ects if first time clearing the room and changes the current state of the corresponding flag
     public static void isRoomCleared()
     {
         string currentRoomName = SceneManager.GetActiveScene().name;
@@ -170,6 +186,7 @@ public static class GameInfo
         }
     }
 
+    // checks if the whole floor has been cleared
     public static bool isFloorCleared()
     {
         for (int i = 0; i < clearedRoom.Length; i++)

@@ -201,11 +201,13 @@ public class SkillTree : MonoBehaviour
         UpdateAllSkillUI();
     }
 
+    // saves the current state of the skill tree
     public void Save()
     {
         SaveLoadSystem.SaveSkillTree();
     }
 
+    // loads the last saved state of the skill tree
     public void Load()
     {
         SkillTreeData data = SaveLoadSystem.LoadSkillTree();
@@ -221,6 +223,7 @@ public class SkillTree : MonoBehaviour
         }
     }
 
+    // deletes the complete game progression and resets the ects flags
     public void HardReset()
     {
         resetSkillTree();

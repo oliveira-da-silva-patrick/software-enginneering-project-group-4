@@ -8,7 +8,7 @@ public class VendingMachine : MonoBehaviour
     [SerializeField] GameObject vmMenu; // vending machine menu canvas
 
     private Transform player;
-    public float openRadius = 3; //Player has to be within radius to open chest
+    public float openRadius = 3; //Player has to be within radius to interact with vending machine
 
     void Start()
     {
@@ -18,11 +18,11 @@ public class VendingMachine : MonoBehaviour
     //When player clicks on vending machine
     private void OnMouseDown()
     {
-        // second condition avoids opening the vm menu through the pause menu
+        // checks if player is in range and if game is not already paused
         if (Vector2.Distance(player.position, transform.position) <= openRadius && Time.timeScale != 0)
         {
-            vmMenu.SetActive(true);
-            Time.timeScale = 0f;
+            vmMenu.SetActive(true); // activates the vending machine canvas
+            Time.timeScale = 0f; // pauses the game
         }
     }
 
@@ -30,6 +30,6 @@ public class VendingMachine : MonoBehaviour
     public void Resume()
     {
         vmMenu.SetActive(false);
-        Time.timeScale = 1f;
+        Time.timeScale = 1f; // resumes the game
     }
 }

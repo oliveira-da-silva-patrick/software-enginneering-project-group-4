@@ -4,15 +4,18 @@ using UnityEngine;
 using UnityEngine.SceneManagement; // Necessary for switching scenes
 using System.IO;
 
-
+// contains most methods allowing to change between scenes and other tools to manage ui elements
 public class UIElements : MonoBehaviour
 {
 
     // the pause menu canvas
     [SerializeField] GameObject pauseMenu;
 
+    // start a new run (not to be misinterpreted with resetting ECTS which are kept)
+    // saving a new game destroys the old save file
     public void startNewGame()
     {
+        // checks if there is overall game progress
         if (GameInfo.allclearedRoomsEver == null)
         {
             GameInfo.fillEmpty();
@@ -28,10 +31,11 @@ public class UIElements : MonoBehaviour
         GameInfo.Save();
     }
 
+    // loads the game in the last room the player was
     public void continueGame()
     {
         GameInfo.Load();
-        if (GameInfo.currentSceneID >= 2)
+        if (GameInfo.currentSceneID >= 2) // currentSceneID < 2 should be impossible.
         {
             SceneManager.LoadScene(GameInfo.currentSceneID);
         }
@@ -53,7 +57,7 @@ public class UIElements : MonoBehaviour
     // pauses everything and opens the pause menu
     public void PauseGame()
     {
-        if (Time.timeScale != 0)
+        if (Time.timeScale != 0) // checks if the game is running
         {
             GameInfo.Save();
             pauseMenu.SetActive(true);
@@ -68,6 +72,7 @@ public class UIElements : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    // closes the application
     public void Exit()
     {
         Application.Quit();

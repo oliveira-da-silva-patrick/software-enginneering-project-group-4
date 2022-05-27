@@ -6,6 +6,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 public static class SaveLoadSystem
 {
 
+    // deletes the save file containing information about the current run
     public static void deleteSaveFile()
     {
         string path = Application.persistentDataPath + "/gameinfo.dfk";
@@ -48,6 +49,7 @@ public static class SaveLoadSystem
         return null;
     }
 
+    // saves the current state of the current run
     public static void SaveGameInfo()
     {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -61,6 +63,7 @@ public static class SaveLoadSystem
         stream.Close();
     }
 
+    // tries to load the game savefile and returns its data
     public static GameData LoadGameInfo()
     {
         string path = Application.persistentDataPath + "/gameinfo.dfk";
@@ -80,6 +83,7 @@ public static class SaveLoadSystem
         return null;
     }
 
+    // saves the player's current health
     public static void SaveHealth()
     {
         BinaryFormatter formatter = new BinaryFormatter();
@@ -93,6 +97,7 @@ public static class SaveLoadSystem
         stream.Close();
     }
 
+    // loads the save file containing player's current health
     public static HealthData LoadHealth()
     {
         string path = Application.persistentDataPath + "/health.dfk";

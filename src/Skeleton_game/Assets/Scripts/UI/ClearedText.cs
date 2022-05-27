@@ -13,21 +13,21 @@ public class ClearedText : MonoBehaviour
     {
         int count = GameObject.FindGameObjectsWithTag("Enemy").Length;
         Debug.Log(count);
-        if (count == 0 && !clearedText.active)
+        if (count == 0 && !clearedText.active) // checks if enemies have been defeated and text not already active
         {
-            if (SceneManager.GetActiveScene().name.Contains("Floor_6"))
+            if (SceneManager.GetActiveScene().name.Contains("Floor_6")) // if last floor -> load credits
             {
                 GameObject gameObject = GameObject.Find("LevelLoader");
                 LevelLoader levelloader = (LevelLoader)gameObject.GetComponent(typeof(LevelLoader));
                 levelloader.LoadNextLevel("WinScene");
             }
-            GameInfo.isRoomCleared();
-            GameInfo.Save();
-            SaveLoadSystem.SaveHealth();
-            clearedText.SetActive(true);
+            GameInfo.isRoomCleared(); // changes the flag of the room to true
+            GameInfo.Save(); // saves the game
+            SaveLoadSystem.SaveHealth(); // saves the health
+            clearedText.SetActive(true); // activates cleared message
         } else if(count != 0)
         {
-            clearedText.SetActive(false);
+            clearedText.SetActive(false); // should normally never happen, as it is disabled by default
         }
     }
 }

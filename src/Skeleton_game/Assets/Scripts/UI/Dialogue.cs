@@ -3,30 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// this class is responsible for the interactions with npcs
 public class Dialogue : MonoBehaviour
 {
     [SerializeField] GameObject dMenu;
-    public string text;
+    public string text; // the npc's answer
 
     private Transform player;
-    public Text dText;
-    public float openRadius = 3;
+    public Text dText; // the text field containing the text
+    public float openRadius = 3; // the interaction radius
 
     void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+    { 
+        player = GameObject.FindGameObjectWithTag("Player").transform; // instantiate the player
     }
 
     private void OnMouseDown()
     {
-        if (Vector2.Distance(player.position, transform.position) <= openRadius && Time.timeScale != 0)
+        if (Vector2.Distance(player.position, transform.position) <= openRadius && Time.timeScale != 0) // check if player is in radius and if game is not already paused
         {            
-            dMenu.SetActive(true);
-            dText.text = text;
-            Time.timeScale = 0f;
+            dMenu.SetActive(true); // activates the dialogue menu
+            dText.text = text; // changes to text to fit the npc
+            Time.timeScale = 0f; // pause the game
         }
     }
 
+    // resumes the game
     public void Resume()
     {
         dMenu.SetActive(false);
