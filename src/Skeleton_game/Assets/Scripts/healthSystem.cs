@@ -1,3 +1,30 @@
+/**
+    Script Description
+
+    This script is supposed to be attached to the HealthBar in the HealthBar scene.
+    The HealthBar contains the health of the main character.
+
+        * Health: The current health amount of the player.
+
+        * shield: The current shield amount of the player.
+
+        * maxHealth: The maximum health amount that the player has.
+
+        * maxShield: The maximum shield amount that the player has.
+
+        * healthBar: An reference to the players health bar. This only available to the player.
+        
+        * enemyHealthBar: An reference to the final boss health bar. This only available to the final boss.
+
+        * shieldBar: An reference to the players shield bar. This only available to the player.
+
+        * PoisonDamageInterval: The time interval between each time the enemy receives poison damage.      
+**/
+
+//----------------------------------------------------------
+
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,6 +53,9 @@ public class healthSystem : MonoBehaviour
     public GameObject coin;
     public GameObject diamond;
 
+
+    //      At the beginning of every start of a the game, this class sets the amount of health and shield to their respective bars and it also checks if the user has upgraded the max health
+    
     private void Start()
     {
         Load();
@@ -106,6 +136,7 @@ public class healthSystem : MonoBehaviour
         healthBar.setHealth(health);
     }
 
+    // This methode reduces the health to the cuorresponding damage received, it also resets the health/shield to the healthbar/shieldbar. ...enemy part...
     public void TakeDamage(int damage)
     {
         int storeDamage = damage;
@@ -167,11 +198,13 @@ public class healthSystem : MonoBehaviour
         // Debug.Log(health);
     }
 
+    //activates the poison damage
     public void poisonDamage1()
     {
         StartCoroutine("PoisonDamage1");
     }
 
+    //activates the poison damage
     public void poisonDamage2()
     {
         StartCoroutine("PoisonDamage2");
@@ -180,6 +213,9 @@ public class healthSystem : MonoBehaviour
     {
         checkStuns();
     }
+
+
+
     private void checkStuns()
     {
         AI_Shooting AI_shootingScript = GetComponent<AI_Shooting>();
@@ -261,6 +297,7 @@ public class healthSystem : MonoBehaviour
         }
     }
 
+    //Destroys the the player if the health is 0 or lower.
     void Die()
     {
         Destroy(gameObject);
@@ -271,6 +308,7 @@ public class healthSystem : MonoBehaviour
         SaveLoadSystem.deleteSaveFile();
     }
 
+    //This methode gives the enemy 5 poison damage during a certain period of time
     IEnumerator PoisonDamage2(){
          float PoisonCounter = 0;
          while(PoisonCounter < 5f){
@@ -284,6 +322,7 @@ public class healthSystem : MonoBehaviour
          }
     }
 
+    //This methode gives the enemy 2 poison damage during a certain period of time
     IEnumerator PoisonDamage1() {
          float PoisonCounter = 0;
          while(PoisonCounter < 5f){
