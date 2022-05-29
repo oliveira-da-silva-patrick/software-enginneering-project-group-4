@@ -20,9 +20,17 @@
 
         * attackPrefab: Needs the Player_shoot (the projectiles that the player shoots).
 
-        * fireRate: Variable that sets the attack speed of the player.
+        * attackPrefabAxis: Needs the Player_shoot_Axis prefab (the projectiles that the player shoots to the xy axis).
 
-        * nextFire: Variable which tells the methode that it has to shoot again.
+        * magnetPrefab: Needs the Magnet prefab (the projectiles that orbits around the player).
+
+        * fireRateNormal: Variable that sets the attack speed for the normal projectiles of the player.
+
+        * nextFireNormal: Variable which tells the methode that it has to shoot again(normal projectiles).
+
+        * fireRateAxis: Variable that sets the attack speed for the xy-axis projectiles of the player.
+
+        * nextFireAxis: Variable which tells the methode that it has to shoot again(xy-axis projectiles).
 
         * enemy: Gets the closest enemy to the player.
 
@@ -86,6 +94,7 @@ public class PlayerMovement : MonoBehaviour
 
 
 
+    //In this start methode the code goes trough the skills from the skill-tree to make sure that the player gets the player chosen upgrades
     void Start()
     {
         rotateSpeed = 1500f;
@@ -128,6 +137,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    //Spawns/Let the player sart in specific places in the different floors
     private void Spawn()
     {
         int position = GameInfo.GetLastVisitedRoom();
@@ -157,6 +167,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     // Update is called once per frame
+    // Important to move the player around every time update is called
     void Update()
     {
         // destroy children with linerenderers
@@ -180,12 +191,14 @@ public class PlayerMovement : MonoBehaviour
         shootLasers(enemies);
     }
 
+    //Fixedupdate is like update() but gets called more often
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * speed * Time.deltaTime);
         // rb.MovePosition(new Vector2(transform.position.x + (movement.x * speed * Time.deltaTime), transform.position.y + (movement.y * speed * Time.deltaTime)));
     }
 
+    //The shoot lets the player only shoot when he does not move but the xy-axis always shoots when it can.
     void Shoot()
     {
         if (Time.time > nextFireNormal)
@@ -216,6 +229,7 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    //the shooting methode for the xy-axis, checks if the player has the skills to have the xy-axis shoots
     void ShootAxisXY()
     {
         if (Time.time > nextFireAxis)
@@ -309,6 +323,7 @@ public class PlayerMovement : MonoBehaviour
         line.SetPosition(1, endPos);
     }
 
+    //attacks only the nearest enemy, the distance has to be lower than 10f and the player needs to be moitonless
     void shootEnemy(Vector2 movement, GameObject[] enemies)
     {
         if (enemies.Length > 0)

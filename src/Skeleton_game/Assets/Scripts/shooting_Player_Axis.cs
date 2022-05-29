@@ -1,3 +1,22 @@
+/**
+    Script Description
+
+    This script is supposed to be attached to the HealthBar in the HealthBar scene.
+    The HealthBar contains the health of the main character.
+
+        * speed: The value for the speed that the projectile moves.
+
+        * rb: Projectile's Rigidbody2D.
+
+        * damage: The value for the damage that the projectile does.
+
+        * piercingEnabled: The boolean which tells the projectile if the piercing skill is enabled.      
+**/
+
+//----------------------------------------------------------
+
+
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +30,7 @@ public class shooting_Player_Axis : MonoBehaviour
 
 
     // Start is called before the first frame update
+    //In this start methode the code goes trough the skills from the skill-tree to make sure that the projectile gets the player chosen upgrades
     void Start()
     {
         Load();
@@ -22,6 +42,8 @@ public class shooting_Player_Axis : MonoBehaviour
         }
     }
 
+
+    //In this methode if the projectile collides with the enemy it does damage and can also active some skills if they are enabled
     void OnTriggerEnter2D (Collider2D hitInfo)
     {
         healthSystem opponent = hitInfo.GetComponent<healthSystem>();
