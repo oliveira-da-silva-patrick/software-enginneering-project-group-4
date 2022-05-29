@@ -18513,6 +18513,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4900823048056598683, guid: ea99830ba6102fa4689ffe0d3016ca7c, type: 3}
   m_PrefabInstance: {fileID: 1376071173}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1376071175 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3576686896057298511, guid: ea99830ba6102fa4689ffe0d3016ca7c, type: 3}
+  m_PrefabInstance: {fileID: 1376071173}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9430314d91931234dae84e99984c95e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1426580724
 GameObject:
   m_ObjectHideFlags: 0
@@ -19804,7 +19815,7 @@ PrefabInstance:
     - target: {fileID: 671670225406854523, guid: c33e9ecaa74b33f46ba80ef23e10064b, type: 3}
       propertyPath: enemyHealthBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1376071175}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c33e9ecaa74b33f46ba80ef23e10064b, type: 3}
 --- !u!1 &1747090137
