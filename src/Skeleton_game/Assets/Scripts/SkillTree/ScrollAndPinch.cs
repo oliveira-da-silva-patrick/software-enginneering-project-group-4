@@ -2,7 +2,7 @@
     Script Description
 
     This script is supposed to be attached to the camera in the SkillTree scene. There are 2 serialized fields that need to be filled.
-    The Skill is clickable, which will lead to its connected skills, as well as the corresponding connectors, to appear.
+    This script allows the player to scroll with one finger, and pinch with 2 fingers when using the SkillTree scene
 
         * zoomOutMin: A minimum zoom value, to let the player not zoom too far outside, should be set to 100.
 
@@ -26,12 +26,12 @@ public class ScrollAndPinch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // also true if touch is registered on touch device
+        // also true if touch is registered on touch device (GetMouseButtonDown)
         if (Input.GetMouseButtonDown(0))
         {
             touchStart = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
-        // in case a zoom should be registered
+        // checks if 2 fingers are touching at the same time, for zoom feature
         if (Input.touchCount == 2)
         {
             ismultiTouch = true;

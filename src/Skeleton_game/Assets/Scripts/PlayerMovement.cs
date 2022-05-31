@@ -170,7 +170,7 @@ public class PlayerMovement : MonoBehaviour
     // Important to move the player around every time update is called
     void Update()
     {
-        // destroy children with linerenderers
+        // destroys all lasers, as they will be newly calculated and instantiated for every frame
         GameObject[] gos;
         gos = GameObject.FindGameObjectsWithTag("LineRendererPrefab");
         foreach(GameObject g in gos)
@@ -250,8 +250,13 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-    
 
+    /*
+     * shootLasers() checks if the correct laser abilities are unlocked in the skilltree, and adjusts the damage, as well as the amount of enemies that have to be shot
+     * It calls shootLaser() in each unlocked instance
+     * 
+     * Param: enemies [] -> all enemies in the scene, ordered by distance to the player
+    */
     void shootLasers(GameObject[] enemies)
     {
         int laserDamage = 0;
@@ -293,7 +298,13 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-
+    /*
+    * shootLaser() shoots a raycast towards the enemy that has to be shot
+    * if the raycast is successful (no boundaries or other objects in the way), it calls draw2DRay to draw the laser and deals damage to the enemy
+    * 
+    * Param: enemiy -> enemy that will be shot by laser
+    * Param: laserDamage -> calculated laser damage per second, based on Skills unlocked & calculated in shootLasers()
+    */
     void shootLaser(GameObject enemy, float laserDamage)
     {
         distance = Vector2.Distance(transform.position, enemy.transform.position);
@@ -314,7 +325,14 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
-
+    /*
+    * draw2DRay() draws the laser, using a linerenderer
+    * The linerenderer exists as a prefab in every scene, has to be instantiated for every new laser
+    * Modifications to the laser have been done in Unity itself
+    * 
+    * Param: startPos -> middle of player position
+    * Param: endPos -> enemyPosition
+    */
     void draw2DRay(Vector2 startPos, Vector2 endPos)
     {
         GameObject go = Instantiate(linePrefab);
@@ -385,6 +403,7 @@ public class PlayerMovement : MonoBehaviour
         return gos;
     }
 
+    // loads the current skilltree data, in case of an app closure
     public void Load()
     {
         SkillTreeData data = SaveLoadSystem.LoadSkillTree();

@@ -2,15 +2,16 @@
     Script Description
 
     This script is supposed to be attached to the HealthBar in the HealthBar scene.
+    This script is also attached to each enemy and player, the differenciation is made inside each method.
     The HealthBar contains the health of the main character.
 
-        * Health: The current health amount of the player.
+        * Health: The current health amount of the attached object.
 
-        * shield: The current shield amount of the player.
+        * shield: The current shield amount of the attached object.
 
-        * maxHealth: The maximum health amount that the player has.
+        * maxHealth: The maximum health amount that the attached object has.
 
-        * maxShield: The maximum shield amount that the player has.
+        * maxShield: The maximum shield amount that the attached object has.
 
         * healthBar: An reference to the players health bar. This only available to the player.
         
@@ -58,6 +59,7 @@ public class healthSystem : MonoBehaviour
     
     private void Start()
     {
+        // The following checks if the player has any health-based abilities unlocked and sets the maximum health accordingly
         Load();
         if (SkillTree.UnlockedAbilities != null)
         {
@@ -75,6 +77,7 @@ public class healthSystem : MonoBehaviour
             }
         }
         maxHealth = health;
+        // whenever a new scene is loaded, the player health needs to be updated accordingly
         if (gameObject.tag == "Player")
         {
             LoadHealth();
@@ -94,6 +97,10 @@ public class healthSystem : MonoBehaviour
         playerMoney = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMoney>();
     }
 
+    /*
+     * smallPotion() is called whenever a small potion is bought at the vending machine, and the player health is updated
+     * Update value: 25
+     */
     public void smallPotion()
     {
         hasMoney = PlayerMoney.money;
@@ -115,6 +122,10 @@ public class healthSystem : MonoBehaviour
         healthBar.setHealth(health);
     }
 
+    /*
+    * bigPotion() is called whenever a large potion is bought at the vending machine, and the player health is updated
+    * Update value: 50
+    */
     public void bigPotion()
     {
         hasMoney = PlayerMoney.money;
@@ -136,7 +147,10 @@ public class healthSystem : MonoBehaviour
         healthBar.setHealth(health);
     }
 
-    // This methode reduces the health to the cuorresponding damage received, it also resets the health/shield to the healthbar/shieldbar. ...enemy part...
+    /*
+    * TakeDamage() reduces the health to the cuorresponding damage received
+    * it also resets the health/shield to the healthbar/shieldbar. ...enemy part...
+    */
     public void TakeDamage(int damage)
     {
         int storeDamage = damage;
@@ -177,6 +191,7 @@ public class healthSystem : MonoBehaviour
             DropLoot();
             Die();
         }
+        // if an enemy is shot
         if (gameObject.CompareTag("Enemy"))
         {
             // shooting stun
@@ -204,7 +219,7 @@ public class healthSystem : MonoBehaviour
         StartCoroutine("PoisonDamage1");
     }
 
-    //activates the poison damage
+    //activates the larger poison damage
     public void poisonDamage2()
     {
         StartCoroutine("PoisonDamage2");
@@ -215,7 +230,11 @@ public class healthSystem : MonoBehaviour
     }
 
 
-
+    /*
+     * checkStuns() checks if the player has abilities unlocked, and handles the consequences accordingly
+     * The shooting stun & movement stun are the focus of this method
+     * This method is calles in Update
+     */
     private void checkStuns()
     {
         AI_Shooting AI_shootingScript = GetComponent<AI_Shooting>();
@@ -224,6 +243,7 @@ public class healthSystem : MonoBehaviour
         Shooting shootingScript = GetComponent<Shooting>();
         FieldOfView movementScript = GetComponent<FieldOfView>();
 
+        // checks if the hit entity is a normal type enemy, if so, the stun is placed for a period of time
         if (AI_shootingScript != null && AI_movementScript != null && gameObject.CompareTag("Enemy"))
         {
             initialMovementSpeed = AI_movementScript.maxSpeed;
@@ -242,15 +262,14 @@ public class healthSystem : MonoBehaviour
             }
             else
             {
-                // TODO
                 AI_movementScript.maxSpeed = initialMovementSpeed;
                 AI_shootingScript.startTimeBtwShots = initialShootingSpeed;
                 isShootingStunned = false;
                 isMovementStunned = false;
             }
 
-            // Debug.Log("Movement speed: " + movementScript.maxAcceleration + "Shooting Speed " + shootingScript.startTimeBtwShots);
         }
+        // for the intelligent enemies, as they use different scriptnames, but should also be affected by the stuns
         else if (shootingScript != null && movementScript != null && gameObject.CompareTag("Enemy"))
         {
             initialMovementSpeed = movementScript.speed;
@@ -269,7 +288,6 @@ public class healthSystem : MonoBehaviour
             }
             else
             {
-                // TODO
                 movementScript.speed = initialMovementSpeed;
                 shootingScript.startTimeBtwShots = initialShootingSpeed;
                 isShootingStunned = false;
@@ -277,6 +295,8 @@ public class healthSystem : MonoBehaviour
             }
         }
     }
+
+    // Load() allows the Skilltree data to be regained, if the game has been closed
     public void Load()
     {
         SkillTreeData data = SaveLoadSystem.LoadSkillTree();
@@ -322,7 +342,7 @@ public class healthSystem : MonoBehaviour
          }
     }
 
-    //This methode gives the enemy 2 poison damage during a certain period of time
+    //This method gives the enemy 2 poison damage during a certain period of time
     IEnumerator PoisonDamage1() {
          float PoisonCounter = 0;
          while(PoisonCounter < 5f){
@@ -370,6 +390,7 @@ public class healthSystem : MonoBehaviour
         }
     }
 
+    // LoadHealth() reloads the correct health value whenever the game was closed
     public void LoadHealth()
     {
         HealthData data = SaveLoadSystem.LoadHealth();
