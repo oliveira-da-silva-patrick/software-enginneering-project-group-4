@@ -87,7 +87,7 @@ public class shooting_Player : MonoBehaviour
         // if piercing shot is enabled
         if (piercingEnabled)
         {
-            if (hitInfo.name == "Wall" || hitInfo.name == "Doors" || hitInfo.name == "Escalator" || hitInfo.CompareTag("Player") || hitInfo.CompareTag("Boundary")){
+            if (hitInfo.name == "Wall" || hitInfo.name == "Doors" || hitInfo.name == "Escalator" || hitInfo.CompareTag("Boundary")){
                 if (!hitInfo.name.Contains("Camera"))
                 {
                     Destroy(gameObject);
