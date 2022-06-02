@@ -27,7 +27,7 @@ To play the game on an Android device or emulator, go to releases, and download 
 Open that file in your phone or emulator and the game will be installed.
 If you are trying to download the apk file from your smartphone, try changing the github page to its desktop version.
 
-### Windows (current v1.0)
+### Windows (current v1.1)
 To play the game on a Windows device, download the whole repo as a .zip file. 
 Then, go to "/Windows" and in there you will find the "U.V.O.exe" file. Run it to play the game.
 You can delete everything you downloaded from github except the "/Windows" folder.
