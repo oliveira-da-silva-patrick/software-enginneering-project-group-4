@@ -168,6 +168,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1276,6 +1277,55 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Static_Characters_npcs_24: -6345228833028113486
+      Static_Characters_npcs_18: -5258534680245182584
+      Static_Characters_npcs_32: 8626560841116787949
+      Static_Characters_npcs_47: -9082618210031990150
+      Static_Characters_npcs_15: -1258073187271410168
+      Static_Characters_npcs_45: -2380001669315921431
+      Static_Characters_npcs_25: 7643950002541884597
+      Static_Characters_npcs_46: -7981961225610519366
+      Static_Characters_npcs_30: 6190255271722519839
+      Static_Characters_npcs_9: 2728334055390068661
+      Static_Characters_npcs_33: 2264116273053139665
+      Static_Characters_npcs_20: -7326106200024654079
+      Static_Characters_npcs_0: 6519505751475627460
+      Static_Characters_npcs_19: -665037095570619977
+      Static_Characters_npcs_42: -414283986944973920
+      Static_Characters_npcs_44: 366374783634580638
+      Static_Characters_npcs_1: 8740447624125729171
+      Static_Characters_npcs_36: 5304794611526421555
+      Static_Characters_npcs_35: 7763316719447251643
+      Static_Characters_npcs_12: -7279593870642100634
+      Static_Characters_npcs_16: -8174913425681747191
+      Static_Characters_npcs_17: -4694252487370288862
+      Static_Characters_npcs_34: -136563889032522847
+      Static_Characters_npcs_26: -7794585698861847743
+      Static_Characters_npcs_23: 1866178917584363287
+      Static_Characters_npcs_10: -2112342891843696447
+      Static_Characters_npcs_13: -1205008797894728043
+      Static_Characters_npcs_27: -6088438131118234663
+      Static_Characters_npcs_22: -105511619742880883
+      Static_Characters_npcs_29: -3245816530260250727
+      Static_Characters_npcs_6: 8972189317231837346
+      Static_Characters_npcs_5: -3541822159234477430
+      Static_Characters_npcs_38: 2264175162090184765
+      Static_Characters_npcs_7: -1059219183642712744
+      Static_Characters_npcs_4: -1522975454861380853
+      Static_Characters_npcs_3: -7176795649345267270
+      Static_Characters_npcs_28: 2070928115611776374
+      Static_Characters_npcs_14: 6593691510692217971
+      Static_Characters_npcs_37: -6010876465636337279
+      Static_Characters_npcs_8: 3571354068752567582
+      Static_Characters_npcs_21: -7353739137416232275
+      Static_Characters_npcs_41: 1285512246224258325
+      Static_Characters_npcs_43: -5243797557473604541
+      Static_Characters_npcs_39: 2263099841721870489
+      Static_Characters_npcs_40: -8735401973236919580
+      Static_Characters_npcs_11: -8950908617355697378
+      Static_Characters_npcs_31: 8138553355739552314
+      Static_Characters_npcs_2: 5365367890793239735
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

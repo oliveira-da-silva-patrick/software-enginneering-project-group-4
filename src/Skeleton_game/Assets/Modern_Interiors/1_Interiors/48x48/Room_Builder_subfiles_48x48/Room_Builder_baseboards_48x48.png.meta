@@ -114,6 +114,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -844,6 +845,37 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Room_Builder_baseboards_48x48_24: -6200294144621375122
+      Room_Builder_baseboards_48x48_9: 6484130708346461634
+      Room_Builder_baseboards_48x48_27: -643661044899495013
+      Room_Builder_baseboards_48x48_1: 7291749722315078723
+      Room_Builder_baseboards_48x48_28: -5800548047571027906
+      Room_Builder_baseboards_48x48_29: -1260095931871967850
+      Room_Builder_baseboards_48x48_21: 543602614746874402
+      Room_Builder_baseboards_48x48_13: -2705785693486304980
+      Room_Builder_baseboards_48x48_6: -2331881738413193287
+      Room_Builder_baseboards_48x48_25: 3505044675017058959
+      Room_Builder_baseboards_48x48_23: -4210801682923987506
+      Room_Builder_baseboards_48x48_11: 3619703468223536411
+      Room_Builder_baseboards_48x48_5: 8520946371501220788
+      Room_Builder_baseboards_48x48_26: 1221482380794842451
+      Room_Builder_baseboards_48x48_15: -1654551959817568747
+      Room_Builder_baseboards_48x48_4: 523092628865883465
+      Room_Builder_baseboards_48x48_19: -5089808202587982769
+      Room_Builder_baseboards_48x48_3: 3814232764057418487
+      Room_Builder_baseboards_48x48_7: 3092863136077036674
+      Room_Builder_baseboards_48x48_10: -8934489809715942790
+      Room_Builder_baseboards_48x48_17: -7283264891528253163
+      Room_Builder_baseboards_48x48_8: -1038868722296811808
+      Room_Builder_baseboards_48x48_16: -7588697327071504397
+      Room_Builder_baseboards_48x48_20: -6406027988978932767
+      Room_Builder_baseboards_48x48_18: -3104531509539182479
+      Room_Builder_baseboards_48x48_2: 2110555337889391964
+      Room_Builder_baseboards_48x48_0: 4057147620314250758
+      Room_Builder_baseboards_48x48_14: 5406361491326171729
+      Room_Builder_baseboards_48x48_22: -3308780207046724662
+      Room_Builder_baseboards_48x48_12: 3747674728795403554
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

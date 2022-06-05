@@ -168,6 +168,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -1276,6 +1277,55 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      New_Characters_4 48x48_21: 6929792925758176156
+      New_Characters_4 48x48_32: 9010285128383929625
+      New_Characters_4 48x48_3: -8149232058161554342
+      New_Characters_4 48x48_26: -2974971532867932142
+      New_Characters_4 48x48_20: 4702154133689748709
+      New_Characters_4 48x48_1: 393288609629700584
+      New_Characters_4 48x48_28: -2670092060449538786
+      New_Characters_4 48x48_46: 7893741646943859146
+      New_Characters_4 48x48_29: 8654381750517021315
+      New_Characters_4 48x48_18: -1321966785964227649
+      New_Characters_4 48x48_23: 3953397179580094291
+      New_Characters_4 48x48_7: 2606109188910271696
+      New_Characters_4 48x48_39: -1858798889110760956
+      New_Characters_4 48x48_13: -5735474575012882893
+      New_Characters_4 48x48_12: 844965697507937361
+      New_Characters_4 48x48_35: -8686835203679499953
+      New_Characters_4 48x48_6: 2846429779133435991
+      New_Characters_4 48x48_0: -6669183158700287232
+      New_Characters_4 48x48_31: 5140831133778028665
+      New_Characters_4 48x48_9: -5433115400125042296
+      New_Characters_4 48x48_43: -6320529002177117387
+      New_Characters_4 48x48_15: 410703949652878199
+      New_Characters_4 48x48_42: -5825787936564219002
+      New_Characters_4 48x48_4: 8977880607853126263
+      New_Characters_4 48x48_14: 3290683822595939039
+      New_Characters_4 48x48_47: -1715900160482013032
+      New_Characters_4 48x48_8: 5032440888046674580
+      New_Characters_4 48x48_5: -8096696963818169102
+      New_Characters_4 48x48_2: 2806809942167921725
+      New_Characters_4 48x48_10: -542248582312694765
+      New_Characters_4 48x48_37: 2471025458347532909
+      New_Characters_4 48x48_36: 6270894834844381139
+      New_Characters_4 48x48_40: -638053592018746589
+      New_Characters_4 48x48_11: 8084209061941908207
+      New_Characters_4 48x48_16: 359931765204264576
+      New_Characters_4 48x48_24: 4038046537207375043
+      New_Characters_4 48x48_33: -6348973373499704165
+      New_Characters_4 48x48_45: -370906573752391547
+      New_Characters_4 48x48_17: 6953060614660377306
+      New_Characters_4 48x48_25: -9098354742599359339
+      New_Characters_4 48x48_41: 8820464788968447014
+      New_Characters_4 48x48_22: -5211081043647656026
+      New_Characters_4 48x48_44: -3957983646025552748
+      New_Characters_4 48x48_34: 434452288384855033
+      New_Characters_4 48x48_38: -650625891639222619
+      New_Characters_4 48x48_30: -3387193358579963719
+      New_Characters_4 48x48_27: 2484968557147390257
+      New_Characters_4 48x48_19: -7364741285446856110
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
