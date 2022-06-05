@@ -22,7 +22,7 @@ Please prioritize playing on your smartphone (only Android is supported). If you
 It is possible that the game does not scale correctly with your phone screen. If this is the case please switch to the Windows version and mention it in
 the feedback form.
 
-### Android (current v1.0)
+### Android (current v1.2)
 To play the game on an Android device or emulator, go to releases, and download the latest android release as apk. 
 Open that file in your phone or emulator and the game will be installed.
 If you are trying to download the apk file from your smartphone, try changing the github page to its desktop version.
